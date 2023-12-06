@@ -6,23 +6,41 @@ from collections import OrderedDict
 
 from thefuzz import fuzz
 from thefuzz import process
+from functools import cmp_to_key
 
 domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
-stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 
-             'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 
-             'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 
-             'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 
-             'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 
-             'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 
-             'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 
-             'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 
+stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself',
+             'yourselves',
+             'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them',
+             'their',
+             'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is',
+             'are', 'was',
+             'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an',
+             'the', 'and',
+             'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against',
+             'between',
+             'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out',
+             'on', 'off',
+             'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all',
+             'any', 'both',
+             'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so',
+             'than', 'too',
              'very', 'can', 'will', 'just', 'don', 'should', 'now']
+
+
+def tokenize(seq: str, splitter=' '):
+    return re.split(splitter, seq)
+
+
+def serialize(tokens: list, concat=' '):
+    return concat.join(tokens)
 
 
 class LogCluster:
     def __init__(self, template: str):
         self.template = template
+        self.tokenized_template = tokenize(template)
         self.logMessages: list[str] = list()
         self.nWildcard = 0  # number of wildcard(<*>) in the template
 
@@ -34,15 +52,41 @@ class LogCluster:
         """
         update template
         """
-        new_template = self.extract_template(self.template, log_message)
-        self.template = new_template
+        self.tokenized_template = self.extract_template(log_message)
+        self.template = serialize(self.tokenized_template)
 
-    def extract_template(self, log_message: str, template: str):
-        log_message = set(re.split(r'\W', log_message))
-        template = set(re.split(r'\W', template))
-        ret = log_message & template
-        ret.remove('')
-        return [ret]
+    def extract_template(self, log_message: str) -> list[str]:
+        log_message = re.split(r' ', log_message)
+        template = re.split(r' ', self.template)
+
+        common_token_set = set(log_message) & set(
+            template)  # identify the common set of tokens shared by both t_i and l_i
+        common_token_set.discard('')
+        new_tokenized_template = log_message if len(log_message) > len(
+            template) else template  # choose the list that has more tokens between 𝑡ˆ and 𝑙ˆ
+        new_tokenized_template = list(new_tokenized_template)
+        # replace any token in the longer list that is not in the common token set with the placeholder "<*>"
+        for i in range(len(new_tokenized_template)):
+            if new_tokenized_template[i] not in common_token_set:
+                new_tokenized_template[i] = '<*>'
+        return new_tokenized_template
+
+
+# Trie Update
+def merge_clusters(log_clusters: list[LogCluster]):
+    def cmp(log_cluser: LogCluster):
+        items = re.findall(r'<\*>', log_cluser.template)
+        return len(items)
+    sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
+    # for log_cluster in sorted_log_clusters:
+    #     print(log_cluster.template)
+    for i in range(len(sorted_log_clusters)-1):
+        # print(sorted_log_clusters[i].template)
+        template = sorted_log_clusters[i].template.replace('<*>', '.*')
+        template = template.replace('(', r'\(').replace(')', r'\)')
+        complied = re.compile(template)
+        if re.search(template, sorted_log_clusters[i+1].template):
+            print('GOOD!')
 
 
 
@@ -52,7 +96,7 @@ token_occurrences = dict()
 
 d = 3  # their first 𝑑 prefix tokens
 
-cmax = 2  # hyperparameter to limit the maximum number of child nodes
+cmax = 3  # hyperparameter to limit the maximum number of child nodes
 
 
 def traverse_d_k(log: LogMessage) -> list[str]:
@@ -87,16 +131,17 @@ traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
 # match
 theta_match = 50  # match threshold
 
-def match_exact(log_message: str, log_clusters: list[LogCluster]) -> LogCluster:
+
+def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
     for log_cluster in log_clusters:
         template = log_cluster.template
-        template_pattern = template.replace(r'<\*>', r'.*')
+        template_pattern = template.replace(r'<\*>', r'.*').replace(r'(', '\(').replace(r')', '\)')
         if re.search(template_pattern, log_message) is not None:
             return log_cluster
     return None
 
 
-def match_partial(log_message: str, log_clusters: list[LogCluster]) -> (LogCluster, int):
+def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluster, int):
     '''
     Partial Match. Use Levenshtein Distance instead of Jaccard similarity at present
     '''
@@ -112,32 +157,36 @@ class Trie:
     def __init__(self) -> None:
         self.child = dict()
         self.isEnd = False
-        self.logClusters: list[LogCluster] = list()
+        self.logClusters: set[LogCluster] = set()
 
     def insert(self, log: LogMessage) -> "Trie":
-        node = self
+        trie_node = self
 
         # extract internal nodes
         for func in traverse_funcs:
             internal_tokens = func(log)
             for internal_token in internal_tokens:
-                if internal_token not in node.child:
-                    node.child[internal_token] = Trie()
-                node = node.child[internal_token]
-                node.isEnd = False
-        node.isEnd = True
+                if internal_token not in trie_node.child:
+                    trie_node.child[internal_token] = Trie()
+                trie_node = trie_node.child[internal_token]
+                trie_node.isEnd = False
+        trie_node.isEnd = True
 
         # leaf node, match a log cluster then update its template
-        log_cluster = node.match(log.get_content())
+        log_cluster = trie_node.match(log.get_content())
+        trie_node.logClusters.add(log_cluster)  # add the log into trie node
         log_cluster.insert_and_update_template(log.get_content())
-        node.logClusters.append(log_cluster)
-        return node
+        return trie_node
 
     def match(self, log_message: str) -> LogCluster:
+        """
+        match, then **remove** a log_cluster from the trie node. should add it again in the following step
+        """
         cluster = match_exact(log_message, self.logClusters)  # exact match
         if cluster is None:
             cluster, score = match_partial(log_message, self.logClusters)  # partial match
             if score < theta_match:
                 # The template for this new log cluster is the log message itself, i.e., t_j = l_i
                 cluster = LogCluster(log_message)  # no match
+        self.logClusters.discard(cluster)  # !!!
         return cluster
