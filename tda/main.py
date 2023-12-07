@@ -17,33 +17,22 @@ def visualize_trie(root: Trie, name: str):
         t['children'] = []
         for log_cluster in root.logClusters:
             t['children'].append(
-                {'name': f'log_cluster_{log_cluster.__hash__()}', 'value': len(log_cluster.logMessages)}
+                {'name': f'logclu:{log_cluster.template[0:10]}...)', 'value': len(log_cluster.logMessages)}
             )
         return t
     data = dict()
     data['name'] = name
     data['children'] = list()
     for name, child in root.child.items():
-            data['children'].append(visualize_trie(child, name))
+        data['children'].append(visualize_trie(child, name))
     return data
 
 
-def process():
-    headers = prepro.gen_header(log_format)
-    logMessageL = []
-    for line in prepro.read_line(file_path):
-        log_message = prepro.LogMessage()
-        log_message.preprocess(headers, line)
-
-        node = root.insert(log_message)
-
-        logMessageL.append(log_message)  # all log messages
-
-    data = visualize_trie(root, 'root')
+def tree(file_name: str, data, tree_name='TDA display'):
     tree = (
         Tree()
         .add(
-            "TDA display",
+            "",
             [data],
             collapse_interval=2,
             orient="TB",
@@ -58,9 +47,32 @@ def process():
             symbol_size=10,
             initial_tree_depth=3,
         )
-        .set_global_opts(title_opts=opts.TitleOpts(title="TDA-Display"))
+        .set_global_opts(title_opts=opts.TitleOpts(title=tree_name))
 
-    ).render("tree_top_bottom.html")
+    ).render(file_name)
+
+
+def reconstruct():
+    root.reconstruct()
+    data = visualize_trie(root, 'root-reconstructed')
+
+    tree("tree-reconstructed.html", data, 'TDA reconstructed')
+
+
+def process():
+    headers = prepro.gen_header(log_format)
+    logMessageL = []
+    for line in prepro.read_line(file_path):
+        log_message = prepro.LogMessage()
+        log_message.preprocess(headers, line)
+
+        node = root.insert(log_message)
+
+        logMessageL.append(log_message)  # all log messages
+
+    data = visualize_trie(root, 'root')
+
+    tree("tree_top_bottom.html", data)
 
 
 if __name__ == "__main__":

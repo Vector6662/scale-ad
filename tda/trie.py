@@ -107,11 +107,11 @@ def traverse_d_k(log: LogMessage) -> list[str]:
     return [log.get_level()]
 
 
-def traverse_m_f(log: LogMessage) -> list[str]:
+def traverse_m_f(log_message: LogMessage) -> list[str]:
     """
     Traverse by most frequent tokens. English stopwords are discarded
     """
-    for token in log.context_tokens:
+    for token in log_message.context_tokens:
         token_occurrences[token] = token_occurrences.get(token, 0) + 1
     li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:K][1]
     return [str(li)]
@@ -154,7 +154,7 @@ def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluste
 
 
 class Trie:
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
         self.child: dict[str, Trie] = dict()
         self.isEnd = False
@@ -194,6 +194,7 @@ class Trie:
 
     def search_tries_by_level(self, level: int) -> list["Trie"]:
         """
+        search all trie nodes in a level, e.g. domain knowledge, most frequently used. usually root node call this for the purpose of re-constructing the thie tree.
         level 0 for root node, level 1 for domain knowledge level, level 2 for freq...
         """
         tries = []
@@ -205,7 +206,7 @@ class Trie:
 
     def search_clusters_recurse(self) -> list[LogCluster]:
         """
-        search clusters recursively
+        search all log clusters recursively, if this trie isEnd == False, then search its all child nodes until isEnd == True, return all log clusters
         """
         if self.isEnd:
             return list(self.logClusters)
@@ -213,3 +214,35 @@ class Trie:
         for name, child in self.child.items():
             log_clusters.extend(child.search_clusters_recurse())
         return log_clusters
+
+    def reconstruct(self, level=2):
+        """
+        re-construct trie start by this trie node instance
+        """
+        if level == 0:
+            self.update_trie()
+        else:
+            for name, child in self.child.items():
+                child.reconstruct(level-1)
+
+    def update_trie(self, traverse_func=traverse_prefix):
+        """
+        update trie. a part of reconstruct.
+        search ALL log clusters under this trie node or its children recursively, then clear its all child nodes, finally re-construct its child nodes
+        traverse_func: assign traverse function
+        """
+        log_clusters = self.search_clusters_recurse()  # gather all log clusters under this node recursively
+        assert self.isEnd == False
+        self.child = dict()  # clear all child trie nodes, then re-construct
+        for log_cluster in log_clusters:
+            node = self
+            log_message = LogMessage()
+            log_message.data_frame['CONTENT'] = log_cluster.template
+            tokens = traverse_func(log_message)
+            for token in tokens:
+                if token not in node.child:
+                    node.child[token] = Trie(token)
+                node = node.child[token]
+                node.isEnd = False
+            node.isEnd = True
+            node.logClusters.add(log_cluster)
