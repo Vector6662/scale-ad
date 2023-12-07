@@ -1,11 +1,13 @@
 import re
 import unittest
-from trie import LogCluster, merge_clusters
+from trie import LogCluster, merge_clusters, Trie
 import pandas as pd
+import main
 
 df = pd.read_csv('../data/BGL/BGL_2k.log_templates.csv')
 
 event_templates = df['EventTemplate']
+
 
 # print(event_templates)
 
@@ -26,8 +28,26 @@ class TestLogCluster(unittest.TestCase):
         merge_clusters(log_clusters)
 
     def test_sandbox(self):
-        template = 'ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>'.replace('(', r'\(').replace('<*>', '.*')
+        template = 'ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>'.replace('(',
+                                                                                                                r'\(').replace(
+            '<*>', '.*')
 
         seq = 'ciod: failed to read message prefix on control stream (CioStream socket to a:b'
         match = re.search(template, seq)
         assert match
+
+
+class TestTrie(unittest.TestCase):
+    def test_search_tries_by_level(self):
+        main.process()
+        print(main.root.search_tries_by_level(2))
+
+    def test_recursively_search_clusters(self):
+        main.process()
+        tries = main.root.search_tries_by_level(2)
+        test_trie = tries[-2]
+        print('test trie name: ', test_trie.name)
+        clusters = test_trie.search_clusters_recurse()
+        print('total clusters:', len(clusters))
+        print(''.join([f'{cluster.__hash__()}, {cluster.template}' for cluster in clusters]))
+

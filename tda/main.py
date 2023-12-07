@@ -5,33 +5,30 @@ from pyecharts import options as opts
 from queue import Queue, LifoQueue, PriorityQueue
 
 file_path = '../data/BGL/BGL_small.log'  # reduced log for test
-root = Trie()
+root = Trie('root')
 # essential frame is <CONTENT>
 log_format = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
 
 
 def visualize_trie(root: Trie, name: str):
     if root.isEnd:
-        ret = []
+        t = dict()
+        t['name'] = root.name
+        t['children'] = []
         for log_cluster in root.logClusters:
-            t = dict()
-            t['name'] = f'log_cluster_{log_cluster.__hash__()}'
-            log_messages = log_cluster.logMessages
-            t['value'] = len(log_messages)
-            ret.append(t)
-            return ret
-    internal_data = dict()
-    internal_data['name'] = name
-    internal_data['children'] = list()
-    for key, value in root.child.items():
-        if value.isEnd:
-            internal_data['children'] = visualize_trie(value, key)
-        else:
-            internal_data['children'].append(visualize_trie(value, key))
-    return internal_data
+            t['children'].append(
+                {'name': f'log_cluster_{log_cluster.__hash__()}', 'value': len(log_cluster.logMessages)}
+            )
+        return t
+    data = dict()
+    data['name'] = name
+    data['children'] = list()
+    for name, child in root.child.items():
+            data['children'].append(visualize_trie(child, name))
+    return data
 
 
-if __name__ == "__main__":
+def process():
     headers = prepro.gen_header(log_format)
     logMessageL = []
     for line in prepro.read_line(file_path):
@@ -64,3 +61,7 @@ if __name__ == "__main__":
         .set_global_opts(title_opts=opts.TitleOpts(title="TDA-Display"))
 
     ).render("tree_top_bottom.html")
+
+
+if __name__ == "__main__":
+    process()

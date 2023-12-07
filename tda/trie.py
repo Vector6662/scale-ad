@@ -1,5 +1,5 @@
 import re
-from typing import List
+from typing import List, Dict
 
 from preprocess import LogMessage
 from collections import OrderedDict
@@ -77,18 +77,18 @@ def merge_clusters(log_clusters: list[LogCluster]):
     def cmp(log_cluser: LogCluster):
         items = re.findall(r'<\*>', log_cluser.template)
         return len(items)
-    sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
+
+    sorted_log_clusters = sorted(log_clusters, key=cmp,
+                                 reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
     # for log_cluster in sorted_log_clusters:
     #     print(log_cluster.template)
-    for i in range(len(sorted_log_clusters)-1):
+    for i in range(len(sorted_log_clusters) - 1):
         # print(sorted_log_clusters[i].template)
         template = sorted_log_clusters[i].template.replace('<*>', '.*')
         template = template.replace('(', r'\(').replace(')', r'\)')
         complied = re.compile(template)
-        if re.search(template, sorted_log_clusters[i+1].template):
+        if re.search(template, sorted_log_clusters[i + 1].template):
             print('GOOD!')
-
-
 
 
 K = 3  # 𝐾 most frequent tokens
@@ -154,8 +154,9 @@ def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluste
 
 
 class Trie:
-    def __init__(self) -> None:
-        self.child = dict()
+    def __init__(self, name) -> None:
+        self.name = name
+        self.child: dict[str, Trie] = dict()
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
@@ -167,7 +168,7 @@ class Trie:
             internal_tokens = func(log)
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.child:
-                    trie_node.child[internal_token] = Trie()
+                    trie_node.child[internal_token] = Trie(internal_token)
                 trie_node = trie_node.child[internal_token]
                 trie_node.isEnd = False
         trie_node.isEnd = True
@@ -190,3 +191,25 @@ class Trie:
                 cluster = LogCluster(log_message)  # no match
         self.logClusters.discard(cluster)  # !!!
         return cluster
+
+    def search_tries_by_level(self, level: int) -> list["Trie"]:
+        """
+        level 0 for root node, level 1 for domain knowledge level, level 2 for freq...
+        """
+        tries = []
+        if level == 0:
+            return [self]
+        for name, child in self.child.items():
+            tries.extend(child.search_tries_by_level(level - 1))
+        return tries
+
+    def search_clusters_recurse(self) -> list[LogCluster]:
+        """
+        search clusters recursively
+        """
+        if self.isEnd:
+            return list(self.logClusters)
+        log_clusters = []
+        for name, child in self.child.items():
+            log_clusters.extend(child.search_clusters_recurse())
+        return log_clusters
