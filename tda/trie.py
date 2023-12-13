@@ -1,7 +1,8 @@
 import re
 from typing import List, Dict
 
-from preprocess import LogMessage
+from preprocess import gen_header
+from logs import LogMessage, LogCluster
 from collections import OrderedDict
 
 from thefuzz import fuzz
@@ -10,72 +11,45 @@ from functools import cmp_to_key
 
 domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
-stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself',
-             'yourselves',
-             'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them',
-             'their',
-             'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is',
-             'are', 'was',
-             'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an',
-             'the', 'and',
-             'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against',
-             'between',
-             'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out',
-             'on', 'off',
-             'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all',
-             'any', 'both',
-             'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so',
-             'than', 'too',
-             'very', 'can', 'will', 'just', 'don', 'should', 'now']
+K = 3  # 𝐾 most frequent tokens
+token_occurrences = []
+open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN', 'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
+
+d = 3  # their first 𝑑 prefix tokens
+
+cmax = 3  # hyperparameter to limit the maximum number of child nodes
 
 
-def tokenize(seq: str, splitter=' '):
-    return re.split(splitter, seq)
+def sampling(file_path: str, log_format: str, bath_size=1000) -> list:
+    """
+    choose first batch_size logs as samples, then extract most frequent tokens, returns a set
+    """
+    sample_logs = []
+    token_occurrences_dict = dict()
+    with open(file_path) as file:
+        for line in file:
+            if bath_size <= 0:
+                break
+            log = LogMessage()
+            log.preprocess(gen_header(log_format), line)
+            sample_logs.append(log)
 
+            for token, pos in zip(log.content_tokens, log.context_POSs):
+                if pos not in open_class_words:
+                    continue
+                token_occurrences_dict[token] = token_occurrences_dict.get(token, 0) + 1
+            bath_size = bath_size - 1
 
-def serialize(tokens: list, concat=' '):
-    return concat.join(tokens)
-
-
-class LogCluster:
-    def __init__(self, template: str):
-        self.template = template
-        self.tokenized_template = tokenize(template)
-        self.logMessages: list[str] = list()
-        self.nWildcard = 0  # number of wildcard(<*>) in the template
-
-    def insert_and_update_template(self, log_message: str):
-        self.logMessages.append(log_message)
-        self.update(log_message)  # update template based on the new log message
-
-    def update(self, log_message: str):
-        """
-        update template
-        """
-        self.tokenized_template = self.extract_template(log_message)
-        self.template = serialize(self.tokenized_template)
-
-    def extract_template(self, log_message: str) -> list[str]:
-        log_message = re.split(r' ', log_message)
-        template = re.split(r' ', self.template)
-
-        common_token_set = set(log_message) & set(
-            template)  # identify the common set of tokens shared by both t_i and l_i
-        common_token_set.discard('')
-        new_tokenized_template = log_message if len(log_message) > len(
-            template) else template  # choose the list that has more tokens between 𝑡ˆ and 𝑙ˆ
-        new_tokenized_template = list(new_tokenized_template)
-        # replace any token in the longer list that is not in the common token set with the placeholder "<*>"
-        for i in range(len(new_tokenized_template)):
-            if new_tokenized_template[i] not in common_token_set:
-                new_tokenized_template[i] = '<*>'
-        return new_tokenized_template
+    sample_logs = sorted(token_occurrences_dict.items(), key=lambda s: s[1], reverse=True)
+    sample_logs = [item[0] for item in sample_logs]
+    global token_occurrences
+    token_occurrences = sample_logs
 
 
 # Trie Update
 def merge_clusters(log_clusters: list[LogCluster]):
-    def cmp(log_cluser: LogCluster):
-        items = re.findall(r'<\*>', log_cluser.template)
+    def cmp(log_cluster: LogCluster):
+        items = re.findall(r'<\*>', log_cluster.template)
         return len(items)
 
     sorted_log_clusters = sorted(log_clusters, key=cmp,
@@ -91,14 +65,6 @@ def merge_clusters(log_clusters: list[LogCluster]):
             print('GOOD!')
 
 
-K = 3  # 𝐾 most frequent tokens
-token_occurrences = dict()
-
-d = 3  # their first 𝑑 prefix tokens
-
-cmax = 3  # hyperparameter to limit the maximum number of child nodes
-
-
 def traverse_d_k(log: LogMessage) -> list[str]:
     """
     Traverse by domain knowledge
@@ -111,18 +77,27 @@ def traverse_m_f(log_message: LogMessage) -> list[str]:
     """
     Traverse by most frequent tokens. English stopwords are discarded
     """
-    for token in log_message.context_tokens:
-        token_occurrences[token] = token_occurrences.get(token, 0) + 1
-    li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:K][1]
-    return [str(li)]
+    content_tokens = set(log_message.content_tokens)
+    frequent_tokens = []
+    count = K
+    for token in token_occurrences:
+        if count <= 0:
+            break
+        if token in content_tokens:
+            frequent_tokens.append(token)
+            count = count-1
+    return [','.join(frequent_tokens)]
 
 
 def traverse_prefix(log: LogMessage) -> list[str]:
     """
     Traverse by prefix tokens
     """
-    content = log.get_content()
-    return content.split(' ')[0:cmax]
+    prefix_tokens = []
+    for token, pos in zip(log.content_tokens, log.context_POSs):
+        if pos in open_class_words:
+            prefix_tokens.append(token)
+    return prefix_tokens[0: cmax]
 
 
 traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
@@ -142,9 +117,9 @@ def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
 
 
 def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluster, int):
-    '''
+    """
     Partial Match. Use Levenshtein Distance instead of Jaccard similarity at present
-    '''
+    """
     best_log_cluster, max_score = None, 0
     for logCluster in log_clusters:
         score = fuzz.token_set_ratio(log_message, logCluster.template)
@@ -160,11 +135,13 @@ class Trie:
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
-    def insert(self, log: LogMessage) -> "Trie":
+    def insert(self, log: LogMessage, funcs=None) -> "Trie":
+        if funcs is None:
+            funcs = traverse_funcs
         trie_node = self
 
         # extract internal nodes
-        for func in traverse_funcs:
+        for func in funcs:
             internal_tokens = func(log)
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.child:
@@ -223,7 +200,7 @@ class Trie:
             self.update_trie()
         else:
             for name, child in self.child.items():
-                child.reconstruct(level-1)
+                child.reconstruct(level - 1)
 
     def update_trie(self, traverse_func=traverse_prefix):
         """
@@ -236,8 +213,10 @@ class Trie:
         self.child = dict()  # clear all child trie nodes, then re-construct
         for log_cluster in log_clusters:
             node = self
+            # generate a log message based on a template
             log_message = LogMessage()
             log_message.data_frame['CONTENT'] = log_cluster.template
+            log_message.tokenize()
             tokens = traverse_func(log_message)
             for token in tokens:
                 if token not in node.child:

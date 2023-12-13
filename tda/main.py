@@ -1,10 +1,10 @@
-from trie import Trie
-import preprocess as prepro
+from trie import Trie, sampling
 from pyecharts.charts import Tree
 from pyecharts import options as opts
 from queue import Queue, LifoQueue, PriorityQueue
+from anomaly_detection import detect
 
-file_path = '../data/BGL/BGL_small.log'  # reduced log for test
+file_path = '../data/BGL/BGL_2k.log'  # reduced log for test
 root = Trie('root')
 # essential frame is <CONTENT>
 log_format = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
@@ -60,10 +60,15 @@ def reconstruct():
 
 
 def process():
-    headers = prepro.gen_header(log_format)
+    from preprocess import gen_header, read_line
+    from logs import LogMessage
+
+    sampling(file_path, log_format)
+
     logMessageL = []
-    for line in prepro.read_line(file_path):
-        log_message = prepro.LogMessage()
+    headers = gen_header(log_format)
+    for line in read_line(file_path):
+        log_message = LogMessage()
         log_message.preprocess(headers, line)
 
         node = root.insert(log_message)
@@ -73,6 +78,10 @@ def process():
     data = visualize_trie(root, 'root')
 
     tree("tree_top_bottom.html", data)
+
+    # start detection
+    log_clusters = root.search_clusters_recurse()
+    detect([len(log_cluster.logMessages) for log_cluster in log_clusters])
 
 
 if __name__ == "__main__":

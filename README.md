@@ -12,3 +12,13 @@ thefuzz:https://github.com/seatgeek/thefuzz
 ```commandline
 pip install thefuzz
 ```
+
+pyecharts: https://pyecharts.org/#/zh-cn/intro
+```commandline
+pip install pyecharts
+```
+
+streamad: https://github.com/Fengrui-Liu/StreamAD
+```commandline
+pip install streamad
+```

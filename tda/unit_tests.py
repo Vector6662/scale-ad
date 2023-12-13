@@ -21,7 +21,7 @@ class TestPreprocess(unittest.TestCase):
         for line in preprocess.read_line(file_path):
             log = preprocess.LogMessage()
             log.preprocess(headers, line)
-            for token in log.context_tokens:
+            for token in log.content_tokens:
                 token_occurrences[token] = token_occurrences.get(token, 0) + 1
             li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:3]  # K=3
             print(li)
@@ -35,12 +35,18 @@ class TestLogCluster(unittest.TestCase):
         new_template = log_cluster.extract_template(log_message=log_message)
         assert re.split(' ', ' '.join(new_template)) == new_template
 
-    def test_merge_log_clusters(self):
+    def test_merge_demo_log_clusters(self):
         log_clusters = []
         for template in event_templates:
             log_clusters.append(LogCluster(template))
 
         merge_clusters(log_clusters)
+
+    def test_merge_log_clusteres(self):
+        main.process()
+        log_clusters = main.root.search_clusters_recurse()
+        merge_clusters(log_clusters)
+
 
     def test_sandbox(self):
         template = 'ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>'.replace('(',
