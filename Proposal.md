@@ -119,6 +119,15 @@ Main idea: detecting templates that appear significantly less frequently than ot
 - [基于极值理论的单变量时间序列流式异常检测算法SPOT/DSPOT](https://blog.csdn.net/m0_37935211/article/details/122566605)
 - [基于极值理论的流数据实时异常检测(SPOT/DSPOT, KDD'17)](https://zhuanlan.zhihu.com/p/337022414)
 
+generalized extreme value：
+scipy: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.genextreme.html
+pyextremes: https://github.com/georgebv/pyextremes
+
+docs from Scipy org: https://docs.scipy.org/doc/scipy/tutorial/stats.html
+
+inferred by: 
+> we leverage the Generalized Extreme Value (GEV) distribution within the Extreme Value Theory (EVT) framework
+
 #### Least-Recently-Used (LRU) strategy
 limit the number of log templates considered for fitting the distribution
 
@@ -131,3 +140,8 @@ estimate line of codes: 1000 lines of python code
 
 integrate GPT:
 ![Alt text](imgs/integrate-gpt-in-ScaleAD.png)
+
+defects of GPT in paper:
+(1) ChatGPT may miss some anomalies if log messages lack evident semantics that indicate an error. 
+(2) the normal logs that are wrongly classified as abnormal were subtle anomalies that engineers typically disregard, such as "failed to login, wrong password."
+Such logs often contain keywords such as "failed," indicating abnormal semantics.

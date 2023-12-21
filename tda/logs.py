@@ -1,4 +1,6 @@
 import re
+from time import time
+
 import en_core_web_sm
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
@@ -18,10 +20,14 @@ class LogCluster:
         self.tokenized_template = tokenize(template)
         self.logMessages: list[str] = list()
         self.nWildcard = 0  # number of wildcard(<*>) in the template
+        self.ground_truth = 0
+        self.recent_used_timestamp = None
+        self.update_time()
 
     def insert_and_update_template(self, log_message: str):
         self.logMessages.append(log_message)
         self.update(log_message)  # update template based on the new log message
+        self.update_time()
 
     def update(self, log_message: str):
         """
@@ -43,6 +49,9 @@ class LogCluster:
             if new_tokenized_template[i] not in common_token_set:
                 new_tokenized_template[i] = '<*>'
         return new_tokenized_template
+
+    def update_time(self):
+        self.recent_used_timestamp = int(time())
 
 
 class LogMessage:
@@ -102,3 +111,26 @@ class LogMessage:
         if 'LEVEL' not in self.data_frame:
             raise ValueError('no field LEVEL in log datat frame')
         return self.data_frame['LEVEL']
+
+
+class FeedBack:
+    """
+    expert feed back, including on-call engineers, GPT
+    """
+
+    def __int__(self, decision: int, ep: float, tp: float):
+        self.decision = decision  # 1 indicates anomaly, 0 indicated normal
+        self.ep = ep  # confidence score given by experts
+        self.tp = tp  # anomaly score by GEV
+        self.p = self.compute_integrate()
+
+    def compute_integrate(self):
+        """
+        compute an integrated anomaly score 𝑝, which is a weighted average of TDA’s output and the expert’s feedback, where we use the expert’s confidence as the weight.
+        """
+        assert self.decision == 0 or 1
+        if self.decision == 1:
+            p = self.ep + (1 - self.ep) * self.tp
+        else:
+            p = 1 - (self.ep + (1 - self.ep) * (1 - self.tp))
+        return p

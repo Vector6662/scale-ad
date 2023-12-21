@@ -19,8 +19,7 @@ d = 3  # their first 𝑑 prefix tokens
 
 cmax = 3  # hyperparameter to limit the maximum number of child nodes
 
-
-def sampling(file_path: str, log_format: str, bath_size=1000) -> list:
+def sampling(file_path: str, log_format: str, bath_size=1000):
     """
     choose first batch_size logs as samples, then extract most frequent tokens, returns a set
     """
@@ -46,25 +45,7 @@ def sampling(file_path: str, log_format: str, bath_size=1000) -> list:
     token_occurrences = sample_logs
 
 
-# Trie Update
-def merge_clusters(log_clusters: list[LogCluster]):
-    def cmp(log_cluster: LogCluster):
-        items = re.findall(r'<\*>', log_cluster.template)
-        return len(items)
-
-    sorted_log_clusters = sorted(log_clusters, key=cmp,
-                                 reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
-    # for log_cluster in sorted_log_clusters:
-    #     print(log_cluster.template)
-    for i in range(len(sorted_log_clusters) - 1):
-        # print(sorted_log_clusters[i].template)
-        template = sorted_log_clusters[i].template.replace('<*>', '.*')
-        template = template.replace('(', r'\(').replace(')', r'\)')
-        complied = re.compile(template)
-        if re.search(template, sorted_log_clusters[i + 1].template):
-            print('GOOD!')
-
-
+# todo traverse process should generally based on open class words, NUMs, PRON(i.e. Closed class words) should be excluded within these process
 def traverse_d_k(log: LogMessage) -> list[str]:
     """
     Traverse by domain knowledge
@@ -85,14 +66,15 @@ def traverse_m_f(log_message: LogMessage) -> list[str]:
             break
         if token in content_tokens:
             frequent_tokens.append(token)
-            count = count-1
-    return [','.join(frequent_tokens)]
+            count = count - 1
+    return [', '.join(frequent_tokens)]
 
 
 def traverse_prefix(log: LogMessage) -> list[str]:
     """
     Traverse by prefix tokens
     """
+    # fixme SpaCy determine hex(e.g. 0x1ff2) as a open class words. BTW, is open class words a proper 'judge'?
     prefix_tokens = []
     for token, pos in zip(log.content_tokens, log.context_POSs):
         if pos in open_class_words:
@@ -100,11 +82,11 @@ def traverse_prefix(log: LogMessage) -> list[str]:
     return prefix_tokens[0: cmax]
 
 
-traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
+all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
 
 ####################
 # match
-theta_match = 50  # match threshold
+theta_match = 0.5  # match threshold
 
 
 def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
@@ -131,22 +113,22 @@ def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluste
 class Trie:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.child: dict[str, Trie] = dict()
+        self.children: dict[str, Trie] = dict()
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
     def insert(self, log: LogMessage, funcs=None) -> "Trie":
         if funcs is None:
-            funcs = traverse_funcs
+            funcs = all_traverse_funcs
         trie_node = self
 
         # extract internal nodes
         for func in funcs:
             internal_tokens = func(log)
             for internal_token in internal_tokens:
-                if internal_token not in trie_node.child:
-                    trie_node.child[internal_token] = Trie(internal_token)
-                trie_node = trie_node.child[internal_token]
+                if internal_token not in trie_node.children:
+                    trie_node.children[internal_token] = Trie(internal_token)
+                trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
         trie_node.isEnd = True
 
@@ -177,7 +159,7 @@ class Trie:
         tries = []
         if level == 0:
             return [self]
-        for name, child in self.child.items():
+        for name, child in self.children.items():
             tries.extend(child.search_tries_by_level(level - 1))
         return tries
 
@@ -188,7 +170,7 @@ class Trie:
         if self.isEnd:
             return list(self.logClusters)
         log_clusters = []
-        for name, child in self.child.items():
+        for name, child in self.children.items():
             log_clusters.extend(child.search_clusters_recurse())
         return log_clusters
 
@@ -199,7 +181,7 @@ class Trie:
         if level == 0:
             self.update_trie()
         else:
-            for name, child in self.child.items():
+            for name, child in self.children.items():
                 child.reconstruct(level - 1)
 
     def update_trie(self, traverse_func=traverse_prefix):
@@ -210,7 +192,7 @@ class Trie:
         """
         log_clusters = self.search_clusters_recurse()  # gather all log clusters under this node recursively
         assert self.isEnd == False
-        self.child = dict()  # clear all child trie nodes, then re-construct
+        self.children = dict()  # clear all child trie nodes, then re-construct
         for log_cluster in log_clusters:
             node = self
             # generate a log message based on a template
@@ -219,9 +201,34 @@ class Trie:
             log_message.tokenize()
             tokens = traverse_func(log_message)
             for token in tokens:
-                if token not in node.child:
-                    node.child[token] = Trie(token)
-                node = node.child[token]
+                if token not in node.children:
+                    node.children[token] = Trie(token)
+                node = node.children[token]
                 node.isEnd = False
             node.isEnd = True
             node.logClusters.add(log_cluster)
+
+    def extract_recently_used_templates(self):
+        """
+        LRU strategy, limit the number of log templates considered for fitting the GEV distribution
+        """
+        log_clusters = self.search_clusters_recurse()
+        sorted(log_clusters, key=lambda log: log.recent_used_timestamp, reverse=True)
+
+    # Trie Update
+    def merge_clusters(self, log_clusters: list[LogCluster]):
+        def cmp(log_cluster: LogCluster):
+            items = re.findall(r'<\*>', log_cluster.template)
+            return len(items)
+
+        sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
+
+        # for log_cluster in sorted_log_clusters:
+        #     print(log_cluster.template)
+        for i in range(len(sorted_log_clusters) - 1):
+            # print(sorted_log_clusters[i].template)
+            template = sorted_log_clusters[i].template.replace('<*>', '.*')
+            template = template.replace('(', r'\(').replace(')', r'\)')
+            complied = re.compile(template)
+            if re.search(template, sorted_log_clusters[i + 1].template):
+                print('GOOD!')

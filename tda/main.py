@@ -23,7 +23,7 @@ def visualize_trie(root: Trie, name: str):
     data = dict()
     data['name'] = name
     data['children'] = list()
-    for name, child in root.child.items():
+    for name, child in root.children.items():
         data['children'].append(visualize_trie(child, name))
     return data
 
@@ -81,7 +81,7 @@ def process():
 
     # start detection
     log_clusters = root.search_clusters_recurse()
-    detect([len(log_cluster.logMessages) for log_cluster in log_clusters])
+    detect(log_clusters)
 
 
 if __name__ == "__main__":
