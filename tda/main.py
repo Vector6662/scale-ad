@@ -4,11 +4,18 @@ from pyecharts import options as opts
 from queue import Queue, LifoQueue, PriorityQueue
 from anomaly_detection import detect
 
-file_path = '../data/BGL/BGL_2k.log'  # reduced log for test
 root = Trie('root')
 # essential frame is <CONTENT>
-log_format = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
 
+file_path_BGL = '../data/BGL/BGL_2k.log'  # reduced log for test
+log_format_BGL = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
+
+
+file_path_HDFS = '../data/HDFS/HDFS_2k.log'
+log_format_HDFS = '<DATE><TIME><PID><LEVEL><COMPONENT><CONTENT>'
+
+file_path = file_path_BGL
+log_format = log_format_BGL
 
 def visualize_trie(root: Trie, name: str):
     if root.isEnd:
@@ -16,9 +23,10 @@ def visualize_trie(root: Trie, name: str):
         t['name'] = root.name
         t['children'] = []
         for log_cluster in root.logClusters:
-            t['children'].append(
-                {'name': f'logclu:{log_cluster.template[0:10]}...)', 'value': len(log_cluster.logMessages)}
-            )
+            t['children'] = [
+                {'name': f'log_clu({log_cluster.template})', 'value': len(log_cluster.logMessages)},
+                {'name': 'items', 'value': log_cluster.logMessages}
+            ]
         return t
     data = dict()
     data['name'] = name
@@ -78,6 +86,9 @@ def process():
     data = visualize_trie(root, 'root')
 
     tree("tree_top_bottom.html", data)
+
+    with open('structure.json', 'w') as f:
+        f.write(str(data))
 
     # start detection
     log_clusters = root.search_clusters_recurse()

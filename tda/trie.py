@@ -45,7 +45,8 @@ def sampling(file_path: str, log_format: str, bath_size=1000):
     token_occurrences = sample_logs
 
 
-# todo traverse process should generally based on open class words, NUMs, PRON(i.e. Closed class words) should be excluded within these process
+# TODO traverse process should generally based on open class words, NUMs, PRON(i.e. Closed class words)
+#  should be excluded within these process. Therefore, rex is just sufficient for this purpose: \w(i.e. words only)
 def traverse_d_k(log: LogMessage) -> list[str]:
     """
     Traverse by domain knowledge
@@ -74,10 +75,12 @@ def traverse_prefix(log: LogMessage) -> list[str]:
     """
     Traverse by prefix tokens
     """
-    # fixme SpaCy determine hex(e.g. 0x1ff2) as a open class words. BTW, is open class words a proper 'judge'?
+    # FIXME: SpaCy determine hex(e.g. 0x1ff2) as an open class words. BTW, is open class words a proper 'judge'?
     prefix_tokens = []
     for token, pos in zip(log.content_tokens, log.context_POSs):
-        if pos in open_class_words:
+        if pos not in open_class_words:
+            continue
+        if re.fullmatch(r'[A-Za-z]+', token) is not None:  # only letter(eg. "demo", "time") can be prefix.
             prefix_tokens.append(token)
     return prefix_tokens[0: cmax]
 
@@ -216,19 +219,19 @@ class Trie:
         sorted(log_clusters, key=lambda log: log.recent_used_timestamp, reverse=True)
 
     # Trie Update
-    def merge_clusters(self, log_clusters: list[LogCluster]):
-        def cmp(log_cluster: LogCluster):
-            items = re.findall(r'<\*>', log_cluster.template)
-            return len(items)
+def merge_clusters(log_clusters: list[LogCluster]):
+    def cmp(log_cluster: LogCluster):
+        items = re.findall(r'<\*>', log_cluster.template)
+        return len(items)
 
-        sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
+    sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
 
-        # for log_cluster in sorted_log_clusters:
-        #     print(log_cluster.template)
-        for i in range(len(sorted_log_clusters) - 1):
-            # print(sorted_log_clusters[i].template)
-            template = sorted_log_clusters[i].template.replace('<*>', '.*')
-            template = template.replace('(', r'\(').replace(')', r'\)')
-            complied = re.compile(template)
-            if re.search(template, sorted_log_clusters[i + 1].template):
-                print('GOOD!')
+    # for log_cluster in sorted_log_clusters:
+    #     print(log_cluster.template)
+    for i in range(len(sorted_log_clusters) - 1):
+        # print(sorted_log_clusters[i].template)
+        template = sorted_log_clusters[i].template.replace('<*>', '.*')
+        template = template.replace('(', r'\(').replace(')', r'\)')
+        complied = re.compile(template)
+        if re.search(template, sorted_log_clusters[i + 1].template):
+            print('GOOD!')
