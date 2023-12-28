@@ -80,7 +80,7 @@ def traverse_prefix(log: LogMessage) -> list[str]:
     for token, pos in zip(log.content_tokens, log.context_POSs):
         if pos not in open_class_words:
             continue
-        if re.fullmatch(r'[A-Za-z]+', token) is not None:  # only letter(eg. "demo", "time") can be prefix.
+        if re.fullmatch(r'[A-Za-z]+', token) is not None:  # only letter(eg: "demo", "time") can be prefix.
             prefix_tokens.append(token)
     return prefix_tokens[0: cmax]
 

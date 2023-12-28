@@ -2,8 +2,8 @@ from trie import Trie, sampling
 from pyecharts.charts import Tree
 from pyecharts import options as opts
 from queue import Queue, LifoQueue, PriorityQueue
-from anomaly_detection import detect
-
+# from anomaly_detection import detect
+from cdf import detect
 root = Trie('root')
 # essential frame is <CONTENT>
 

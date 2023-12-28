@@ -22,5 +22,3 @@ def detect(log_clusters: list[LogCluster]):
 
     data, label, date, features = ds.data, ds.label, ds.date, ds.features
     plot(data=data, scores=np.array(scores), date=date, features=features, label=label).show()
-
-

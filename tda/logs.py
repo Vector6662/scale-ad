@@ -23,6 +23,7 @@ class LogCluster:
         self.ground_truth = 0
         self.recent_used_timestamp = None
         self.update_time()
+        self.feedback = None  # instance of Feedback
 
     def insert_and_update_template(self, log_message: str):
         self.logMessages.append(log_message)
@@ -69,6 +70,7 @@ class LogMessage:
         """
         self.headers = headers  # headers of dataframe
         self.line = line  # origin log message(per line)
+        self.line = re.sub(r'\n', '', self.line) # remove \n
         self.gen_data_frame()
         self.tokenize()
 
@@ -76,29 +78,15 @@ class LogMessage:
         data_frame_list = re.split(r' ', self.line, maxsplit=len(self.headers) - 1)
         for header, data_frame in zip(self.headers, data_frame_list):
             self.data_frame[header] = data_frame
-
-    def tokenize1(self):
-        doc = nlp(self.get_content())
-        tokens = [token.text for token in doc]
-        POSs = [token.pos_ for token in doc]
-        # todo remove any characters that are not letters or numbers
-        compiled = re.compile(r'\W')
-        for token, pos in zip(tokens, POSs):
-            if compiled.match(token) and len(token) == 1:
-                continue
-            else:
-                self.content_tokens.append(token)
-                self.context_POSs.append(pos)
-
     def tokenize(self):
-        # todo remove any characters that are not letters or numbers
-        compiled = re.compile(r'\W')
-
+        # remove any characters that are not letters or numbers
+        compiled = re.compile(r'\W')  # [^A-Za-z0-9_] not character, number, _
         content = compiled.sub(' ', self.get_content())
+        # then analyze part-of-speech of each word
         doc = nlp(content)
         tokens = [token.text for token in doc]
-        POSs = [token.pos_ for token in doc]
-        for token, pos in zip(tokens, POSs):
+        part_of_speeches = [token.pos_ for token in doc]
+        for token, pos in zip(tokens, part_of_speeches):
             self.content_tokens.append(token)
             self.context_POSs.append(pos)
 
@@ -118,7 +106,7 @@ class FeedBack:
     expert feed back, including on-call engineers, GPT
     """
 
-    def __int__(self, decision: int, ep: float, tp: float):
+    def __init__(self, decision: int, ep: float, tp: float):
         self.decision = decision  # 1 indicates anomaly, 0 indicated normal
         self.ep = ep  # confidence score given by experts
         self.tp = tp  # anomaly score by GEV
