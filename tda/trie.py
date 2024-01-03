@@ -88,7 +88,7 @@ def traverse_prefix(log: LogMessage) -> list[str]:
 all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
 
 ####################
-# match
+# match: exact, partial, no-match
 theta_match = 0.5  # match threshold
 
 
@@ -120,7 +120,11 @@ class Trie:
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
-    def insert(self, log: LogMessage, funcs=None) -> "Trie":
+    def insert(self, log: LogMessage, funcs=None) -> ("Trie", LogCluster):
+        """
+        gross-grained insert via three traverse functions. Then exact inserted into a LogCluster instance.
+        returns internal leaf node and log cluster that matches.
+        """
         if funcs is None:
             funcs = all_traverse_funcs
         trie_node = self
@@ -133,17 +137,17 @@ class Trie:
                     trie_node.children[internal_token] = Trie(internal_token)
                 trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
-        trie_node.isEnd = True
+        trie_node.isEnd = True  # internal leaf node
 
         # leaf node, match a log cluster then update its template
         log_cluster = trie_node.match(log.get_content())
         trie_node.logClusters.add(log_cluster)  # add the log into trie node
         log_cluster.insert_and_update_template(log.get_content())
-        return trie_node
+        return trie_node, log_cluster
 
     def match(self, log_message: str) -> LogCluster:
         """
-        match, then **remove** a log_cluster from the trie node. should add it again in the following step
+        match, then **remove** a log cluster from the trie node. should add it AGAIN in the following step
         """
         cluster = match_exact(log_message, self.logClusters)  # exact match
         if cluster is None:

@@ -1,9 +1,12 @@
 # Proposal based on "Log-based Anomaly Detection based on EVT Theory with feedback"
+
 ![TDA](imgs/scaleAD.png)
 
 ## Steps to Implement Trie-based Detection Agent(TDA)
+
 TDA workflow:
 ![TDA](imgs/tda-framework.png)
+
 ### Dataset from Jenkens
 
 In this paper, datasets origin from 20 IaaS microservice. We can now use logs in Jenkens pipline at present.
@@ -124,18 +127,21 @@ trigger Trie updates periodically, such as every million lines of log messages.
 Main idea: detecting templates that appear significantly **less frequently** than others.
 
 > we leverage the Generalized Extreme Value (GEV) distribution within the Extreme Value Theory (EVT) framework
+
 #### Extreme Value Theory (EVT) framework
 
 ##### 5.1 StreamAD
+
 - [StreamAD](https://github.com/Fengrui-Liu/StreamAD)
 - [基于极值理论的单变量时间序列流式异常检测算法SPOT/DSPOT](https://blog.csdn.net/m0_37935211/article/details/122566605)
 - [基于极值理论的流数据实时异常检测(SPOT/DSPOT, KDD'17)](https://zhuanlan.zhihu.com/p/337022414)
 
 ##### 5.2 generalized extreme value(GEV)：
+
 - scipy: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.genextreme.html
 - pyextremes: https://github.com/georgebv/pyextremes
 
-docs from Scipy org: https://docs.scipy.org/doc/scipy/tutorial/stats.html
+docs from Scipy org: https://docs.scipy.org/doc/scip`y/tutorial/stats.html
 
 #### Cumulative Distribution Function results.
 
@@ -146,6 +152,7 @@ figure2: cdf
 figure3: anomaly score tp, with T=10
 
 ![Alt text](imgs/cdf.png)
+
 #### StreamAD results
 
 ![Alt text](imgs/streanad.png)
@@ -159,7 +166,7 @@ limit the number of log templates considered for fitting the distribution
 
 ### 6. Leveraging Expert Feedback
 
-#### integrate GPT
+#### Integrate GPT
 
 Intended UI Design(Figure 7(a)):
 
@@ -174,3 +181,15 @@ Intended UI Design(Figure 7(a)):
 ### TODO: Retrieval Augmented Generation techniques
 
 https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6
+
+## Further development planning
+
+- go on optimize TDA, especially implement LRU,
+- design and implement a UI for monitoring
+- [RAG](https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6): take a survey first
+
+
+## UI Design
+There are two part of UI content: 
+- One for on-call users: Display anomaly logs and their details. Display potential logs based on GEV theory-Waiting for on-call engineers or GPT's feedback.
+- Another for monitoring: Display TDA tree and its change(eg. after "Update Trie" step);

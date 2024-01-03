@@ -38,12 +38,16 @@ class LogCluster:
         self.template = serialize(self.tokenized_template)
 
     def extract_template(self, log_message: str) -> list[str]:
+        """
+        extract a new template between the incoming log cluster and existed template
+        """
         log_message = re.split(r' ', log_message)
         template = re.split(r' ', self.template)
-
-        common_token_set = set(log_message) & set(template)  # identify the common set of tokens shared by both t_i and l_i
+        # identify the common set of tokens shared by both t_i and l_i
+        common_token_set = set(log_message) & set(template)
         common_token_set.discard('')
-        new_tokenized_template = log_message if len(log_message) > len(template) else template  # choose the list that has more tokens between 𝑡ˆ and 𝑙ˆ
+        # choose the list that has more tokens between 𝑡ˆ and 𝑙ˆ
+        new_tokenized_template = log_message if len(log_message) > len(template) else template
         new_tokenized_template = list(new_tokenized_template)
         # replace any token in the longer list that is not in the common token set with the placeholder "<*>"
         for i in range(len(new_tokenized_template)):
@@ -78,6 +82,7 @@ class LogMessage:
         data_frame_list = re.split(r' ', self.line, maxsplit=len(self.headers) - 1)
         for header, data_frame in zip(self.headers, data_frame_list):
             self.data_frame[header] = data_frame
+
     def tokenize(self):
         # remove any characters that are not letters or numbers
         compiled = re.compile(r'\W')  # [^A-Za-z0-9_] not character, number, _
