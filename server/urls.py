@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Apis import tda_display
+from Apis import trie_display_graph
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', tda_display)
+    path('trie/', trie_display_graph)
 ]
