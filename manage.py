@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from tda.main import process
+from tda.process_tda import process
 
 
 def main():

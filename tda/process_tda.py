@@ -1,21 +1,15 @@
-from render_structure import render_pyecharts_tree
+from logs import LogMessage
+from server_apis import render_pyecharts_tree
 from trie import Trie, sampling
 from queue import Queue, LifoQueue, PriorityQueue
-from anomaly_detection import detect
-# from cdf import detect
+
+# from anomaly_detection import detect
+from cdf import detect
+
+from config import file_path, log_format
+
 root = Trie('root')
-# essential frame is <CONTENT>
-
-file_path_BGL = './data/BGL/BGL_2k.log'  # reduced log for test
-log_format_BGL = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
-
-
-file_path_HDFS = './data/HDFS/HDFS_2k.log'
-log_format_HDFS = '<DATE><TIME><PID><LEVEL><COMPONENT><CONTENT>'
-
-file_path = file_path_BGL
-log_format = log_format_BGL
-
+logMessages = []
 
 def reconstruct():
     root.reconstruct()
@@ -28,17 +22,17 @@ def process():
 
     sampling(file_path, log_format)
 
-    logMessageL = []
     headers = gen_header(log_format)
     for line in read_line(file_path):
         log_message = LogMessage()
         log_message.preprocess(headers, line)
 
         trie_node, log_cluster = root.insert(log_message)
+        log_message.log_cluster = log_cluster  # refer to its parent
 
         # TODO: LRU
 
-        logMessageL.append(log_message)  # all log messages
+        logMessages.append(log_message)  # all log messages
 
     data = render_pyecharts_tree("tree_top_bottom.html", root)
 

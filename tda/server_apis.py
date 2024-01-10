@@ -1,5 +1,7 @@
 """
-generate json structure for rendering. eg,
+APIs exposed to Django server.
+generate json structure for rendering;
+data from expert feedbacks;
 """
 from trie import Trie
 from pyecharts.charts import Tree
@@ -20,12 +22,12 @@ def gen_trie_graph(root: Trie, name: str, total_id: int, data: dict):
     }
     """
     cur_id = total_id + 1
-    data['nodes'].append({'id': cur_id, 'name': name, 'symbolSize': 10, 'category': 0})
+    data['nodes'].append({'id': cur_id, 'name': name, 'symbolSize': 20, 'category': 0})
     if root.isEnd:
         log_cluster_id = cur_id + 1
         for log_cluster in root.logClusters:
             data['nodes'].append({'id': log_cluster_id, 'name': f'log_cluster({log_cluster.template})',
-                                  'value': len(log_cluster.logMessages), 'category': 1})
+                                  'value': len(log_cluster.logMessages), 'symbolSize': 10, 'category': 1})
             data['links'].append({'source': cur_id, 'target': log_cluster_id})
             log_cluster_id = log_cluster_id + 1
         return cur_id, log_cluster_id - 1
@@ -40,6 +42,8 @@ def gen_trie_graph(root: Trie, name: str, total_id: int, data: dict):
 def gen_trie_tree(root: Trie, name: str, debug=False):
     """
     visualize trie data structure for pyecharts type "tree".
+    if debug==True, each leaf node will list all log messages under the log cluster,
+    else, only total amounts of log messages under this log cluster, because frontend frameworks(eg. pyecharts, echarts) only support integer in field 'value'.
     json format, see structure.json
 
     """
@@ -50,10 +54,10 @@ def gen_trie_tree(root: Trie, name: str, debug=False):
         for log_cluster in root.logClusters:
             if debug:  # just for debug: see json structure details(structure.json) intuitively
                 items = '\n'.join(log_cluster.logMessages)
-                t['children'] = [{'name': f'log_clu({log_cluster.template})',
-                                  'value': f'len: {len(log_cluster.logMessages)}\nitems:{items}'}]
+                t['children'] = [{'name': f'{log_cluster.template}',
+                                  'value': f'{log_cluster.logMessages}'}]
             else:
-                t['children'] = [{'name': f'log_clu({log_cluster.template})',
+                t['children'] = [{'name': f'{log_cluster.template}',
                                   'value': len(log_cluster.logMessages)}]
         return t
     data = dict()
@@ -91,17 +95,36 @@ def render_pyecharts_tree(file_name: str, root: Trie, tree_name='TDA display'):
     ).render(file_name)
     return data
 
+# APIs below:
 
-def django_interface(root: Trie, render_type='graph'):
+def render_api(root: Trie, render_type='graph'):
     """
+    api exposed to Django server to render trie tree for graph
     render_type: graph or tree
     """
     assert render_type == 'graph' or 'tree'
     data = {}
 
     if render_type == 'graph':
-        data = {'nodes': list(), 'links': list(), 'categories': [{'name': 'A'}, {'name': 'B'}]}
+        data = {'nodes': list(), 'links': list(), 'categories': [{'name': 'Internal Nodes'}, {'name': 'Leaf Nodes'}]}
         gen_trie_graph(root, 'root', -1, data)
     elif render_type == 'tree':
         data = gen_trie_tree(root, 'Trie display', debug=False)
     return data
+
+
+def expert_feedback_api(root: Trie):
+    data = []
+    for log_cluster in root.search_clusters_recurse():
+        if log_cluster.feedback is None:
+            continue
+        data.append({
+            'log_template': log_cluster.template,
+            'level': log_cluster.feedback.decision,
+            'ep': log_cluster.feedback.ep,
+            'tp': log_cluster.feedback.tp,
+            'logs': log_cluster.logMessages,
+            'desc': log_cluster.feedback.reason
+        })
+    return data # for debug
+

@@ -187,9 +187,14 @@ https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8f
 - go on optimize TDA, especially implement LRU,
 - design and implement a UI for monitoring
 - [RAG](https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6): take a survey first
+  - [Verba](https://github.com/weaviate/Verba)
+  - [selfrag](https://selfrag.github.io/)
 
 
 ## UI Design
 There are two part of UI content: 
 - One for on-call users: Display anomaly logs and their details. Display potential logs based on GEV theory-Waiting for on-call engineers or GPT's feedback.
 - Another for monitoring: Display TDA tree and its change(eg. after "Update Trie" step);
+
+### Developing notes:
+fix Django double load:https://blog.csdn.net/qq_39147299/article/details/117474908

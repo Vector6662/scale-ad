@@ -2,8 +2,9 @@ import re
 import unittest
 from trie import LogCluster, merge_clusters, Trie, traverse_m_f, token_occurrences
 import pandas as pd
-import main
+import process_tda as main
 import preprocess
+
 
 df = pd.read_csv('../data/BGL/BGL_2k.log_templates.csv')
 

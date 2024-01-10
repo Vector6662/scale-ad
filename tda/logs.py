@@ -23,7 +23,7 @@ class LogCluster:
         self.ground_truth = 0
         self.recent_used_timestamp = None
         self.update_time()
-        self.feedback = None  # instance of Feedback
+        self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
 
     def insert_and_update_template(self, log_message: str):
         self.logMessages.append(log_message)
@@ -67,6 +67,7 @@ class LogMessage:
 
         self.content_tokens = list(str())  # tokens generated from CONTEXT
         self.context_POSs = list(str())  # part of speech(generated from CONTEXT as well)
+        self.log_cluster = LogCluster('')  # the log cluster this log message belongs to
 
     def preprocess(self, headers: list[str], line: str):
         """
@@ -111,11 +112,12 @@ class FeedBack:
     expert feed back, including on-call engineers, GPT
     """
 
-    def __init__(self, decision: int, ep: float, tp: float):
-        self.decision = decision  # 1 indicates anomaly, 0 indicated normal
+    def __init__(self, decision: int, ep: float, tp: float, reason='desc...'):
+        self.decision = decision  # 1 indicates anomaly, 0 indicated normal, 2 unknown
         self.ep = ep  # confidence score given by experts
         self.tp = tp  # anomaly score by GEV
         self.p = self.compute_integrate()
+        self.reason = reason
 
     def compute_integrate(self):
         """
