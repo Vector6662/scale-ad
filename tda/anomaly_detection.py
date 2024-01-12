@@ -1,10 +1,32 @@
-from streamad.util import StreamGenerator, UnivariateDS, plot, CustomDS
-from streamad.model import SpotDetector
+from scipy.stats import genextreme
 import numpy as np
-from logs import LogCluster
+from streamad.model import SpotDetector
+from streamad.util import CustomDS, StreamGenerator, plot
 import pandas as pd
 
-def detect(log_clusters: list[LogCluster]):
+from log_structure import LogCluster, FeedBack
+from expert_feedback import openai_feedback
+from utils import plot_cdf
+
+
+
+def detect_cdf(log_clusters: list[LogCluster]):
+    data = [len(log_cluster.logMessages) for log_cluster in log_clusters]
+    c = -0.5
+    query_threshold = 0.95
+    cdfs = genextreme.cdf(data, c)
+    T = 10  # range from 2 to 10
+    tps = cdfs ** T / np.sum(cdfs) ** T
+
+    plot_cdf(data, cdfs, tps)
+
+    for log_cluster, tp in zip(log_clusters, cdfs):
+        if tp > query_threshold:
+            result, score, reason = openai_feedback(log_cluster)
+            log_cluster.feedback = FeedBack(decision=1 if result == 'yes' else 0, ep=score, tp=tp, reason=reason)
+
+
+def detect_streamad(log_clusters: list[LogCluster]):
     data = {'values': [len(log_cluster.logMessages) for log_cluster in log_clusters],
             # 'col': [log_cluster.template for log_cluster in log_clusters],
             'label': [log_cluster.ground_truth for log_cluster in log_clusters]

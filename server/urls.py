@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Apis import trie_display_graph, api_test, log_feedback, log_messages_result
+from api_handlers import trie_display_graph, api_test, log_feedback, log_messages_result
 
 urlpatterns = [
     path('', api_test),

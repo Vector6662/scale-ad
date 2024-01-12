@@ -1,7 +1,7 @@
 from django.http.response import HttpResponse
 from django.http.request import HttpRequest
 import json
-from tda.server_apis import render_api, expert_feedback_api
+from tda.server_apis import render_echarts_api, expert_feedback_api
 from tda.process_tda import root, logMessages
 
 
@@ -11,7 +11,7 @@ def api_test(request):
 
 def trie_display_graph(request: HttpRequest):
     render_type = request.GET.get('render_type')
-    result = render_api(root, render_type)
+    result = render_echarts_api(root, render_type)
     result = json.dumps(result)
     return HttpResponse(result)
 

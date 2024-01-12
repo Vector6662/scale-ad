@@ -1,11 +1,8 @@
 import re
-import en_core_web_sm
-from logs import LogMessage
 
 patterns = [
     r'(\d+[\.-])+\d+',  # time. eg, 2005-06-14-09.11.51.127157
 ]
-
 
 
 def read_line(file_path: str) -> list:
@@ -29,4 +26,13 @@ def gen_header(log_format: str):
     # return list(tokens)
 
 
-
+def plot_cdf(data, cdfs, tps):
+    import numpy as np
+    import matplotlib.pyplot as plt
+    data = np.array(data)
+    x = np.arange(0, len(data))
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1)
+    ax1.scatter(x, data, label='origin', s=5)
+    ax2.scatter(x, cdfs, label='cdf', s=5)
+    ax3.scatter(x, tps, label='tp', s=5)
+    plt.show()

@@ -1,9 +1,12 @@
 # essential frame is <CONTENT>
-file_path_BGL = './data/BGL/BGL_2k.log'  # reduced log for test
+file_path_BGL = './data/BGL/BGL_2k.log'  # reduced log for test， 2k
 log_format_BGL = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
 
 file_path_HDFS = './data/HDFS/HDFS_2k.log'
 log_format_HDFS = '<DATE><TIME><PID><LEVEL><COMPONENT><CONTENT>'
+
+file_path_bgl2 = './data/bgl2'  # total bgl log, 4747963 lines
+
 
 file_path = file_path_BGL
 log_format = log_format_BGL

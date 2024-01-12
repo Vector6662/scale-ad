@@ -1,3 +1,7 @@
+"""
+Log Data Structures, including LogMessage(wrapper of each log message. Each line is a log message), LogCluster
+
+"""
 import re
 from time import time
 

@@ -97,9 +97,9 @@ def render_pyecharts_tree(file_name: str, root: Trie, tree_name='TDA display'):
 
 # APIs below:
 
-def render_api(root: Trie, render_type='graph'):
+def render_echarts_api(root: Trie, render_type='graph'):
     """
-    api exposed to Django server to render trie tree for graph
+    api exposed to Django server to render trie tree or graph
     render_type: graph or tree
     """
     assert render_type == 'graph' or 'tree'

@@ -1,8 +1,8 @@
 import re
 from typing import List, Dict
 
-from preprocess import gen_header
-from logs import LogMessage, LogCluster
+from utils import gen_header
+from log_structure import LogMessage, LogCluster
 from collections import OrderedDict
 
 from thefuzz import fuzz
@@ -41,8 +41,7 @@ def sampling(file_path: str, log_format: str, bath_size=1000):
 
     sample_logs = sorted(token_occurrences_dict.items(), key=lambda s: s[1], reverse=True)
     sample_logs = [item[0] for item in sample_logs]
-    global token_occurrences
-    token_occurrences = sample_logs
+    token_occurrences.extend(sample_logs)
 
 
 # TODO traverse process should generally based on open class words, NUMs, PRON(i.e. Closed class words)
@@ -134,12 +133,12 @@ class Trie:
             internal_tokens = func(log)
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.children:
-                    trie_node.children[internal_token] = Trie(internal_token)
+                    trie_node.children[internal_token] = Trie(internal_token)  # create a new node
                 trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
-        trie_node.isEnd = True  # internal leaf node
+        trie_node.isEnd = True  # leaf node
 
-        # leaf node, match a log cluster then update its template
+        # leaf trie node, match a log cluster then update its template
         log_cluster = trie_node.match(log.get_content())
         trie_node.logClusters.add(log_cluster)  # add the log into trie node
         log_cluster.insert_and_update_template(log.get_content())
