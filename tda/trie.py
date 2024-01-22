@@ -1,8 +1,8 @@
 import re
-from typing import List, Dict
+from typing import List, Dict, Tuple
+from io import TextIOWrapper
 
-from utils import gen_header
-from log_structure import LogMessage, LogCluster
+from log_structure import LogMessage, LogCluster, LogError
 from collections import OrderedDict
 
 from thefuzz import fuzz
@@ -13,31 +13,34 @@ domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
 K = 3  # 𝐾 most frequent tokens
 token_occurrences = []
-open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN', 'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
+open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN',
+                    'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
 
 d = 3  # their first 𝑑 prefix tokens
 
 cmax = 3  # hyperparameter to limit the maximum number of child nodes
 
-def sampling(file_path: str, log_format: str, bath_size=1000):
+
+def sampling(pattern: re.Pattern, file_path: str, bath_size=1000):
     """
     choose first batch_size logs as samples, then extract most frequent tokens, returns a set
     """
+    print('========sampling========')
     sample_logs = []
     token_occurrences_dict = dict()
-    with open(file_path) as file:
-        for line in file:
-            if bath_size <= 0:
-                break
-            log = LogMessage()
-            log.preprocess(gen_header(log_format), line)
-            sample_logs.append(log)
+    with open(file_path) as f:
+        for line, _ in zip(f, range(bath_size)):
+            try:
+                log = LogMessage(pattern, line)
+            except LogError as e:
+                print(e)
+                continue
 
+            sample_logs.append(log)
             for token, pos in zip(log.content_tokens, log.context_POSs):
                 if pos not in open_class_words:
                     continue
                 token_occurrences_dict[token] = token_occurrences_dict.get(token, 0) + 1
-            bath_size = bath_size - 1
 
     sample_logs = sorted(token_occurrences_dict.items(), key=lambda s: s[1], reverse=True)
     sample_logs = [item[0] for item in sample_logs]
@@ -76,12 +79,12 @@ def traverse_prefix(log: LogMessage) -> list[str]:
     """
     # FIXME: SpaCy determine hex(e.g. 0x1ff2) as an open class words. BTW, is open class words a proper 'judge'?
     prefix_tokens = []
-    for token, pos in zip(log.content_tokens, log.context_POSs):
+    for token, pos, _ in zip(log.content_tokens, log.context_POSs, range(cmax)):
         if pos not in open_class_words:
             continue
         if re.fullmatch(r'[A-Za-z]+', token) is not None:  # only letter(eg: "demo", "time") can be prefix.
             prefix_tokens.append(token)
-    return prefix_tokens[0: cmax]
+    return prefix_tokens
 
 
 all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
@@ -91,11 +94,21 @@ all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
 theta_match = 0.5  # match threshold
 
 
+def add_escape(value):
+    """
+    refer to: https://blog.csdn.net/qq_15558143/article/details/123319772
+    """
+    reserved_chars = r'''?&|!{}[]()^~+'''
+    replace = ['\\' + l for l in reserved_chars]
+    trans = str.maketrans(dict(zip(reserved_chars, replace)))
+    return value.translate(trans)
+
+
 def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
     for log_cluster in log_clusters:
-        template = log_cluster.template
-        template_pattern = template.replace(r'<\*>', r'.*').replace(r'(', '\(').replace(r')', '\)')
-        if re.search(template_pattern, log_message) is not None:
+        template = add_escape(log_cluster.template)
+        template = template.replace(r'<*>', r'.*')
+        if re.fullmatch(template, log_message):
             return log_cluster
     return None
 
@@ -119,7 +132,7 @@ class Trie:
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
-    def insert(self, log: LogMessage, funcs=None) -> ("Trie", LogCluster):
+    def insert(self, log_message: LogMessage, funcs=None) -> Tuple["Trie", LogCluster]:
         """
         gross-grained insert via three traverse functions. Then exact inserted into a LogCluster instance.
         returns internal leaf node and log cluster that matches.
@@ -130,7 +143,7 @@ class Trie:
 
         # extract internal nodes
         for func in funcs:
-            internal_tokens = func(log)
+            internal_tokens = func(log_message)
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.children:
                     trie_node.children[internal_token] = Trie(internal_token)  # create a new node
@@ -139,9 +152,10 @@ class Trie:
         trie_node.isEnd = True  # leaf node
 
         # leaf trie node, match a log cluster then update its template
-        log_cluster = trie_node.match(log.get_content())
+        log_cluster = trie_node.match(log_message.get_content())
         trie_node.logClusters.add(log_cluster)  # add the log into trie node
-        log_cluster.insert_and_update_template(log.get_content())
+        log_cluster.insert_and_update_template(log_message.get_content())
+
         return trie_node, log_cluster
 
     def match(self, log_message: str) -> LogCluster:
@@ -171,7 +185,7 @@ class Trie:
 
     def search_clusters_recurse(self) -> list[LogCluster]:
         """
-        search all log clusters recursively, if this trie isEnd == False, then search its all child nodes until isEnd == True, return all log clusters
+        search ALL log clusters recursively, if this trie isEnd == False, then search its all child nodes until isEnd == True, return all log clusters
         """
         if self.isEnd:
             return list(self.logClusters)
@@ -202,11 +216,9 @@ class Trie:
         for log_cluster in log_clusters:
             node = self
             # generate a log message based on a template
-            log_message = LogMessage()
-            log_message.data_frame['CONTENT'] = log_cluster.template
-            log_message.tokenize()
-            tokens = traverse_func(log_message)
-            for token in tokens:
+            log_message = LogMessage(template=log_cluster.template)
+            prefix_tokens = traverse_func(log_message)
+            for token in prefix_tokens:
                 if token not in node.children:
                     node.children[token] = Trie(token)
                 node = node.children[token]
@@ -221,13 +233,19 @@ class Trie:
         log_clusters = self.search_clusters_recurse()
         sorted(log_clusters, key=lambda log: log.recent_used_timestamp, reverse=True)
 
+    def remove_log_cluster(self, log_cluster: LogCluster):
+        self.logClusters.remove(log_cluster)
+
     # Trie Update
+
+
 def merge_clusters(log_clusters: list[LogCluster]):
     def cmp(log_cluster: LogCluster):
         items = re.findall(r'<\*>', log_cluster.template)
         return len(items)
 
-    sorted_log_clusters = sorted(log_clusters, key=cmp, reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
+    sorted_log_clusters = sorted(log_clusters, key=cmp,
+                                 reverse=True)  # no arg 'cmp' in python 3+. refer to: https://blog.csdn.net/gongjianbo1992/article/details/107324871
 
     # for log_cluster in sorted_log_clusters:
     #     print(log_cluster.template)

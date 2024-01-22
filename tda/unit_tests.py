@@ -1,5 +1,7 @@
 import re
 import unittest
+
+from log_structure import LogMessage
 from trie import LogCluster, merge_clusters, Trie, traverse_m_f, token_occurrences
 import pandas as pd
 import process_tda as main
@@ -18,14 +20,62 @@ class TestPreprocess(unittest.TestCase):
     def test_most_frequent_tokens_transformation(self):
         file_path = '../data/BGL/BGL_small.log'  # reduced log for test
         log_format = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
-        headers = preprocess.gen_header(log_format)
-        for line in preprocess.read_line(file_path):
-            log = preprocess.LogMessage()
+        headers = utils.gen_header(log_format)
+        for line in utils.read_line(file_path):
+            log = LogMessage()
             log.preprocess(headers, line)
             for token in log.content_tokens:
                 token_occurrences[token] = token_occurrences.get(token, 0) + 1
             li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:3]  # K=3
             print(li)
+    def test_java_pattern(self):
+        java_pattern = r'(?P<DATE>\S+)  +(?P<LEVEL>\w+) +(?P<PID>\d+) +-+ +\[(?P<THREAD>\w+)\] +(?P<CLASS>\S+) +: +(?P<CONTENT>.+)'
+        content = '2024-01-04T16:04:57.400+08:00  INFO 41672 --- [main] c.s.c.services.impl.ServiceCatalogImpl   : Registered service MarketPartnerQueuingService'
+        m = re.match(java_pattern, content)
+        print(m.groupdict())
+        print(m[0])
+    def test_jenkins_pattern(self):
+        # hint: if there's a [INFO]/[cds] etc., it may have additional contents... but let it alone, too complicated.
+        contents = ['[2024-01-03T02:05:46.863Z] [Pipeline] echo',
+                    '[2024-01-03T02:27:45.916Z] Unstash content: tests',
+                    '[2024-01-03T02:06:06.155Z] info  sapPipelineInit - Logging into Vault',
+                    '[2024-01-03T02:07:48.094Z] info  mtaBuild - Progress (1): 7.2/60 kB',
+                    '[2024-01-03T02:08:03.985Z] info  mtaBuild - ',
+                    '[2024-01-03T02:07:52.058Z] info  mtaBuild - [INFO] InstallNodeMojo: No proxy was configured, downloading directly.',
+                    '[2024-01-03T02:27:27.683Z] info  codeqlExecuteScan - CodeQL image version: 20231103125425-jdk17-86e411f',
+                    '[2024-01-03T02:27:30.203Z] info  codeqlExecuteScan - [2024-01-03 02:27:29] [build-stdout] [INFO] Scanning for projects...',
+                    '[2024-01-03T02:27:37.701Z] info  detectExecuteScan - 2024-01-03 02:27:36 UTC INFO  [main] --- Binary Scanner tool will not be run.']
+        guess = '[TIME] LEVEL COMPONENT - any other pattern can append to: even can be pure test'
+
+        # [2024-01-03T02:27:37.701Z] info detectExecuteScan - 2024-01-03 02:27:36 UTC INFO [main] --- Binary Scanner tool will not be run.
+        # [2024-01-03T02:27:30.203Z] info codeqlExecuteScan - [2024-01-03 02:27:29] [build-stdout] [INFO] Scanning for projects...
+        pattern1 = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((\[[^\[\]]+\] *)|(.+ -+ ))*(?P<CONTENT>[^\n]+)'
+        for content in contents:
+            m = re.match(pattern1, content)
+            if not m:
+                continue
+            print(m.groupdict())
+
+    def test_merge(self):
+        template = '<*> Node card status: <*> <*> <*> <*> <*> <*> <*> <*> is <*> active. Midplane. PGOOD <*> <*> is clear. MPGOOD is OK. MPGOOD <*> <*> is clear. The 2.5 volt rail is OK. The 1.5 volt rail is <*>'
+        template_tokens = re.split(r'\s', template)
+        new_template_tokens = []
+        i = 0
+        while i < len(template_tokens):
+            if template_tokens[i] != '<*>':
+                new_template_tokens.append(template_tokens[i])
+                i = i+1
+                continue
+            while i < len(template_tokens) and template_tokens[i] == '<*>':
+                i = i+1
+            new_template_tokens.append('<*>')
+            if i < len(template_tokens):
+                new_template_tokens.append(template_tokens[i])
+            i = i+1
+        print(new_template_tokens)
+
+
+
 
 
 class TestLogCluster(unittest.TestCase):
@@ -33,7 +83,7 @@ class TestLogCluster(unittest.TestCase):
         log_message = "deleted items: obj1, obj2, obj3, obj4"
         template = "deleted items: <*>"
         log_cluster = LogCluster(template=template)
-        new_template = log_cluster.extract_template(log_message=log_message)
+        new_template = extract_template(log_message=log_message)
         assert re.split(' ', ' '.join(new_template)) == new_template
 
     def test_merge_demo_log_clusters(self):

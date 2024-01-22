@@ -2,20 +2,18 @@
 
 ![TDA](imgs/scaleAD.png)
 
-## Steps to Implement Trie-based Detection Agent(TDA)
+## Research
+
+Summary of "Tools and Benchmarks for Automated Log Parsing": https://zhuanlan.zhihu.com/p/498522888
+
+## Trie-based Detection Agent(TDA)
 
 TDA workflow:
 ![TDA](imgs/tda-framework.png)
 
-### Dataset from Jenkens
-
-In this paper, datasets origin from 20 IaaS microservice. We can now use logs in Jenkens pipline at present.
-
 ## Implemet TDA
 
-follow Chapter 3.
-
-Steps:
+Steps following Chapter 3 of TDA paper.
 
 ### 1. Preprocess
 
