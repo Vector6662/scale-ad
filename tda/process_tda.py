@@ -2,15 +2,15 @@ import re
 from time import sleep
 from threading import Thread
 
-from anomaly_detection import detect_cdf
+from anomaly_detection import detect_cdf, detect_streamad
 from config import file_path, log_pattern_re, log_keywords
 from server_apis import render_pyecharts_tree
 from trie import Trie, sampling
-from utils import LruCache
+from utils import LruCache, LogClusterCache
 from log_structure import LogMessage, LogError
 
 root: Trie = None
-lcCache = LruCache(50)  # lru cache of log clusters
+lcCache = LogClusterCache(50)  # lru cache of log clusters
 logMessages = []
 
 
@@ -24,7 +24,7 @@ def detect_worker():
         sleep(10)
         print('==============start detection==============')
         # start detection
-        detect_cdf(lcCache.get_cache())
+        detect_cdf(lcCache.to_list())
 
 
 def process():
@@ -35,13 +35,13 @@ def process():
     sampling(pattern, file_path)
 
     # thread for detection
-    thr = Thread(target=detect_worker, name='detection thread')
-    # thr.start()
+    thr = Thread(target=detect_worker, name='Anomany Detection Thread')
+    thr.start()
 
     # main thread, read logs
     with open(file_path) as f:
         for line in f:
-            # sleep(1)
+            sleep(0.5)
             print(f'==============one line coming...==============\t\t{line}')
 
             try:
@@ -51,10 +51,16 @@ def process():
                 continue
 
             trie_node, log_cluster = root.insert(log_message)
+            log_cluster.insert_and_update_template(log_message)
+
             log_message.log_cluster = log_cluster  # refer to its parent
             log_cluster.parent = trie_node  # refer to its parent
 
-            # TODO: LRU, add the most frequently used log templates into LRU. only those templates are used in detect().
+            if log_cluster.feedback.decision != 2:
+                # todo already has feedback
+                pass
+
+            # LRU, add the most frequently used log templates into LRU. only those templates are used in detect().
             #  Moreover, there may need another thread to process this detect simultaneously.
             lcCache.insert(log_cluster)
 
@@ -64,7 +70,3 @@ def process():
     data = render_pyecharts_tree("tree_top_bottom.html", root)
     with open('structure.json', 'w') as f:
         f.write(str(data))
-
-
-if __name__ == "__main__":
-    process()

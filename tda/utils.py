@@ -2,15 +2,12 @@ import re
 from collections import OrderedDict
 from io import TextIOWrapper
 from typing import Generic, Hashable, Optional, TypeVar
-from log_structure import LogCluster
 
 patterns = [
     r'(\d+[\.-])+\d+',  # time. eg, 2005-06-14-09.11.51.127157
     # TODO hex
 ]
-
-
-
+DEFAULT_VALUE = 0
 
 
 def read_line(file_path: str) -> list:
@@ -56,42 +53,60 @@ class LruCache(Generic[T]):
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.__cache: OrderedDict[LogCluster, int] = OrderedDict()
-        self.value = 0
+        self._cache: OrderedDict[T, int] = OrderedDict()
 
-    def __get(self, key: LogCluster) -> Optional[T]:
-        if key not in self.__cache:
+    def __get(self, key: T) -> Optional[T]:
+        if key not in self._cache:
             return None
-        self.__cache.move_to_end(key)
-        return self.__cache[key]
+        self._cache.move_to_end(key)
+        return self._cache[key]
 
-    def insert(self, key: LogCluster) -> None:
+    def insert(self, key: T) -> None:
+        if len(self._cache) >= self.capacity:
+            self._cache.popitem(last=False)
 
-        if len(self.__cache) >= self.capacity:
-            template, log_cluster = self.__cache.popitem(last=False)
-            # TODO: consider if this log cluster should be removed from trie
-            # parent = log_cluster.parent
-            # assert parent is not None and parent.isEnd
-            # parent.remove_log_cluster(log_cluster)
+        self._cache[key] = DEFAULT_VALUE
+        self._cache.move_to_end(key)
 
-        self.__cache[key] = self.value
-        self.__cache.move_to_end(key)
-
-    def get_cache(self) -> list[LogCluster]:
+    def to_list(self) -> list[T]:
         """
-        get cached log clusters if there is no feedback
+        get cached (log clusters) if there is no feedback
         """
-        return list(self.__cache)
+        return list(self._cache)
 
     def clear(self) -> None:
-        self.__cache.clear()
+        self._cache.clear()
 
     def __len__(self) -> int:
-        return len(self.__cache)
+        return len(self._cache)
 
     def __iter__(self):
         # refer to: https://blog.csdn.net/qq_51352578/article/details/125507312
-        return self.__cache.__iter__()
+        return self._cache.__iter__()
 
     def __getitem__(self, item):
         return self.__get(item)
+
+
+class LogClusterCache(LruCache):
+    def __init__(self, capacity: int):
+        super().__init__(capacity)
+
+    def insert(self, key: 'LogCluster') -> None:
+        if len(self._cache) >= self.capacity:
+            log_cluster, _ = self._cache.popitem(last=False)
+            # TODO: consider if this log cluster should be removed from trie
+            parent = log_cluster.parent  # trie leaf node
+            assert parent is not None and parent.isEnd
+            parent.remove_log_cluster(log_cluster)
+
+        self._cache[key] = DEFAULT_VALUE
+        self._cache.move_to_end(key)
+
+
+class LogMessagesCache(LruCache):
+    def __init__(self, capacity: int):
+        super().__init__(capacity)
+
+    def __str__(self):
+        return [log_message.get_content() for log_message in self.to_list()]

@@ -5,6 +5,7 @@ Log Data Structures, including LogMessage(wrapper of each log message. Each line
 import re
 from time import time
 import en_core_web_sm
+from utils import LogMessagesCache
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
 
@@ -68,7 +69,7 @@ class LogCluster:
         self.template: str = template
         self.tokenized_template = re.split(r'\s', template)
         self.compiled_template: re.Pattern = None
-        self.logMessages: list[str] = list()
+        self.logMessagesCache: LogMessagesCache = LogMessagesCache(30)
         self.nWildcard: int = 0  # number of wildcard(<*>) in the template
         self.ground_truth: float = 0
         self.recent_used_timestamp = None
@@ -76,10 +77,10 @@ class LogCluster:
         self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
         self.parent: 'Trie' = None
 
-    def insert_and_update_template(self, log_message: str):
-        self.logMessages.append(log_message)
+    def insert_and_update_template(self, log_message: 'LogMessage'):
+        self.logMessagesCache.insert(log_message)
         # update template based on the new log message
-        self.tokenized_template = extract_template(log_message, self.template)
+        self.tokenized_template = extract_template(log_message.get_content(), self.template)
         # merge adjacent "<*>"s
         self.tokenized_template = merge_adjacent_wildcards(self.tokenized_template)
 
@@ -95,6 +96,12 @@ class LogCluster:
 
     def update_time(self):
         self.recent_used_timestamp = int(time())
+
+    def get_log_messages(self) -> list[str]:
+        """
+        get CONTENT of log messages under this log cluster
+        """
+        return [log_message.get_content() for log_message in self.logMessagesCache.to_list()]
 
 
 class LogMessage:

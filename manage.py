@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from threading import Thread
 from tda.process_tda import process
 
 
@@ -20,5 +21,7 @@ def main():
 
 
 if __name__ == '__main__':
-    process()
+    thr = Thread(target=process, name='TDA main Thread')
+    thr.start()
+
     main()

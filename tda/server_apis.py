@@ -3,6 +3,8 @@ APIs exposed to Django server.
 generate json structure for rendering;
 data from expert feedbacks;
 """
+from datetime import datetime
+
 from trie import Trie
 from pyecharts.charts import Tree
 from pyecharts import options as opts
@@ -27,7 +29,7 @@ def gen_trie_graph(root: Trie, name: str, total_id: int, data: dict):
         log_cluster_id = cur_id + 1
         for log_cluster in root.logClusters:
             data['nodes'].append({'id': log_cluster_id, 'name': f'log_cluster({log_cluster.template})',
-                                  'value': len(log_cluster.logMessages), 'symbolSize': 10, 'category': 1})
+                                  'value': len(log_cluster.logMessagesCache), 'symbolSize': 10, 'category': 1})
             data['links'].append({'source': cur_id, 'target': log_cluster_id})
             log_cluster_id = log_cluster_id + 1
         return cur_id, log_cluster_id - 1
@@ -53,12 +55,12 @@ def gen_trie_tree(root: Trie, name: str, debug=False):
         t['children'] = []
         for log_cluster in root.logClusters:
             if debug:  # just for debug: see json structure details(structure.json) intuitively
-                items = '\n'.join(log_cluster.logMessages)
+                items = '\n'.join(log_cluster.logMessagesCache)
                 t['children'] = [{'name': f'{log_cluster.template}',
-                                  'value': f'{log_cluster.logMessages}'}]
+                                  'value': f'{log_cluster.logMessagesCache}'}]
             else:
                 t['children'] = [{'name': f'{log_cluster.template}',
-                                  'value': len(log_cluster.logMessages)}]
+                                  'value': len(log_cluster.logMessagesCache)}]
         return t
     data = dict()
     data['name'] = name
@@ -123,8 +125,8 @@ def expert_feedback_api(root: Trie):
             'level': log_cluster.feedback.decision,
             'ep': log_cluster.feedback.ep,
             'tp': log_cluster.feedback.tp,
-            'logs': log_cluster.logMessages,
+            'logs': log_cluster.get_log_messages(),
             'desc': log_cluster.feedback.reason
         })
-    return data # for debug
+    return data  # for debug
 

@@ -1,7 +1,7 @@
 from scipy.stats import genextreme
 import numpy as np
 from streamad.model import SpotDetector
-from streamad.util import CustomDS, StreamGenerator, plot
+from streamad.util import CustomDS, StreamGenerator, plot, MultivariateDS
 import pandas as pd
 
 from log_structure import LogCluster, FeedBack
@@ -10,9 +10,9 @@ from utils import plot_cdf
 
 
 def detect_cdf(log_clusters: list[LogCluster]):
-    data = [len(log_cluster.logMessages) for log_cluster in log_clusters]
+    data = [len(log_cluster.logMessagesCache) for log_cluster in log_clusters]
     c = -0.5
-    query_threshold = 0.95
+    query_threshold = 0.80
     cdfs = genextreme.cdf(data, c)
     T = 10  # range from 2 to 10
     tps = cdfs ** T / np.sum(cdfs) ** T
@@ -28,9 +28,9 @@ def detect_cdf(log_clusters: list[LogCluster]):
 
 
 def detect_streamad(log_clusters: list[LogCluster]):
-    data = {'values': [len(log_cluster.logMessages) for log_cluster in log_clusters],
+    data = {'values': [len(log_cluster.logMessagesCache) for log_cluster in log_clusters],
             # 'col': [log_cluster.template for log_cluster in log_clusters],
-            'label': [log_cluster.ground_truth for log_cluster in log_clusters]
+            'label': [1 if log_cluster.feedback.decision == 1 else 0 for log_cluster in log_clusters]
             }
     print(data)
     ds = CustomDS(pd.DataFrame(data))

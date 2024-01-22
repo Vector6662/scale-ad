@@ -152,24 +152,25 @@ class Trie:
         trie_node.isEnd = True  # leaf node
 
         # leaf trie node, match a log cluster then update its template
-        log_cluster = trie_node.match(log_message.get_content())
-        trie_node.logClusters.add(log_cluster)  # add the log into trie node
-        log_cluster.insert_and_update_template(log_message.get_content())
+        log_cluster, is_no_match = trie_node.match(log_message.get_content())
+        if is_no_match:
+            trie_node.logClusters.add(log_cluster)  # add the log into trie node
 
         return trie_node, log_cluster
 
-    def match(self, log_message: str) -> LogCluster:
+    def match(self, log_message: str) -> Tuple[LogCluster, bool]:
         """
-        match, then **remove** a log cluster from the trie node. should add it AGAIN in the following step
+        three match strategy. if 'no match', should return true in order to add this new log cluster in the trie (leaf) node
         """
+        is_no_match = False
         cluster = match_exact(log_message, self.logClusters)  # exact match
         if cluster is None:
             cluster, score = match_partial(log_message, self.logClusters)  # partial match
             if score < theta_match:
                 # The template for this new log cluster is the log message itself, i.e., t_j = l_i
                 cluster = LogCluster(log_message)  # no match
-        self.logClusters.discard(cluster)  # !!!
-        return cluster
+                is_no_match = True
+        return cluster, is_no_match
 
     def search_tries_by_level(self, level: int) -> list["Trie"]:
         """
