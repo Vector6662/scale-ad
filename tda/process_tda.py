@@ -8,6 +8,7 @@ from server_apis import render_pyecharts_tree
 from trie import Trie, sampling
 from utils import LruCache, LogClusterCache
 from log_structure import LogMessage, LogError
+from trie import NO_MATCH, PARTIAL_MATCH, EXACT_MATCH
 
 root: Trie = None
 lcCache = LogClusterCache(50)  # lru cache of log clusters
@@ -36,23 +37,24 @@ def process():
 
     # thread for detection
     thr = Thread(target=detect_worker, name='Anomany Detection Thread')
-    thr.start()
+    # thr.start()
 
     # main thread, read logs
     with open(file_path) as f:
         for line in f:
-            sleep(0.5)
+            # sleep(0.5)
             print(f'==============one line coming...==============\t\t{line}')
 
             try:
                 log_message = LogMessage(pattern, line)
-            except LogError as e:
+            except (LogError, ValueError) as e:
                 print(e)
                 continue
 
-            trie_node, log_cluster = root.insert(log_message)
-            log_cluster.insert_and_update_template(log_message)
-
+            trie_node, log_cluster, match_type = root.insert(log_message)
+            if not log_cluster:
+                continue
+            log_cluster.insert_and_update_template(log_message, match_type)
             log_message.log_cluster = log_cluster  # refer to its parent
             log_cluster.parent = trie_node  # refer to its parent
 

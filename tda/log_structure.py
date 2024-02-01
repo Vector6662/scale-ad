@@ -8,6 +8,12 @@ import en_core_web_sm
 from utils import LogMessagesCache
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
+open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN',
+                    'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
+
+EXACT_MATCH = 0
+PARTIAL_MATCH = 1
+NO_MATCH = 2
 
 
 class LogError(Exception):
@@ -30,7 +36,7 @@ def merge_adjacent_wildcards(template_tokens: list[str]):
             new_tokenized_template.append(template_tokens[i])
             i = i + 1
             continue
-        while i < len(template_tokens) and template_tokens[i] == '<*>':
+        while i < len(template_tokens) and (template_tokens[i] == '<*>' or template_tokens[i].isspace()):
             i = i + 1
         new_tokenized_template.append('<*>')
         if i < len(template_tokens):
@@ -39,17 +45,16 @@ def merge_adjacent_wildcards(template_tokens: list[str]):
     return new_tokenized_template
 
 
-def extract_template(log_message: str, template: str) -> list[str]:
+def extract_template(log_message: 'LogMessage', tokenized_template: list[str]) -> list[str]:
     """
     extract a new template between the incoming log cluster and existed template
     """
-    log_message = re.split(r' ', log_message)
-    template = re.split(r' ', template)
+    log_message = log_message.content_tokens
     # identify the common set of tokens shared by both t_i and l_i
-    common_token_set = set(log_message) & set(template)
+    common_token_set = set(log_message) & set(tokenized_template)
     common_token_set.discard('')
     # choose the list that has more tokens between 𝑡ˆ and 𝑙ˆ
-    new_tokenized_template = log_message if len(log_message) > len(template) else template
+    new_tokenized_template = log_message if len(log_message) > len(tokenized_template) else tokenized_template
     new_tokenized_template = list(new_tokenized_template)
     # replace any token in the longer list that is not in the common token set with the placeholder "<*>"
     for i in range(len(new_tokenized_template)):
@@ -59,16 +64,15 @@ def extract_template(log_message: str, template: str) -> list[str]:
 
 
 def serialize(tokenized_template: list[str]):
-    template = ' '.join(tokenized_template)
+    template = ''.join(tokenized_template)
     # template = re.sub(r' *<\*> *', '<*>', template)
     return template
 
 
 class LogCluster:
-    def __init__(self, template: str):
-        self.template: str = template
-        self.tokenized_template = re.split(r'\s', template)
-        self.compiled_template: re.Pattern = None
+    def __init__(self, tokenized_template: list[str]):
+        self.template: str = ''.join(tokenized_template)
+        self.tokenized_template: list[str] = tokenized_template
         self.logMessagesCache: LogMessagesCache = LogMessagesCache(30)
         self.nWildcard: int = 0  # number of wildcard(<*>) in the template
         self.ground_truth: float = 0
@@ -77,22 +81,24 @@ class LogCluster:
         self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
         self.parent: 'Trie' = None
 
-    def insert_and_update_template(self, log_message: 'LogMessage'):
+    def insert_and_update_template(self, log_message: 'LogMessage', match_type: int):
+        """
+        insert log message into the corresponding log cluster, then update log cluster's template, only if match type is not EXACT_MATCH.
+        for EXACT_MATCH, not necessary to update template.
+        """
+        self.update_time()
         self.logMessagesCache.insert(log_message)
+        # exact match, then no need to update template
+        if match_type == EXACT_MATCH:
+            return
         # update template based on the new log message
-        self.tokenized_template = extract_template(log_message.get_content(), self.template)
+        self.tokenized_template = extract_template(log_message, self.tokenized_template)
         # merge adjacent "<*>"s
         self.tokenized_template = merge_adjacent_wildcards(self.tokenized_template)
 
         # serialize
         self.template = serialize(self.tokenized_template)
 
-        # cache pattern
-        pattern = re.escape(self.template)
-        pattern = pattern.replace('<*>', '.*')
-        self.compiled_template = re.compile(pattern)
-
-        self.update_time()
 
     def update_time(self):
         self.recent_used_timestamp = int(time())
@@ -111,8 +117,9 @@ class LogMessage:
         line: origin log line
         """
         self.data_frame = dict()
+        self.traverse_tokens: dict = None  # tokens used in traverse internal nodes
         self.content_tokens = list(str())  # tokens generated from CONTEXT
-        self.context_POSs = list(str())  # part of speech(generated from CONTEXT as well)
+        # self.context_POSs = list(str())  # part of speech(generated from CONTEXT as well)
         self.log_cluster: LogCluster = None  # the log cluster which this log message belongs to
 
         # update trie process will call it too. in this condition, only requires log cluster template parameter.
@@ -133,20 +140,33 @@ class LogMessage:
         if not m:
             raise LogError(self.line, str(self.pattern))
         gd = m.groupdict()
-        assert gd['CONTENT'], gd['LEVEL']
+        # check if the data frame CONTENT only contains space or non-words, eg, '--------', ' '.
+        if re.fullmatch(r'\W*', gd['CONTENT']):
+            raise ValueError(f"field CONTENT: [{gd['CONTENT']}], or LEVEL:]{gd['LEVEL']}] is empty")
         self.data_frame.update(gd)
 
     def __tokenize(self):
         # remove any characters that are not letters or numbers
-        compiled = re.compile(r'\W')  # [^A-Za-z0-9_] not character, number, _
-        content = compiled.sub(' ', self.get_content())
-        # then analyze part-of-speech of each word
-        doc = nlp(content)
-        tokens = [token.text for token in doc]
-        part_of_speeches = [token.pos_ for token in doc]
-        for token, pos in zip(tokens, part_of_speeches):
-            self.content_tokens.append(token)
-            self.context_POSs.append(pos)
+        self.content_tokens = re.split(r'(\s+)', self.get_content())
+        # generate tokens by nlp, filter out open class words, use these tokens in traverse internal nodes stage
+
+        # FIXME: Spacy defect.
+        #  Filer out Open Class Words is not enough, eg.
+        #    '0x0b85eee0'                                --> PROPN;
+        #    'generating core.2275'                           --> [VERB, PROPN]
+        #    'machine[NOUN] check[NOUN]:[PUNCT] i[PRON]-[VERB]fetch[VERB]......................[PUNCT]0[NUM]'   Possible solution: filter out non-words? like '-' here
+        #  Only words(r'[A-Za-z]+') can be put into traverse tokens? so NLP is not necessary?
+
+        # TODO: Further optimization: here, I just get rid of numbers, or words that contains numbers, e.g.
+        #    "CE sym 2, at 0x0b85eee0, mask 0x05, core.3947358" ---> "CE sym , at , mask , core.".
+        #    "CioStream socket to 172.16.96.116:33370'"         ---> "CioStream socket to ...:'"
+        #  then the traverse tokens won't contain any numbers.
+        #  However, this is not an elegant solution. Optimization may be processed after researching Spacy. I think patterns like hex '0x05' can be identified as NUM.
+        content = re.sub(r'\w*\d+\w*', '', self.get_content())
+        self.traverse_tokens = {token.text: token.pos_ for token in nlp(content) if token.pos_ in open_class_words}
+        pass
+
+
 
     def get_content(self) -> str:
         if 'CONTENT' not in self.data_frame:
@@ -164,8 +184,13 @@ class FeedBack:
     expert feed back, including on-call engineers, GPT
     """
 
-    def __init__(self, decision: int, ep: float, tp: float, reason='desc...'):
-        self.decision = decision  # 1 indicates anomaly, 0 indicated normal, 2 unknown
+    def __init__(self, ep: float, tp: float, decision: int = -1, reason='desc...'):
+        '''
+        -1: initial state, means haven't submitted to expert for feedback.
+        others have been submitted to expert, but may no feedback yet:
+        1 indicates anomaly, 0 indicated normal, 2 unknown, already submitted to expert, but no feedback yet
+        '''
+        self.decision = decision
         self.ep = ep  # confidence score given by experts
         self.tp = tp  # anomaly score by GEV
         self.p = self.compute_integrate()

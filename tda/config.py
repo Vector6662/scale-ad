@@ -10,13 +10,13 @@ log_format_HDFS = '<DATE><TIME><PID><LEVEL><COMPONENT><CONTENT>'
 
 file_path_bgl2 = './data/bgl2'  # total bgl log, 4747963 lines
 
-jenkins_path = './data/Jenkins/semantic-sdk-release.log'
+jenkins_path = './data/Jenkins/jenkins-test.log'
 jenkins_pattern = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((\[[^\[\]]+\] *)|(.+ -+ ))*(?P<CONTENT>[^\n]+)'
 
 
 file_path = bgl_path
 log_pattern_re = bgl_pattern
-log_keywords = 'Blue Gene/L(i.e. BGL)'
+log_keywords = 'BGL'
 
 
 

@@ -1,0 +1,1474 @@
+
+[2024-01-12T08:00:43.783Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) [495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z41
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 path:	/XPATH Zum Bedingung (For constraint)[495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 result:		nicht erlaubter Wert (not allowed value) [495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z41
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 path:	/XPATH Zum Bedingung (For constraint)[495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) [495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z41
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 path:	/XPATH Zum Bedingung (For constraint)[495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 result:		nicht erlaubter Wert (not allowed value) [495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z41
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 path:	/XPATH Zum Bedingung (For constraint)[495]
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s -- in EDIXMLAperakValidation.Embedded495Test
+[2024-01-12T08:00:43.784Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.EmbeddedValueFormatTest
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.784Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[950]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [951]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[951]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	2	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [951]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[953]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [908]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[908]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [955]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[955]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [948] or [949] or [957]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[948X949X957]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [958]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[958]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [907]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[907]
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.785Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [912]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[912]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[3] Zum Bedingung (For constraint)[917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[4] Zum Bedingung (For constraint)[917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	5	 result:		falsches Format (wrong format) [917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	5	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[6] Zum Bedingung (For constraint)[917]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [925]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[925]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[939]
+[2024-01-12T08:00:43.786Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [939]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	4	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[939]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	6	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	7	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	7	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [940]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[940]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [940]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[940]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [946]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[946]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [959]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[2] Zum Bedingung (For constraint)[959]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [959]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[3] Zum Bedingung (For constraint)[959]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [962]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[3] Zum Bedingung (For constraint)[962]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [962]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[4] Zum Bedingung (For constraint)[962]
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.787Z] info  mavenBuild - LoopCount:	5	 result:		falsches Format (wrong format) [962]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	5	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[6] Zum Bedingung (For constraint)[962]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [955] or [958]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[955X958]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [915]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[915]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	2	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[961]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [951] or [952]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[950X951X952]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [968]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[968]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [948] or [949]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[948X949]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [969]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[969]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [960]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[950X960]
+[2024-01-12T08:00:43.788Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [951] or [960] or [961]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[950X951X960X961]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[922]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [926]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[926]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [951] or [960]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[950X951X960]
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.789Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[931]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [938]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[938]
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.790Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[942]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[943]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [947]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILTS/G_SG5/S_DTM/C_C507/D_2380[1] Zum Bedingung (For constraint)[947]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [948]
+[2024-01-12T08:00:43.791Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[948]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[949]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[902] U [906] U [917]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [906]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[902] U [906] U [917]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [917]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[902] U [906] U [917]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - [INFO] Tests run: 63, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in EDIXMLAperakValidation.EmbeddedValueFormatTest
+[2024-01-12T08:00:43.792Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormat_950_x_951_x_952Test
+[2024-01-12T08:00:43.792Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.ValidateFormat_950_x_951_x_952Test
+[2024-01-12T08:00:43.792Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ORDERS1_1J_AMID17102_S_BGM_C_C002_D_1001Test
+[2024-01-12T08:00:43.792Z] info  mavenBuild - Start to run test case:	1
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - End to run test case:	1
+[2024-01-12T08:00:43.792Z] info  mavenBuild - Start to run test case:	2
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.792Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.792Z] info  mavenBuild - End to run test case:	2
+[2024-01-12T08:00:43.792Z] info  mavenBuild - Start to run test case:	3
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	3
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	4
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	4
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	5
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	5
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	6
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	6
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	7
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	7
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	8
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) Z14
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	8
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	9
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) Z28
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	9
+[2024-01-12T08:00:43.793Z] info  mavenBuild - Start to run test case:	10
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) 7
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_ORDERS[1]/S_BGM[1]/C_C002[1]/D_1001[1] Zum Bedingung (For constraint)[ORDERS_AMID17102_S_BGM_C_C002_D_1001]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - End to run test case:	10
+[2024-01-12T08:00:43.793Z] info  mavenBuild - [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.ORDERS1_1J_AMID17102_S_BGM_C_C002_D_1001Test
+[2024-01-12T08:00:43.793Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormat_950Test
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950]
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.793Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.ValidateFormat_950Test
+[2024-01-12T08:00:43.794Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UBNewTest
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010240500+00
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [932] xor [933] xor [934] xor [935]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010252200+00
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [932] xor [933]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 result:		falsches Format (wrong format) [932] xor [933]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 result:		falsches Format (wrong format) [932] xor [933]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	6	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010240500+00
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [934] xor [935]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 result:		falsches Format (wrong format) [934] xor [935]
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.794Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 result:		falsches Format (wrong format) [934] xor [935]
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010240500+00
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [932] xor [933] xor [934] xor [935]
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	6	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 203303262200+00
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 200003262300+00
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 203303262200+00
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 200003262300+00
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in EDIXMLAperakValidation.UBNewTest
+[2024-01-12T08:00:43.795Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_906Test
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [906]
+[2024-01-12T08:00:43.795Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.OVERALL_906Test
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_exactly_one_comparing_valuesTest
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx1/M_UTILMD[1]/G_SG4[1]/G_SG8[2]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	1	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z21
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx2/M_UTILMD[1]/G_SG4[1]/G_SG8[3]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z21
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx3/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.Validate_exactly_one_comparing_valuesTest
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_495Test
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in EDIXMLAperakValidation.OVERALL_495Test
+[2024-01-12T08:00:43.796Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_exactly_one_comparing_xpathTest
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	1	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[6]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:43.796Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes Datenelement (missing dataelement)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes Datenelement (missing dataelement)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.MSCONS_2Test
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormatTest
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [938]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_MSCONS/G_SG5/G_SG6/S_DTM[C_C507/D_2005=('163','164','293')]/C_C507/D_2380[1] Zum Bedingung (For constraint)[x]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in EDIXMLAperakValidation.ValidateFormatTest
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_902_U_907Test
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [907]
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:43.797Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_902_U_907Test
+[2024-01-12T08:00:43.797Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_if_then_parent_matchTest
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[9]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[20_O_54U243_D7111]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[2]/G_SG8[1]/G_SG10[9]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[20_O_54U243_D7111]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	2	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[3]/G_SG8[1]/G_SG10[9]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[20_O_54U243_D7111]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.828 s -- in EDIXMLAperakValidation.OVERALL_if_then_parent_matchTest
+[2024-01-12T08:00:44.749Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_310Test
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z01')] beziehen auf (refer to) 11234567891/M_UTILMD[1]/G_SG4[1]/G_SG5[1]/S_LOC[1]/C_C517[1]/D_3225[1] Bedingung (Constraint) [310]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes Datenelement (missing dataelement)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z01')] beziehen auf (refer to) 50337609736/M_UTILMD[1]/G_SG4[3]/G_SG5[1]/S_LOC[1]/C_C517[1]/D_3225[1] Bedingung (Constraint) [310]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z40
+[2024-01-12T08:00:44.749Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z01')] beziehen auf (refer to) 50337609728/M_UTILMD[1]/G_SG4[4]/G_SG5[1]/S_LOC[1]/C_C517[1]/D_3225[1] Bedingung (Constraint) [310]
+[2024-01-12T08:00:44.749Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.UTILMD_310Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_OBIS_atLeast_specific_Chapter_ValidationTest
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		NICHT EIN ZUGELASSENER WERT(no at least one allowed value)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 message:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.UTILMD_OBIS_atLeast_specific_Chapter_ValidationTest
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.AperakValidationConstantsTest
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.AperakValidationConstantsTest
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_911Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [911]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	2	 result:		null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [911]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [911]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.OVERALL_911Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILTS_12Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - test case 01 result:
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[2]/G_SG9[1]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[12]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - test case 02 result:
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubte Kombination von Werten (not allowed combination of values)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[2]/G_SG9[1]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[12]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - test case 03 result:
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[3]/G_SG9[1]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[12]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in EDIXMLAperakValidation.UTILTS_12Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_910Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [910]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_910Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_CHECK_SEGMENT_REPEAT_ONCE_Test
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	0	 result: 		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	1	 result: 		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	1	 aperakErrorCode: 	null
+[2024-01-12T08:00:44.750Z] info  mavenBuild - LoopCount: 	1	 aperakErrorCode: 	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[2] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	2	 result: 		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	2	 aperakErrorCode: 	Z40
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	2	 aperakErrorCode: 	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[3] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	3	 result: 		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	3	 aperakErrorCode: 	Z29
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	3	 aperakErrorCode: 	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[4] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	4	 result: 		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	4	 aperakErrorCode: 	Z29
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount: 	4	 aperakErrorCode: 	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.OVERALL_CHECK_SEGMENT_REPEAT_ONCE_Test
+[2024-01-12T08:00:44.751Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_130_U_133Test
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	4	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	5	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	6	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	7	 result:		nicht erlaubter Wert (not allowed value) 202108012200+00
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	7	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	8	 result:		nicht erlaubter Wert (not allowed value) 202108012200+00
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	8	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	8	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	9	 result:		nicht erlaubter Wert (not allowed value) 202103282200+00
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	9	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	9	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.751Z] info  mavenBuild - LoopCount:	10	 result:		nicht erlaubter Wert (not allowed value) 202103282200+00
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	10	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	10	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	11	 result:		nicht erlaubter Wert (not allowed value) 202110312300+00
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	11	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	11	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	12	 result:		nicht erlaubter Wert (not allowed value) 202110312300+00
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	12	 aperakErrorCode:	Z41
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	12	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130O133]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in EDIXMLAperakValidation.MSCONS_130_U_133Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_atleast_two_comparing_xpathTest
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[6]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	3	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	3	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[7]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.Validate_atleast_two_comparing_xpathTest
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_903Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [903]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [903]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [903]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [903]
+[2024-01-12T08:00:44.752Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_903Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_If_902U937U46_ElseIF_902U907U48U46_Else_910U906U46Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.MSCONS_If_902U937U46_ElseIF_902U907U48U46_Else_910U906U46Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILTS_11X15Test
+[2024-01-12T08:00:44.752Z] info  mavenBuild - java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+[2024-01-12T08:00:44.752Z] info  mavenBuild - 	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - 	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+[2024-01-12T08:00:44.752Z] info  mavenBuild - 	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at EDIXMLAperakValidation.UTILTS_11X15Test.testCase01(UTILTS_11X15Test.java:100)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at EDIXMLAperakValidation.UTILTS_11X15Test.test(UTILTS_11X15Test.java:24)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in EDIXMLAperakValidation.UTILTS_11X15Test
+[2024-01-12T08:00:44.753Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Overall_Measurement_Code_ValidationTest
+[2024-01-12T08:00:44.753Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.753Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.753Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 1-08-4-12345678-07
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	3	 result:		nicht erlaubter Wert (not allowed value) 1-08-4-1234567-07
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	3	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 1-08-4-12345678-17-0
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	4	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 3-02-0-003
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	5	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.Overall_Measurement_Code_ValidationTest
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_If_902U906U46_ElseIF_910U906U62U63_Else_902U906U62U64Test
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.MSCONS_If_902U906U46_ElseIF_910U906U62U63_Else_902U906U62U64Test
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_atleast_one_comparing_valuesTest
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.Validate_atleast_one_comparing_valuesTest
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_CHECK_X_O_XNotMandatoryTest
+[2024-01-12T08:00:44.754Z] info  mavenBuild - test case 01
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[5] Zum Bedingung (For constraint)[XO]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.OVERALL_CHECK_X_O_XNotMandatoryTest
+[2024-01-12T08:00:44.754Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_61Test
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[2] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.754Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z40
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[3] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	3	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[4] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	4	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229='Z01'][G_SG10/S_CCI/C_C240/D_7037='ZA6'] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5] Bedingung (Constraint) [61]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.UTILMD_61Test
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_CHECK_X_O_CombinationsTest
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 01
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[5] Zum Bedingung (For constraint)[XO]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 02
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[5] Zum Bedingung (For constraint)[XO]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 03
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		zu viele Wiederholungen von X-Werten (to many iterations of X-values)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[5] Zum Bedingung (For constraint)[XO]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 04
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		zu viele Wiederholungen von X-Werten (to many iterations of X-values)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/G_SG10[5] Zum Bedingung (For constraint)[XO]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_CHECK_X_O_CombinationsTest
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILTS_14Test
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 01 result:
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[2]/G_SG9[1]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[14]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - test case 02 result:
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubte Kombination von Werten (not allowed combination of values)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[3]/G_SG9[1]/S_CAV[1]/C_C889/D_7111 Zum Bedingung (For constraint)[14]
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in EDIXMLAperakValidation.UTILTS_14Test
+[2024-01-12T08:00:44.755Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UBTest
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.755Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 203303260400+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 200003260500+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010252200+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [932] xor [933]
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 202010240500+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [931]
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 result:		falsches Format (wrong format) [934] xor [935]
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 203303262200+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 200003262300+00
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:44.756Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 path:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	3	 path:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 203303262200+00
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	4	 path:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 200003262300+00
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	5	 path:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in EDIXMLAperakValidation.UBTest
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_same_times_comparing_xpathTest
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 result: 		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	/M_UTILMD/G_SG4[G_SG8[S_SEQ/D_1229=('Z13')]] beziehen auf (refer to) /M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z13')]] Bedingung (Constraint) [2119]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 result: 		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	Z40
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount: 	0	 aperakErrorCode: 	/M_UTILMD/G_SG4[G_SG8[S_SEQ/D_1229=('Z13')]] beziehen auf (refer to) /M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z13')]] Bedingung (Constraint) [2119]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.Validate_same_times_comparing_xpathTest
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_exactly_times_comparing_valuesTest
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx1/M_UTILMD[1]/G_SG4[1]/G_SG8[2]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	1	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z21
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx2/M_UTILMD[1]/G_SG4[1]/G_SG8[3]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z21
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z27')] beziehen auf (refer to) LOC_MALOxxxxxxxxxxxxxxx3/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_RFF[1]/C_C506[1]/D_1154[1] Bedingung (Constraint) [284]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.Validate_exactly_times_comparing_valuesTest
+[2024-01-12T08:00:44.757Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_If_902U906_Else_910U906Test
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:44.757Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	5	 result:		falsches Format (wrong format) [906]
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	7	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	3	 result:		falsches Format (wrong format) [906]
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z35
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.MSCONS_If_902U906_Else_910U906Test
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_EXACTLY_TWO_THENTest
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	3	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z40
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_EXACTLY_TWO_THENTest
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_atleast_one_comparing_xpathTest
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[6]/G_SG8[11] Bedingung (Constraint) [317]
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.Validate_atleast_one_comparing_xpathTest
+[2024-01-12T08:00:44.758Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_atMost_xrepeats_comparing_xpathTest
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.758Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1]/G_SG8[11]/G_SG10[1]/S_CAV[1] Bedingung (Constraint) [26]
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	1	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11]/G_SG10[1]/S_CAV[1] Bedingung (Constraint) [26]
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11]/G_SG10[1]/S_CAV[2] Bedingung (Constraint) [26]
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	3	 result:		Fehlendes (missing)
+[2024-01-12T08:00:44.759Z] info  mavenBuild - LoopCount:	3	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11]/G_SG10[1]/S_CAV[3] Bedingung (Constraint) [26]
+[2024-01-12T08:00:44.759Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.Validate_atMost_xrepeats_comparing_xpathTest
+[2024-01-12T08:00:44.759Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_AT_MOST_TWO_THENTest
+[2024-01-12T08:00:45.018Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_AT_MOST_TWO_THENTest
+[2024-01-12T08:00:45.018Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_319Test
+[2024-01-12T08:00:45.018Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.018Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.UTILMD_319Test
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Overall_Article_ID_ValidationTest
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	2	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	3	 result:		nicht erlaubter Wert (not allowed value) 1-08-4-1234567-07
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	3	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value) 1-08-4-12345678-17-0
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	4	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	5	 result:		nicht erlaubter Wert (not allowed value) 3-02-0-003
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	5	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD/G_SG4[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z45')]/S_PIA[D_4347=('Z02')]/C_C212/D_7140 Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes Segment (missing segment) 9990001000532
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[284]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[40]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[1]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[40]
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.Overall_Article_ID_ValidationTest
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_EXACTLY_ONE_THENTest
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.UTILMD_CHECK_EVERY_IF_HAS_EXACTLY_ONE_THENTest
+[2024-01-12T08:00:45.019Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_902_U_906Test
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.019Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [906]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_902_U_906Test
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_if_thenTest
+[2024-01-12T08:00:45.020Z] info  mavenBuild - Start to run test case:	1
+[2024-01-12T08:00:45.020Z] info  mavenBuild - End to run test case:	1
+[2024-01-12T08:00:45.020Z] info  mavenBuild - Start to run test case:	2
+[2024-01-12T08:00:45.020Z] info  mavenBuild - End to run test case:	2
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in EDIXMLAperakValidation.OVERALL_if_thenTest
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_If_910U907_Else_902U907Test
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		falsches Format (wrong format) [907]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [907]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	7	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.MSCONS_If_910U907_Else_902U907Test
+[2024-01-12T08:00:45.020Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ALOCAT_5Test
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.020Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	7	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	8	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	8	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	9	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	9	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	10	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	10	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	11	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	11	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	12	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	12	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	13	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	13	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	14	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	14	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	15	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	15	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	16	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	16	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	17	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	17	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	18	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	18	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	19	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	19	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	20	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	20	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	21	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	21	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	22	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	22	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	23	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	23	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	24	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	24	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in EDIXMLAperakValidation.ALOCAT_5Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_17Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.MSCONS_17Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormat_952Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.ValidateFormat_952Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Embedded_950_951_953Test
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950]
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.021Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[950]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [951]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[951]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [950] or [951]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 path:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[953]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 path:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 path:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.Embedded_950_951_953Test
+[2024-01-12T08:00:45.022Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILTS_13Test
+[2024-01-12T08:00:45.022Z] info  mavenBuild - test case 03 result:
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILTS/G_SG5[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z37')]/G_SG9[S_CCI/C_C240/D_7037=('Z86')]/S_CAV/C_C889/D_7111 beziehen auf (refer to)  Berechnungsschritt-ID:( calculation step identifier:)2 Bedingung (Constraint) [13]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILTS/G_SG5[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z37')]/G_SG9[S_CCI/C_C240/D_7037=('Z86')]/S_CAV/C_C889/D_7111 beziehen auf (refer to)  Berechnungsschritt-ID:( calculation step identifier:)3 Bedingung (Constraint) [13]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILTS/G_SG5[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z37')]/G_SG9[S_CCI/C_C240/D_7037=('Z86')]/S_CAV/C_C889/D_7111 beziehen auf (refer to)  Berechnungsschritt-ID:( calculation step identifier:)4 Bedingung (Constraint) [13]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	3	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	3	 message:	/M_UTILTS/G_SG5[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z37')]/G_SG9[S_CCI/C_C240/D_7037=('Z86')]/S_CAV/C_C889/D_7111 beziehen auf (refer to)  Berechnungsschritt-ID:( calculation step identifier:)5 Bedingung (Constraint) [13]
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	4	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.022Z] info  mavenBuild - LoopCount:	4	 message:	/M_UTILTS/G_SG5[S_IDE/D_7495=('24')]/G_SG8[S_SEQ/D_1229=('Z37')]/G_SG9[S_CCI/C_C240/D_7037=('Z86')]/S_CAV/C_C889/D_7111 beziehen auf (refer to)  Berechnungsschritt-ID:( calculation step identifier:)6 Bedingung (Constraint) [13]
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[2]/G_SG9[1]/S_CAV[1]/C_C889[1]/D_7111[1] Zum Bedingung (For constraint)[11]
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) [494]
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	1	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.292Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value) [494]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 path:	/xpath Zum Bedingung (For constraint)null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.OVERALL_931_494Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_DECTree_codelist_ValidationTest
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in EDIXMLAperakValidation.OVERALL_DECTree_codelist_ValidationTest
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Overall_Multiple_Nodes_Element_Values_Same_Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.Overall_Multiple_Nodes_Element_Values_Same_Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_18Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		nicht erlaubter Wert (not allowed value)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.MSCONS_18Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_1912_123Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z20')]/G_SG10[S_CCI/D_7059=('11')] beziehen auf (refer to) 1020120003578692/M_UTILMD[1]/G_SG4[1]/G_SG8[9] Bedingung (Constraint) [123]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z20')]/G_SG10[S_CCI/D_7059=('11')] beziehen auf (refer to) 1020120003578692/M_UTILMD[1]/G_SG4[1]/G_SG8[10] Bedingung (Constraint) [123]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z20')]/G_SG10[S_CCI/D_7059=('11')] beziehen auf (refer to) 1020100002692267/M_UTILMD[1]/G_SG4[2]/G_SG8[15] Bedingung (Constraint) [123]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 result:		Fehlende Segmentgruppe (missing segmentgroup)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z20')]/G_SG10[S_CCI/D_7059=('11')] beziehen auf (refer to) 1020100002692267/M_UTILMD[1]/G_SG4[2]/G_SG8[16] Bedingung (Constraint) [123]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.UTILMD_1912_123Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_atleast_times_comparing_valuesTest
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes (missing)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	2	 result:		Fehlendes (missing)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in EDIXMLAperakValidation.Validate_atleast_times_comparing_valuesTest
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_902Test
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [902]
+[2024-01-12T08:00:45.293Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.293Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_902Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormat_950_x_951Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.ValidateFormat_950_x_951Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_230Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 result:		Fehler Bedingung [293] verletzt (constraint [203] violated)
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z34
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.294Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.UTILMD_230Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.ValidateFormat_951Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in EDIXMLAperakValidation.ValidateFormat_951Test
+[2024-01-12T08:00:45.294Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_130Test
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	1	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	2	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	2	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	3	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	3	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	4	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	4	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	4	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	5	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	5	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	5	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	6	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	6	 aperakErrorCode:	null
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	6	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[1]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	7	 result:		nicht erlaubter Wert (not allowed value) 202108012200+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	7	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	7	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	8	 result:		nicht erlaubter Wert (not allowed value) 202108012200+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	8	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	8	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[1]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	9	 result:		nicht erlaubter Wert (not allowed value) 202103282200+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	9	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	9	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	10	 result:		nicht erlaubter Wert (not allowed value) 202103282200+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	10	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	10	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[2]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	11	 result:		nicht erlaubter Wert (not allowed value) 202110312300+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	11	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	11	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	12	 result:		nicht erlaubter Wert (not allowed value) 202110312300+00
+[2024-01-12T08:00:45.554Z] info  mavenBuild - LoopCount:	12	 aperakErrorCode:	Z41
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	12	 path:	/M_MSCONS[1]/G_SG5[1]/G_SG6[1]/G_SG9[2]/G_SG10[3]/S_DTM[1] Zum Bedingung (For constraint)[130]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in EDIXMLAperakValidation.MSCONS_130Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.MSCONS_If_902U907_ElseIF_910U907_Else_902U906Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.MSCONS_If_902U907_ElseIF_910U907_Else_902U906Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.Validate_exactly_two_comparing_xpathTest
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		Fehlendes (missing)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[1]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[5]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 result:		zu viele Wiederholungen (to many iterations)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 message:	/M_UTILMD/G_SG4/G_SG8[S_SEQ/D_1229=('Z04')]/G_SG10[S_CCI/C_C240/D_7037=('Z25')]/S_CAV[C_C889/D_7111=('Z30')] beziehen auf (refer to) /M_UTILMD[1]/G_SG4[6]/G_SG8[11] Bedingung (Constraint) [xx]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.Validate_exactly_two_comparing_xpathTest
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILTS_9Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[2]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[9]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[3]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[9]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 result:		Falscher Wert (wrong value)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z29
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 usedPathDuringRuntime:	/M_UTILTS[1]/G_SG5[1]/G_SG8[4]/S_RFF[1]/C_C506[1]/D_1154[1] Zum Bedingung (For constraint)[9]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.UTILTS_9Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_911_MSCONSTest
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	1	 aperakErrorCode:	null
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 result:		falsches Format (wrong format) [911]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	2	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in EDIXMLAperakValidation.OVERALL_911_MSCONSTest
+[2024-01-12T08:00:45.555Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.OVERALL_907Test
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		falsches Format (wrong format) [907]
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	Z35
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.555Z] info  mavenBuild - LoopCount:	0	 aperakErrorCode:	null
+[2024-01-12T08:00:45.556Z] info  mavenBuild - [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in EDIXMLAperakValidation.OVERALL_907Test
+[2024-01-12T08:00:45.556Z] info  mavenBuild - [INFO] Running EDIXMLAperakValidation.UTILMD_OBIS_Chapter_ValidationTest
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	0	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	0	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[10]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[324]
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	1	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	1	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[11]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[324]
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	2	 result:		nicht erlaubter Wert (not allowed value) 1-99:2.8.0
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	2	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[12]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[324]
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	3	 result:		Erfolgreich (SUCCESS)
+[2024-01-12T08:00:45.556Z] info  mavenBuild - LoopCount:	3	 usedPathDuringRuntime:	/M_UTILMD[1]/G_SG4[1]/G_SG8[13]/S_PIA[1]/C_C212[1]/D_7140[1] Zum Bedingung (For constraint)[324]

@@ -3,6 +3,7 @@ from typing import List, Dict, Tuple
 from io import TextIOWrapper
 
 from log_structure import LogMessage, LogCluster, LogError
+from log_structure import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH
 from collections import OrderedDict
 
 from thefuzz import fuzz
@@ -13,12 +14,12 @@ domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
 K = 3  # 𝐾 most frequent tokens
 token_occurrences = []
-open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN',
-                    'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
 
 d = 3  # their first 𝑑 prefix tokens
 
 cmax = 3  # hyperparameter to limit the maximum number of child nodes
+
+
 
 
 def sampling(pattern: re.Pattern, file_path: str, bath_size=1000):
@@ -37,23 +38,18 @@ def sampling(pattern: re.Pattern, file_path: str, bath_size=1000):
                 continue
 
             sample_logs.append(log)
-            for token, pos in zip(log.content_tokens, log.context_POSs):
-                if pos not in open_class_words:
-                    continue
-                token_occurrences_dict[token] = token_occurrences_dict.get(token, 0) + 1
+            # there's no need to filter out open class words here.
+            token_occurrences_dict.update({token: token_occurrences_dict.get(token, 0) + 1 for token in log.traverse_tokens})
 
     sample_logs = sorted(token_occurrences_dict.items(), key=lambda s: s[1], reverse=True)
     sample_logs = [item[0] for item in sample_logs]
     token_occurrences.extend(sample_logs)
 
 
-# TODO traverse process should generally based on open class words, NUMs, PRON(i.e. Closed class words)
-#  should be excluded within these process. Therefore, rex is just sufficient for this purpose: \w(i.e. words only)
 def traverse_d_k(log: LogMessage) -> list[str]:
     """
     Traverse by domain knowledge
     """
-    # TODO similarity in nlp?
     return [log.get_level()]
 
 
@@ -61,29 +57,28 @@ def traverse_m_f(log_message: LogMessage) -> list[str]:
     """
     Traverse by most frequent tokens. English stopwords are discarded
     """
-    content_tokens = set(log_message.content_tokens)
+    traverse_tokens = set(log_message.traverse_tokens)
     frequent_tokens = []
     count = K
     for token in token_occurrences:
         if count <= 0:
             break
-        if token in content_tokens:
+        if token in traverse_tokens:
             frequent_tokens.append(token)
             count = count - 1
-    return [', '.join(frequent_tokens)]
+    return [', '.join(frequent_tokens)] if frequent_tokens else None
 
 
-def traverse_prefix(log: LogMessage) -> list[str]:
+def traverse_prefix(log_message: LogMessage) -> list[str]:
     """
-    Traverse by prefix tokens
+    Traverse by prefix tokens.
+    No need to judge open class words here - it has already been filtered in log message initial stage.
     """
-    # FIXME: SpaCy determine hex(e.g. 0x1ff2) as an open class words. BTW, is open class words a proper 'judge'?
-    prefix_tokens = []
-    for token, pos, _ in zip(log.content_tokens, log.context_POSs, range(cmax)):
-        if pos not in open_class_words:
-            continue
-        if re.fullmatch(r'[A-Za-z]+', token) is not None:  # only letter(eg: "demo", "time") can be prefix.
-            prefix_tokens.append(token)
+    prefix_tokens = [token for token, _ in zip(log_message.traverse_tokens, range(cmax))]
+
+    # for token, _ in zip(log_message.traverse_tokens, range(cmax)):
+    #     if re.fullmatch(r'\w+', token):  # only letter(eg: "demo", "time") can be prefix.
+    #         prefix_tokens.append(token)
     return prefix_tokens
 
 
@@ -91,7 +86,7 @@ all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
 
 ####################
 # match: exact, partial, no-match
-theta_match = 0.5  # match threshold
+theta_match = 70  # match threshold
 
 
 def add_escape(value):
@@ -132,7 +127,7 @@ class Trie:
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
 
-    def insert(self, log_message: LogMessage, funcs=None) -> Tuple["Trie", LogCluster]:
+    def insert(self, log_message: LogMessage, funcs: list[str] = None) -> Tuple["Trie", LogCluster, int]:
         """
         gross-grained insert via three traverse functions. Then exact inserted into a LogCluster instance.
         returns internal leaf node and log cluster that matches.
@@ -140,37 +135,49 @@ class Trie:
         if funcs is None:
             funcs = all_traverse_funcs
         trie_node = self
-
+        # collect log clusters under internal trie node, then assign them to leaf node
+        internal_log_clusters: set[LogCluster] = set()
         # extract internal nodes
         for func in funcs:
-            internal_tokens = func(log_message)
+            internal_tokens = func(log_message)  # extract prefix tokens
+            # there may be chances that internal_tokens may be null, then return None to indicate there are no place to insert this log message
+            if not internal_tokens:
+                return trie_node, None, None
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.children:
                     trie_node.children[internal_token] = Trie(internal_token)  # create a new node
                 trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
+                # # internal nodes can't contain log clusters, should remove then assign them to leaf nodes
+                # if trie_node.logClusters:
+                #     internal_log_clusters.update(trie_node.logClusters)
+                #     trie_node.logClusters = set()
+
         trie_node.isEnd = True  # leaf node
+        # if internal_log_clusters:
+        #     trie_node.logClusters.update(internal_log_clusters)
 
         # leaf trie node, match a log cluster then update its template
-        log_cluster, is_no_match = trie_node.match(log_message.get_content())
-        if is_no_match:
+        log_cluster, match_type = trie_node.match(log_message)
+        if match_type == NO_MATCH:
             trie_node.logClusters.add(log_cluster)  # add the log into trie node
 
-        return trie_node, log_cluster
+        return trie_node, log_cluster, match_type
 
-    def match(self, log_message: str) -> Tuple[LogCluster, bool]:
+    def match(self, log_message: LogMessage) -> Tuple[LogCluster, int]:
         """
         three match strategy. if 'no match', should return true in order to add this new log cluster in the trie (leaf) node
         """
-        is_no_match = False
-        cluster = match_exact(log_message, self.logClusters)  # exact match
-        if cluster is None:
-            cluster, score = match_partial(log_message, self.logClusters)  # partial match
+        match_type = EXACT_MATCH
+        cluster = match_exact(log_message.get_content(), self.logClusters)  # exact match
+        if not cluster:
+            cluster, score = match_partial(log_message.get_content(), self.logClusters)  # partial match
+            match_type = PARTIAL_MATCH
             if score < theta_match:
                 # The template for this new log cluster is the log message itself, i.e., t_j = l_i
-                cluster = LogCluster(log_message)  # no match
-                is_no_match = True
-        return cluster, is_no_match
+                cluster = LogCluster(log_message.content_tokens)  # no match
+                match_type = NO_MATCH
+        return cluster, match_type
 
     def search_tries_by_level(self, level: int) -> list["Trie"]:
         """

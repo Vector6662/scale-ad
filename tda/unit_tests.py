@@ -7,7 +7,6 @@ import pandas as pd
 import process_tda as main
 import utils
 
-
 df = pd.read_csv('../data/BGL/BGL_2k.log_templates.csv')
 
 event_templates = df['EventTemplate']
@@ -28,15 +27,18 @@ class TestPreprocess(unittest.TestCase):
                 token_occurrences[token] = token_occurrences.get(token, 0) + 1
             li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:3]  # K=3
             print(li)
+
     def test_java_pattern(self):
         java_pattern = r'(?P<DATE>\S+)  +(?P<LEVEL>\w+) +(?P<PID>\d+) +-+ +\[(?P<THREAD>\w+)\] +(?P<CLASS>\S+) +: +(?P<CONTENT>.+)'
         content = '2024-01-04T16:04:57.400+08:00  INFO 41672 --- [main] c.s.c.services.impl.ServiceCatalogImpl   : Registered service MarketPartnerQueuingService'
         m = re.match(java_pattern, content)
         print(m.groupdict())
         print(m[0])
-    def test_jenkins_pattern(self):
+
+    def test_extract_jenkins_pattern(self):
         # hint: if there's a [INFO]/[cds] etc., it may have additional contents... but let it alone, too complicated.
-        contents = ['[2024-01-03T02:05:46.863Z] [Pipeline] echo',
+        contents = ['[2024-01-12T08:00:35.272Z] info  mavenBuild - [INFO] ',
+                    '[2024-01-03T02:05:46.863Z] [Pipeline] echo',
                     '[2024-01-03T02:27:45.916Z] Unstash content: tests',
                     '[2024-01-03T02:06:06.155Z] info  sapPipelineInit - Logging into Vault',
                     '[2024-01-03T02:07:48.094Z] info  mtaBuild - Progress (1): 7.2/60 kB',
@@ -44,19 +46,21 @@ class TestPreprocess(unittest.TestCase):
                     '[2024-01-03T02:07:52.058Z] info  mtaBuild - [INFO] InstallNodeMojo: No proxy was configured, downloading directly.',
                     '[2024-01-03T02:27:27.683Z] info  codeqlExecuteScan - CodeQL image version: 20231103125425-jdk17-86e411f',
                     '[2024-01-03T02:27:30.203Z] info  codeqlExecuteScan - [2024-01-03 02:27:29] [build-stdout] [INFO] Scanning for projects...',
-                    '[2024-01-03T02:27:37.701Z] info  detectExecuteScan - 2024-01-03 02:27:36 UTC INFO  [main] --- Binary Scanner tool will not be run.']
+                    '[2024-01-03T02:27:37.701Z] info  detectExecuteScan - 2024-01-03 02:27:36 UTC INFO  [main] --- Binary Scanner tool will not be run.',
+                    ]
         guess = '[TIME] LEVEL COMPONENT - any other pattern can append to: even can be pure test'
 
         # [2024-01-03T02:27:37.701Z] info detectExecuteScan - 2024-01-03 02:27:36 UTC INFO [main] --- Binary Scanner tool will not be run.
         # [2024-01-03T02:27:30.203Z] info codeqlExecuteScan - [2024-01-03 02:27:29] [build-stdout] [INFO] Scanning for projects...
-        pattern1 = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((\[[^\[\]]+\] *)|(.+ -+ ))*(?P<CONTENT>[^\n]+)'
+        pattern1 = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((\[[^\[\]]+\] *)|(.+ -+ ))*(?P<CONTENT>\S+)'
         for content in contents:
             m = re.match(pattern1, content)
             if not m:
+                print(content)
                 continue
             print(m.groupdict())
 
-    def test_merge(self):
+    def test_merge_wildcards(self):
         template = '<*> Node card status: <*> <*> <*> <*> <*> <*> <*> <*> is <*> active. Midplane. PGOOD <*> <*> is clear. MPGOOD is OK. MPGOOD <*> <*> is clear. The 2.5 volt rail is OK. The 1.5 volt rail is <*>'
         template_tokens = re.split(r'\s', template)
         new_template_tokens = []
@@ -64,27 +68,23 @@ class TestPreprocess(unittest.TestCase):
         while i < len(template_tokens):
             if template_tokens[i] != '<*>':
                 new_template_tokens.append(template_tokens[i])
-                i = i+1
+                i = i + 1
                 continue
             while i < len(template_tokens) and template_tokens[i] == '<*>':
-                i = i+1
+                i = i + 1
             new_template_tokens.append('<*>')
             if i < len(template_tokens):
                 new_template_tokens.append(template_tokens[i])
-            i = i+1
+            i = i + 1
         print(new_template_tokens)
-
-
-
+    def test_match_words(self):
+        cmax = 5
+        traverse = {'q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'}
+        prefix_tokens = [token for token, _ in zip(traverse, range(cmax))]
+        print(prefix_tokens)
 
 
 class TestLogCluster(unittest.TestCase):
-    def test_match(self):
-        log_message = "deleted items: obj1, obj2, obj3, obj4"
-        template = "deleted items: <*>"
-        log_cluster = LogCluster(template=template)
-        new_template = extract_template(log_message=log_message)
-        assert re.split(' ', ' '.join(new_template)) == new_template
 
     def test_merge_demo_log_clusters(self):
         log_clusters = []
@@ -98,8 +98,7 @@ class TestLogCluster(unittest.TestCase):
         log_clusters = main.root.search_clusters_recurse()
         merge_clusters(log_clusters)
 
-
-    def test_sandbox(self):
+    def test_rex_match(self):
         template = 'ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>'.replace('(',
                                                                                                                 r'\(').replace(
             '<*>', '.*')
@@ -114,7 +113,6 @@ class TestTrie(unittest.TestCase):
         main.process()
         print([item.name for item in main.root.search_tries_by_level(2)])
         # share the same "domain knowledge" and "frequent token" internal nodes.
-
 
     def test_recursively_search_clusters(self):
         level = 2

@@ -96,9 +96,9 @@ class LogClusterCache(LruCache):
         if len(self._cache) >= self.capacity:
             log_cluster, _ = self._cache.popitem(last=False)
             # TODO: consider if this log cluster should be removed from trie
-            parent = log_cluster.parent  # trie leaf node
-            assert parent is not None and parent.isEnd
-            parent.remove_log_cluster(log_cluster)
+            # parent = log_cluster.parent  # trie leaf node
+            # assert parent is not None and parent.isEnd
+            # parent.remove_log_cluster(log_cluster)
 
         self._cache[key] = DEFAULT_VALUE
         self._cache.move_to_end(key)

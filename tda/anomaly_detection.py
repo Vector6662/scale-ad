@@ -12,7 +12,7 @@ from utils import plot_cdf
 def detect_cdf(log_clusters: list[LogCluster]):
     data = [len(log_cluster.logMessagesCache) for log_cluster in log_clusters]
     c = -0.5
-    query_threshold = 0.80
+    query_threshold = 0.9
     cdfs = genextreme.cdf(data, c)
     T = 10  # range from 2 to 10
     tps = cdfs ** T / np.sum(cdfs) ** T
