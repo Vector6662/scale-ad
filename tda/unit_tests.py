@@ -61,21 +61,10 @@ class TestPreprocess(unittest.TestCase):
             print(m.groupdict())
 
     def test_merge_wildcards(self):
-        template = '<*> Node card status: <*> <*> <*> <*> <*> <*> <*> <*> is <*> active. Midplane. PGOOD <*> <*> is clear. MPGOOD is OK. MPGOOD <*> <*> is clear. The 2.5 volt rail is OK. The 1.5 volt rail is <*>'
-        template_tokens = re.split(r'\s', template)
-        new_template_tokens = []
-        i = 0
-        while i < len(template_tokens):
-            if template_tokens[i] != '<*>':
-                new_template_tokens.append(template_tokens[i])
-                i = i + 1
-                continue
-            while i < len(template_tokens) and template_tokens[i] == '<*>':
-                i = i + 1
-            new_template_tokens.append('<*>')
-            if i < len(template_tokens):
-                new_template_tokens.append(template_tokens[i])
-            i = i + 1
+        template = '\t<*> Node card status: <*> <*> \t\t <*> <*> <*> <*> <*> <*> is <*> \t active. Midplane. PGOOD <*> <*> is clear. MPGOOD is OK. MPGOOD <*> <*> is clear. The 2.5 volt rail is OK. The 1.5 volt rail is <*>'
+        template_tokens = re.split(r'(\s+)', template)
+        from log_structure import merge_adjacent_wildcards
+        new_template_tokens = merge_adjacent_wildcards(template_tokens)
         print(new_template_tokens)
     def test_match_words(self):
         cmax = 5

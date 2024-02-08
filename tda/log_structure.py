@@ -36,9 +36,11 @@ def merge_adjacent_wildcards(template_tokens: list[str]):
             new_tokenized_template.append(template_tokens[i])
             i = i + 1
             continue
-        while i < len(template_tokens) and (template_tokens[i] == '<*>' or template_tokens[i].isspace()):
+        while i < len(template_tokens) and (template_tokens[i] == '<*>' or template_tokens[i].isspace()):  # spaces between '<*>' should also be replaced. e.g. ['<*>', ' ', ' \t\t', '<*>'] ---> ['<*>']
             i = i + 1
         new_tokenized_template.append('<*>')
+        if i > 0 and template_tokens[i-1].isspace():  # for more precise template result, spaces after '<*>' shouldn't be replaced. e.g. ['<*>', spaces..., '<*>', ' ', '\t'] --> ['<*>', ' ', '\t']
+            new_tokenized_template.append(template_tokens[i-1])
         if i < len(template_tokens):
             new_tokenized_template.append(template_tokens[i])
         i = i + 1
@@ -73,7 +75,7 @@ class LogCluster:
     def __init__(self, tokenized_template: list[str]):
         self.template: str = ''.join(tokenized_template)
         self.tokenized_template: list[str] = tokenized_template
-        self.logMessagesCache: LogMessagesCache = LogMessagesCache(30)
+        self.logMessagesCache: LogMessagesCache = LogMessagesCache(300)
         self.nWildcard: int = 0  # number of wildcard(<*>) in the template
         self.ground_truth: float = 0
         self.recent_used_timestamp = None

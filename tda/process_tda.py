@@ -11,7 +11,7 @@ from log_structure import LogMessage, LogError
 from trie import NO_MATCH, PARTIAL_MATCH, EXACT_MATCH
 
 root: Trie = None
-lcCache = LogClusterCache(50)  # lru cache of log clusters
+lcCache = LogClusterCache(200)  # lru cache of log clusters
 logMessages = []
 
 
@@ -72,3 +72,5 @@ def process():
     data = render_pyecharts_tree("tree_top_bottom.html", root)
     with open('structure.json', 'w') as f:
         f.write(str(data))
+
+    print('tda halt...')

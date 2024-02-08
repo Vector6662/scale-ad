@@ -5,8 +5,6 @@ from io import TextIOWrapper
 bgl_path = './data/BGL/BGL_2k.log'  # reduced log for test， 2k
 bgl_pattern = r'\S+ +\d+ +(?P<DATE>\S+) +\S+ +\S+ +\S+ +\S+ +(?P<COMPONENT>\w+) +(?P<LEVEL>\w+) +(?P<CONTENT>.+)'
 
-file_path_HDFS = './data/HDFS/HDFS_2k.log'
-log_format_HDFS = '<DATE><TIME><PID><LEVEL><COMPONENT><CONTENT>'
 
 file_path_bgl2 = './data/bgl2'  # total bgl log, 4747963 lines
 
@@ -14,9 +12,9 @@ jenkins_path = './data/Jenkins/jenkins-test.log'
 jenkins_pattern = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((\[[^\[\]]+\] *)|(.+ -+ ))*(?P<CONTENT>[^\n]+)'
 
 
-file_path = bgl_path
-log_pattern_re = bgl_pattern
-log_keywords = 'BGL'
+file_path = jenkins_path
+log_pattern_re = jenkins_pattern
+log_keywords = 'Jenkins'
 
 
 
