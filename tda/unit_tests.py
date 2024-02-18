@@ -16,17 +16,6 @@ event_templates = df['EventTemplate']
 
 
 class TestPreprocess(unittest.TestCase):
-    def test_most_frequent_tokens_transformation(self):
-        file_path = '../data/BGL/BGL_small.log'  # reduced log for test
-        log_format = '<TAG><SEQ><DATE><COMPONENT1><TIMESTAMP><COMPONENT2><COMPONENT3><PRIORITY><LEVEL><CONTENT>'
-        headers = utils.gen_header(log_format)
-        for line in utils.read_line(file_path):
-            log = LogMessage()
-            log.preprocess(headers, line)
-            for token in log.content_tokens:
-                token_occurrences[token] = token_occurrences.get(token, 0) + 1
-            li = sorted(token_occurrences.items(), key=lambda s: s[1], reverse=True)[0:3]  # K=3
-            print(li)
 
     def test_java_pattern(self):
         java_pattern = r'(?P<DATE>\S+)  +(?P<LEVEL>\w+) +(?P<PID>\d+) +-+ +\[(?P<THREAD>\w+)\] +(?P<CLASS>\S+) +: +(?P<CONTENT>.+)'
@@ -65,13 +54,21 @@ class TestPreprocess(unittest.TestCase):
         template_tokens = re.split(r'(\s+)', template)
         from log_structure import merge_adjacent_wildcards
         new_template_tokens = merge_adjacent_wildcards(template_tokens)
+        print('\n')
+        print(template)
         print(new_template_tokens)
+
     def test_match_words(self):
         cmax = 5
         traverse = {'q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'}
         prefix_tokens = [token for token, _ in zip(traverse, range(cmax))]
         print(prefix_tokens)
 
+def add_escape(value):
+    reserved_chars = r'''?&|!{}[]()^~+*'''
+    replace = ['\\' + l for l in reserved_chars]
+    trans = str.maketrans(dict(zip(reserved_chars, replace)))
+    return value.translate(trans)
 
 class TestLogCluster(unittest.TestCase):
 
@@ -88,13 +85,28 @@ class TestLogCluster(unittest.TestCase):
         merge_clusters(log_clusters)
 
     def test_rex_match(self):
-        template = 'ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>'.replace('(',
-                                                                                                                r'\(').replace(
-            '<*>', '.*')
+        log_message = 'looking for **/url-log.json in\t\t /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace'
+        template = 'looking for <*> in\t\t <*>'
+        template = re.escape(template)
+        template = template.replace(r'<\*>', r'.*')
+        m = re.match(template, log_message)
+        assert m
+        print(m)
 
-        seq = 'ciod: failed to read message prefix on control stream (CioStream socket to a:b'
-        match = re.search(template, seq)
-        assert match
+    def test_translation(self):
+        # DO NOT DELETE! this is an interesting reminder!
+        log_message = '\t\t'
+        template = '\t\t'  # equal to '\\t\\t', interesting
+        m = re.match(template, log_message)
+        assert m
+        print(m)
+
+    def test_tokenize(self):
+        from log_structure import tokenize
+        content = 'generating core.12927'
+        tokens = tokenize(content)
+        print(tokens)
+
 
 
 class TestTrie(unittest.TestCase):

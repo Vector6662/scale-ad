@@ -19,18 +19,6 @@ def read_line(file_path: str) -> list:
     return lines
 
 
-def gen_header(log_format: str):
-    compiled = re.compile(r'<\w+>')
-    headers = compiled.findall(log_format)
-    headers = [header.strip('<').strip('>') for header in headers]
-    return headers
-
-    # compiled = re.compile(r'\W')
-    # tokens = compiled.split(line)
-    # tokens = filter(lambda s: s and s.strip(), tokens) # get rid of empty elements
-    # return list(tokens)
-
-
 def plot_cdf(data, cdfs, tps):
     import numpy as np
     import matplotlib.pyplot as plt

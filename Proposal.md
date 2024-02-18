@@ -4,7 +4,8 @@
 
 ## Research
 
-Summary of "Tools and Benchmarks for Automated Log Parsing": https://zhuanlan.zhihu.com/p/498522888
+13 types of log pattern parsing, also summary of "Tools and Benchmarks for Automated Log Parsing": https://zhuanlan.zhihu.com/p/498522888
+
 
 ## Trie-based Detection Agent(TDA)
 

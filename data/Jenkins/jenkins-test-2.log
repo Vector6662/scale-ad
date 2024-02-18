@@ -1,0 +1,989 @@
+
+[2024-01-03T02:16:33.983Z] info  sapCumulusUpload - looking for **/env.json in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:16:33.983Z] info  sapCumulusUpload - uploading 1 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/
+[2024-01-03T02:16:34.233Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:16:34.234Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:16:34.234Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:16:33.529627645 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"518","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:16:34.234Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:16:34.234Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:16:34.235Z] [Pipeline] }
+[2024-01-03T02:16:34.238Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:34.248Z] [Pipeline] fileExists
+[2024-01-03T02:16:34.259Z] [Pipeline] fileExists
+[2024-01-03T02:16:34.278Z] [Pipeline] sh
+[2024-01-03T02:16:34.536Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:16:34.536Z] time="2024-01-03T02:16:34Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:34.536Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:34.544Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.565Z] [Pipeline] echo
+[2024-01-03T02:16:34.565Z] Transfer Influx data
+[2024-01-03T02:16:34.573Z] [Pipeline] findFiles
+[2024-01-03T02:16:34.584Z] [Pipeline] echo
+[2024-01-03T02:16:34.584Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:16:34.593Z] [Pipeline] readFile
+[2024-01-03T02:16:34.606Z] [Pipeline] echo
+[2024-01-03T02:16:34.606Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:16:34.614Z] [Pipeline] readFile
+[2024-01-03T02:16:34.625Z] [Pipeline] echo
+[2024-01-03T02:16:34.625Z] reading JSON content: 1
+[2024-01-03T02:16:34.633Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.646Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.658Z] [Pipeline] echo
+[2024-01-03T02:16:34.658Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:16:34.666Z] [Pipeline] readFile
+[2024-01-03T02:16:34.678Z] [Pipeline] echo
+[2024-01-03T02:16:34.679Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:16:34.687Z] [Pipeline] readFile
+[2024-01-03T02:16:34.699Z] [Pipeline] echo
+[2024-01-03T02:16:34.699Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:16:34.707Z] [Pipeline] readFile
+[2024-01-03T02:16:34.718Z] [Pipeline] echo
+[2024-01-03T02:16:34.718Z] reading JSON content: 1
+[2024-01-03T02:16:34.726Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.737Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.749Z] [Pipeline] echo
+[2024-01-03T02:16:34.749Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:16:34.757Z] [Pipeline] readFile
+[2024-01-03T02:16:34.768Z] [Pipeline] echo
+[2024-01-03T02:16:34.769Z] reading JSON content: 2
+[2024-01-03T02:16:34.776Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.788Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.800Z] [Pipeline] echo
+[2024-01-03T02:16:34.800Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:16:34.808Z] [Pipeline] readFile
+[2024-01-03T02:16:34.818Z] [Pipeline] echo
+[2024-01-03T02:16:34.819Z] reading JSON content: 1
+[2024-01-03T02:16:34.827Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.837Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.849Z] [Pipeline] echo
+[2024-01-03T02:16:34.849Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:16:34.857Z] [Pipeline] readFile
+[2024-01-03T02:16:34.869Z] [Pipeline] echo
+[2024-01-03T02:16:34.869Z] reading JSON content: 1
+[2024-01-03T02:16:34.877Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.889Z] [Pipeline] readJSON
+[2024-01-03T02:16:34.901Z] [Pipeline] echo
+[2024-01-03T02:16:34.901Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:16:34.909Z] [Pipeline] readFile
+[2024-01-03T02:16:34.921Z] [Pipeline] echo
+[2024-01-03T02:16:34.922Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:16:34.922Z] [Pipeline] stash
+[2024-01-03T02:16:34.923Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:16:34.924Z] Stashed 0 file(s)
+[2024-01-03T02:16:34.926Z] [Pipeline] }
+[2024-01-03T02:16:34.928Z] [Pipeline] // withEnv
+[2024-01-03T02:16:34.938Z] [Pipeline] echo
+[2024-01-03T02:16:34.939Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:16:35.344Z] [Pipeline] echo
+[2024-01-03T02:16:35.344Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:16:35.357Z] [Pipeline] sh
+[2024-01-03T02:16:35.615Z] + [ -x ./sap-piper ]
+[2024-01-03T02:16:35.624Z] [Pipeline] echo
+[2024-01-03T02:16:35.625Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:16:35.636Z] [Pipeline] echo
+[2024-01-03T02:16:35.636Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:16:35.637Z] [Pipeline] unstash
+[2024-01-03T02:16:35.653Z] [Pipeline] libraryResource
+[2024-01-03T02:16:35.663Z] [Pipeline] writeFile
+[2024-01-03T02:16:35.676Z] [Pipeline] echo
+[2024-01-03T02:16:35.676Z] Step params [filePattern:**/target/surefire-reports/*.xml, stepResultType:junit, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:16:35.685Z] [Pipeline] withEnv
+[2024-01-03T02:16:35.685Z] [Pipeline] {
+[2024-01-03T02:16:35.698Z] [Pipeline] echo
+[2024-01-03T02:16:35.698Z] PIPER_parametersJSON: {"filePattern":"**/target/surefire-reports/*.xml","stepResultType":"junit","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:16:35.709Z] [Pipeline] sh
+[2024-01-03T02:16:35.967Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:35.967Z] time="2024-01-03T02:16:35Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:35.967Z] time="2024-01-03T02:16:35Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:35.975Z] [Pipeline] readJSON
+[2024-01-03T02:16:35.987Z] [Pipeline] echo
+[2024-01-03T02:16:35.987Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:16:36.011Z] [Pipeline] withEnv
+[2024-01-03T02:16:36.012Z] [Pipeline] {
+[2024-01-03T02:16:36.026Z] [Pipeline] sh
+[2024-01-03T02:16:36.284Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:16:36.284Z] time="2024-01-03T02:16:36Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:36.284Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:36.285Z] [Pipeline] }
+[2024-01-03T02:16:36.287Z] [Pipeline] // withEnv
+[2024-01-03T02:16:36.298Z] [Pipeline] echo
+[2024-01-03T02:16:36.298Z] Unstash content: pipelineStepReports
+[2024-01-03T02:16:36.299Z] [Pipeline] unstash
+[2024-01-03T02:16:36.336Z] [Pipeline] withCredentials
+[2024-01-03T02:16:36.341Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:16:36.342Z] [Pipeline] {
+[2024-01-03T02:16:36.344Z] [Pipeline] }
+[2024-01-03T02:16:36.346Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:36.357Z] [Pipeline] withCredentials
+[2024-01-03T02:16:36.360Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:16:36.360Z] [Pipeline] {
+[2024-01-03T02:16:36.363Z] [Pipeline] }
+[2024-01-03T02:16:36.365Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:36.376Z] [Pipeline] withCredentials
+[2024-01-03T02:16:36.379Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:36.380Z] [Pipeline] {
+[2024-01-03T02:16:36.382Z] [Pipeline] }
+[2024-01-03T02:16:36.384Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:36.396Z] [Pipeline] withCredentials
+[2024-01-03T02:16:36.405Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:36.406Z] [Pipeline] {
+[2024-01-03T02:16:36.417Z] [Pipeline] sh
+[2024-01-03T02:16:36.674Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:36.674Z] time="2024-01-03T02:16:36Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:36.675Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:16:36.675Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:16:36.675Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:16:36.925Z]
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - looking for **/target/surefire-reports/*.xml in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:16:36.925Z] info  sapCumulusUpload - uploading 234 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/junit
+[2024-01-03T02:16:49.023Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:16:49.023Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:16:49.023Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:16:36.471726161 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"10928","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:16:49.023Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:16:49.023Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:16:49.024Z] [Pipeline] }
+[2024-01-03T02:16:49.028Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:49.038Z] [Pipeline] fileExists
+[2024-01-03T02:16:49.048Z] [Pipeline] fileExists
+[2024-01-03T02:16:49.060Z] [Pipeline] sh
+[2024-01-03T02:16:49.318Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:16:49.318Z] time="2024-01-03T02:16:49Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:49.318Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:49.327Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.347Z] [Pipeline] echo
+[2024-01-03T02:16:49.348Z] Transfer Influx data
+[2024-01-03T02:16:49.355Z] [Pipeline] findFiles
+[2024-01-03T02:16:49.366Z] [Pipeline] echo
+[2024-01-03T02:16:49.367Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:16:49.374Z] [Pipeline] readFile
+[2024-01-03T02:16:49.386Z] [Pipeline] echo
+[2024-01-03T02:16:49.386Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:16:49.394Z] [Pipeline] readFile
+[2024-01-03T02:16:49.404Z] [Pipeline] echo
+[2024-01-03T02:16:49.404Z] reading JSON content: 1
+[2024-01-03T02:16:49.412Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.423Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.435Z] [Pipeline] echo
+[2024-01-03T02:16:49.436Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:16:49.444Z] [Pipeline] readFile
+[2024-01-03T02:16:49.455Z] [Pipeline] echo
+[2024-01-03T02:16:49.456Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:16:49.463Z] [Pipeline] readFile
+[2024-01-03T02:16:49.475Z] [Pipeline] echo
+[2024-01-03T02:16:49.475Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:16:49.483Z] [Pipeline] readFile
+[2024-01-03T02:16:49.493Z] [Pipeline] echo
+[2024-01-03T02:16:49.494Z] reading JSON content: 1
+[2024-01-03T02:16:49.501Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.513Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.524Z] [Pipeline] echo
+[2024-01-03T02:16:49.525Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:16:49.533Z] [Pipeline] readFile
+[2024-01-03T02:16:49.543Z] [Pipeline] echo
+[2024-01-03T02:16:49.543Z] reading JSON content: 2
+[2024-01-03T02:16:49.551Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.564Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.576Z] [Pipeline] echo
+[2024-01-03T02:16:49.577Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:16:49.585Z] [Pipeline] readFile
+[2024-01-03T02:16:49.595Z] [Pipeline] echo
+[2024-01-03T02:16:49.595Z] reading JSON content: 1
+[2024-01-03T02:16:49.602Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.614Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.627Z] [Pipeline] echo
+[2024-01-03T02:16:49.627Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:16:49.635Z] [Pipeline] readFile
+[2024-01-03T02:16:49.645Z] [Pipeline] echo
+[2024-01-03T02:16:49.646Z] reading JSON content: 1
+[2024-01-03T02:16:49.653Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.666Z] [Pipeline] readJSON
+[2024-01-03T02:16:49.678Z] [Pipeline] echo
+[2024-01-03T02:16:49.678Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:16:49.687Z] [Pipeline] readFile
+[2024-01-03T02:16:49.699Z] [Pipeline] echo
+[2024-01-03T02:16:49.699Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:16:49.700Z] [Pipeline] stash
+[2024-01-03T02:16:49.701Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:16:49.701Z] Stashed 0 file(s)
+[2024-01-03T02:16:49.703Z] [Pipeline] }
+[2024-01-03T02:16:49.705Z] [Pipeline] // withEnv
+[2024-01-03T02:16:49.715Z] [Pipeline] echo
+[2024-01-03T02:16:49.716Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:16:50.153Z] [Pipeline] echo
+[2024-01-03T02:16:50.153Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:16:50.167Z] [Pipeline] sh
+[2024-01-03T02:16:50.425Z] + [ -x ./sap-piper ]
+[2024-01-03T02:16:50.435Z] [Pipeline] echo
+[2024-01-03T02:16:50.436Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:16:50.448Z] [Pipeline] echo
+[2024-01-03T02:16:50.448Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:16:50.449Z] [Pipeline] unstash
+[2024-01-03T02:16:50.466Z] [Pipeline] libraryResource
+[2024-01-03T02:16:50.478Z] [Pipeline] writeFile
+[2024-01-03T02:16:50.492Z] [Pipeline] echo
+[2024-01-03T02:16:50.493Z] Step params [filePattern:**/jacoco.xml, stepResultType:jacoco-coverage, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:16:50.501Z] [Pipeline] withEnv
+[2024-01-03T02:16:50.502Z] [Pipeline] {
+[2024-01-03T02:16:50.518Z] [Pipeline] echo
+[2024-01-03T02:16:50.519Z] PIPER_parametersJSON: {"filePattern":"**/jacoco.xml","stepResultType":"jacoco-coverage","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:16:50.533Z] [Pipeline] sh
+[2024-01-03T02:16:50.792Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:50.792Z] time="2024-01-03T02:16:50Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:50.792Z] time="2024-01-03T02:16:50Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:50.802Z] [Pipeline] readJSON
+[2024-01-03T02:16:50.814Z] [Pipeline] echo
+[2024-01-03T02:16:50.814Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:16:50.838Z] [Pipeline] withEnv
+[2024-01-03T02:16:50.839Z] [Pipeline] {
+[2024-01-03T02:16:50.851Z] [Pipeline] sh
+[2024-01-03T02:16:51.109Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:16:51.109Z] time="2024-01-03T02:16:50Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:51.109Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:51.110Z] [Pipeline] }
+[2024-01-03T02:16:51.113Z] [Pipeline] // withEnv
+[2024-01-03T02:16:51.125Z] [Pipeline] echo
+[2024-01-03T02:16:51.125Z] Unstash content: pipelineStepReports
+[2024-01-03T02:16:51.126Z] [Pipeline] unstash
+[2024-01-03T02:16:51.165Z] [Pipeline] withCredentials
+[2024-01-03T02:16:51.170Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:16:51.171Z] [Pipeline] {
+[2024-01-03T02:16:51.174Z] [Pipeline] }
+[2024-01-03T02:16:51.176Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:51.189Z] [Pipeline] withCredentials
+[2024-01-03T02:16:51.192Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:16:51.193Z] [Pipeline] {
+[2024-01-03T02:16:51.195Z] [Pipeline] }
+[2024-01-03T02:16:51.198Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:51.209Z] [Pipeline] withCredentials
+[2024-01-03T02:16:51.213Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:51.213Z] [Pipeline] {
+[2024-01-03T02:16:51.216Z] [Pipeline] }
+[2024-01-03T02:16:51.218Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:51.230Z] [Pipeline] withCredentials
+[2024-01-03T02:16:51.240Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:51.241Z] [Pipeline] {
+[2024-01-03T02:16:51.252Z] [Pipeline] sh
+[2024-01-03T02:16:51.510Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:51.511Z] time="2024-01-03T02:16:51Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:51.511Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:16:51.511Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:16:51.511Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:16:51.761Z]
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - looking for **/jacoco.xml in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:16:51.761Z] info  sapCumulusUpload - uploading 1 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/jacoco-coverage
+[2024-01-03T02:16:52.012Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:16:52.012Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:16:52.012Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:16:51.310312499 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"584","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:16:52.012Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:16:52.012Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:16:52.013Z] [Pipeline] }
+[2024-01-03T02:16:52.018Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:52.029Z] [Pipeline] fileExists
+[2024-01-03T02:16:52.040Z] [Pipeline] fileExists
+[2024-01-03T02:16:52.054Z] [Pipeline] sh
+[2024-01-03T02:16:52.314Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:16:52.314Z] time="2024-01-03T02:16:52Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:52.314Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:52.323Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.346Z] [Pipeline] echo
+[2024-01-03T02:16:52.347Z] Transfer Influx data
+[2024-01-03T02:16:52.354Z] [Pipeline] findFiles
+[2024-01-03T02:16:52.367Z] [Pipeline] echo
+[2024-01-03T02:16:52.367Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:16:52.375Z] [Pipeline] readFile
+[2024-01-03T02:16:52.387Z] [Pipeline] echo
+[2024-01-03T02:16:52.388Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:16:52.396Z] [Pipeline] readFile
+[2024-01-03T02:16:52.407Z] [Pipeline] echo
+[2024-01-03T02:16:52.408Z] reading JSON content: 1
+[2024-01-03T02:16:52.415Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.427Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.440Z] [Pipeline] echo
+[2024-01-03T02:16:52.440Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:16:52.449Z] [Pipeline] readFile
+[2024-01-03T02:16:52.462Z] [Pipeline] echo
+[2024-01-03T02:16:52.462Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:16:52.470Z] [Pipeline] readFile
+[2024-01-03T02:16:52.483Z] [Pipeline] echo
+[2024-01-03T02:16:52.483Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:16:52.492Z] [Pipeline] readFile
+[2024-01-03T02:16:52.503Z] [Pipeline] echo
+[2024-01-03T02:16:52.503Z] reading JSON content: 1
+[2024-01-03T02:16:52.511Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.523Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.536Z] [Pipeline] echo
+[2024-01-03T02:16:52.537Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:16:52.545Z] [Pipeline] readFile
+[2024-01-03T02:16:52.557Z] [Pipeline] echo
+[2024-01-03T02:16:52.557Z] reading JSON content: 2
+[2024-01-03T02:16:52.565Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.577Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.589Z] [Pipeline] echo
+[2024-01-03T02:16:52.590Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:16:52.598Z] [Pipeline] readFile
+[2024-01-03T02:16:52.611Z] [Pipeline] echo
+[2024-01-03T02:16:52.611Z] reading JSON content: 1
+[2024-01-03T02:16:52.620Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.633Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.649Z] [Pipeline] echo
+[2024-01-03T02:16:52.649Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:16:52.657Z] [Pipeline] readFile
+[2024-01-03T02:16:52.671Z] [Pipeline] echo
+[2024-01-03T02:16:52.672Z] reading JSON content: 1
+[2024-01-03T02:16:52.679Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.691Z] [Pipeline] readJSON
+[2024-01-03T02:16:52.705Z] [Pipeline] echo
+[2024-01-03T02:16:52.705Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:16:52.714Z] [Pipeline] readFile
+[2024-01-03T02:16:52.727Z] [Pipeline] echo
+[2024-01-03T02:16:52.728Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:16:52.728Z] [Pipeline] stash
+[2024-01-03T02:16:52.729Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:16:52.730Z] Stashed 0 file(s)
+[2024-01-03T02:16:52.732Z] [Pipeline] }
+[2024-01-03T02:16:52.734Z] [Pipeline] // withEnv
+[2024-01-03T02:16:52.745Z] [Pipeline] echo
+[2024-01-03T02:16:52.746Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:16:53.145Z] [Pipeline] echo
+[2024-01-03T02:16:53.145Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:16:53.159Z] [Pipeline] sh
+[2024-01-03T02:16:53.417Z] + [ -x ./sap-piper ]
+[2024-01-03T02:16:53.426Z] [Pipeline] echo
+[2024-01-03T02:16:53.427Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:16:53.439Z] [Pipeline] echo
+[2024-01-03T02:16:53.439Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:16:53.439Z] [Pipeline] unstash
+[2024-01-03T02:16:53.456Z] [Pipeline] libraryResource
+[2024-01-03T02:16:53.466Z] [Pipeline] writeFile
+[2024-01-03T02:16:53.481Z] [Pipeline] echo
+[2024-01-03T02:16:53.482Z] Step params [filePattern:**/target/coverage/**/cobertura-coverage.xml, stepResultType:cobertura-coverage, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:16:53.492Z] [Pipeline] withEnv
+[2024-01-03T02:16:53.493Z] [Pipeline] {
+[2024-01-03T02:16:53.507Z] [Pipeline] echo
+[2024-01-03T02:16:53.508Z] PIPER_parametersJSON: {"filePattern":"**/target/coverage/**/cobertura-coverage.xml","stepResultType":"cobertura-coverage","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:16:53.521Z] [Pipeline] sh
+[2024-01-03T02:16:53.779Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:53.780Z] time="2024-01-03T02:16:53Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:53.780Z] time="2024-01-03T02:16:53Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:53.789Z] [Pipeline] readJSON
+[2024-01-03T02:16:53.800Z] [Pipeline] echo
+[2024-01-03T02:16:53.800Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:16:53.822Z] [Pipeline] withEnv
+[2024-01-03T02:16:53.823Z] [Pipeline] {
+[2024-01-03T02:16:53.834Z] [Pipeline] sh
+[2024-01-03T02:16:54.091Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:16:54.091Z] time="2024-01-03T02:16:53Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:54.091Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:54.092Z] [Pipeline] }
+[2024-01-03T02:16:54.095Z] [Pipeline] // withEnv
+[2024-01-03T02:16:54.106Z] [Pipeline] echo
+[2024-01-03T02:16:54.106Z] Unstash content: pipelineStepReports
+[2024-01-03T02:16:54.107Z] [Pipeline] unstash
+[2024-01-03T02:16:54.145Z] [Pipeline] withCredentials
+[2024-01-03T02:16:54.151Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:16:54.151Z] [Pipeline] {
+[2024-01-03T02:16:54.154Z] [Pipeline] }
+[2024-01-03T02:16:54.156Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:54.167Z] [Pipeline] withCredentials
+[2024-01-03T02:16:54.171Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:16:54.171Z] [Pipeline] {
+[2024-01-03T02:16:54.174Z] [Pipeline] }
+[2024-01-03T02:16:54.176Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:54.187Z] [Pipeline] withCredentials
+[2024-01-03T02:16:54.191Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:54.192Z] [Pipeline] {
+[2024-01-03T02:16:54.194Z] [Pipeline] }
+[2024-01-03T02:16:54.196Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:54.207Z] [Pipeline] withCredentials
+[2024-01-03T02:16:54.216Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:54.216Z] [Pipeline] {
+[2024-01-03T02:16:54.227Z] [Pipeline] sh
+[2024-01-03T02:16:54.487Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:54.487Z] time="2024-01-03T02:16:54Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:54.487Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:16:54.737Z]
+[2024-01-03T02:16:54.737Z] info  sapCumulusUpload - looking for **/target/coverage/**/cobertura-coverage.xml in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - uploading 0 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/cobertura-coverage
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:16:54.282850395 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"467","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:16:54.988Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:16:54.989Z] [Pipeline] }
+[2024-01-03T02:16:54.992Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:55.003Z] [Pipeline] fileExists
+[2024-01-03T02:16:55.014Z] [Pipeline] fileExists
+[2024-01-03T02:16:55.027Z] [Pipeline] sh
+[2024-01-03T02:16:55.285Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:16:55.285Z] time="2024-01-03T02:16:55Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:55.285Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:55.294Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.314Z] [Pipeline] echo
+[2024-01-03T02:16:55.314Z] Transfer Influx data
+[2024-01-03T02:16:55.322Z] [Pipeline] findFiles
+[2024-01-03T02:16:55.334Z] [Pipeline] echo
+[2024-01-03T02:16:55.334Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:16:55.342Z] [Pipeline] readFile
+[2024-01-03T02:16:55.354Z] [Pipeline] echo
+[2024-01-03T02:16:55.355Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:16:55.362Z] [Pipeline] readFile
+[2024-01-03T02:16:55.373Z] [Pipeline] echo
+[2024-01-03T02:16:55.373Z] reading JSON content: 1
+[2024-01-03T02:16:55.381Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.392Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.404Z] [Pipeline] echo
+[2024-01-03T02:16:55.404Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:16:55.412Z] [Pipeline] readFile
+[2024-01-03T02:16:55.423Z] [Pipeline] echo
+[2024-01-03T02:16:55.424Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:16:55.432Z] [Pipeline] readFile
+[2024-01-03T02:16:55.444Z] [Pipeline] echo
+[2024-01-03T02:16:55.445Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:16:55.453Z] [Pipeline] readFile
+[2024-01-03T02:16:55.464Z] [Pipeline] echo
+[2024-01-03T02:16:55.465Z] reading JSON content: 1
+[2024-01-03T02:16:55.472Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.484Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.496Z] [Pipeline] echo
+[2024-01-03T02:16:55.496Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:16:55.505Z] [Pipeline] readFile
+[2024-01-03T02:16:55.516Z] [Pipeline] echo
+[2024-01-03T02:16:55.517Z] reading JSON content: 2
+[2024-01-03T02:16:55.525Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.536Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.548Z] [Pipeline] echo
+[2024-01-03T02:16:55.549Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:16:55.557Z] [Pipeline] readFile
+[2024-01-03T02:16:55.568Z] [Pipeline] echo
+[2024-01-03T02:16:55.569Z] reading JSON content: 1
+[2024-01-03T02:16:55.578Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.589Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.601Z] [Pipeline] echo
+[2024-01-03T02:16:55.602Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:16:55.610Z] [Pipeline] readFile
+[2024-01-03T02:16:55.622Z] [Pipeline] echo
+[2024-01-03T02:16:55.622Z] reading JSON content: 1
+[2024-01-03T02:16:55.630Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.642Z] [Pipeline] readJSON
+[2024-01-03T02:16:55.653Z] [Pipeline] echo
+[2024-01-03T02:16:55.654Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:16:55.662Z] [Pipeline] readFile
+[2024-01-03T02:16:55.674Z] [Pipeline] echo
+[2024-01-03T02:16:55.675Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:16:55.675Z] [Pipeline] stash
+[2024-01-03T02:16:55.676Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:16:55.677Z] Stashed 0 file(s)
+[2024-01-03T02:16:55.679Z] [Pipeline] }
+[2024-01-03T02:16:55.681Z] [Pipeline] // withEnv
+[2024-01-03T02:16:55.691Z] [Pipeline] echo
+[2024-01-03T02:16:55.692Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:16:56.153Z] [Pipeline] echo
+[2024-01-03T02:16:56.154Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:16:56.166Z] [Pipeline] sh
+[2024-01-03T02:16:56.424Z] + [ -x ./sap-piper ]
+[2024-01-03T02:16:56.433Z] [Pipeline] echo
+[2024-01-03T02:16:56.433Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:16:56.444Z] [Pipeline] echo
+[2024-01-03T02:16:56.445Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:16:56.445Z] [Pipeline] unstash
+[2024-01-03T02:16:56.463Z] [Pipeline] libraryResource
+[2024-01-03T02:16:56.472Z] [Pipeline] writeFile
+[2024-01-03T02:16:56.484Z] [Pipeline] echo
+[2024-01-03T02:16:56.485Z] Step params [filePattern:**/xmake_stage.json, stepResultType:xmake, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:16:56.492Z] [Pipeline] withEnv
+[2024-01-03T02:16:56.493Z] [Pipeline] {
+[2024-01-03T02:16:56.505Z] [Pipeline] echo
+[2024-01-03T02:16:56.505Z] PIPER_parametersJSON: {"filePattern":"**/xmake_stage.json","stepResultType":"xmake","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:16:56.515Z] [Pipeline] sh
+[2024-01-03T02:16:56.774Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:56.774Z] time="2024-01-03T02:16:56Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:56.774Z] time="2024-01-03T02:16:56Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:56.790Z] [Pipeline] readJSON
+[2024-01-03T02:16:56.809Z] [Pipeline] echo
+[2024-01-03T02:16:56.809Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:16:56.833Z] [Pipeline] withEnv
+[2024-01-03T02:16:56.834Z] [Pipeline] {
+[2024-01-03T02:16:56.845Z] [Pipeline] sh
+[2024-01-03T02:16:57.102Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:16:57.102Z] time="2024-01-03T02:16:56Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:57.102Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:57.103Z] [Pipeline] }
+[2024-01-03T02:16:57.106Z] [Pipeline] // withEnv
+[2024-01-03T02:16:57.117Z] [Pipeline] echo
+[2024-01-03T02:16:57.117Z] Unstash content: pipelineStepReports
+[2024-01-03T02:16:57.117Z] [Pipeline] unstash
+[2024-01-03T02:16:57.155Z] [Pipeline] withCredentials
+[2024-01-03T02:16:57.161Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:16:57.161Z] [Pipeline] {
+[2024-01-03T02:16:57.164Z] [Pipeline] }
+[2024-01-03T02:16:57.166Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:57.177Z] [Pipeline] withCredentials
+[2024-01-03T02:16:57.181Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:16:57.182Z] [Pipeline] {
+[2024-01-03T02:16:57.184Z] [Pipeline] }
+[2024-01-03T02:16:57.187Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:57.198Z] [Pipeline] withCredentials
+[2024-01-03T02:16:57.201Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:57.202Z] [Pipeline] {
+[2024-01-03T02:16:57.204Z] [Pipeline] }
+[2024-01-03T02:16:57.207Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:57.218Z] [Pipeline] withCredentials
+[2024-01-03T02:16:57.227Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:16:57.227Z] [Pipeline] {
+[2024-01-03T02:16:57.238Z] [Pipeline] sh
+[2024-01-03T02:16:57.496Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:57.496Z] time="2024-01-03T02:16:57Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:57.496Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:16:57.496Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:16:57.496Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:16:57.747Z]
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - looking for **/xmake_stage.json in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - uploading 0 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/xmake
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:16:57.294689654 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"431","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:16:57.747Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:16:57.998Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:16:57.999Z] [Pipeline] }
+[2024-01-03T02:16:58.001Z] [Pipeline] // withCredentials
+[2024-01-03T02:16:58.013Z] [Pipeline] fileExists
+[2024-01-03T02:16:58.024Z] [Pipeline] fileExists
+[2024-01-03T02:16:58.038Z] [Pipeline] sh
+[2024-01-03T02:16:58.297Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:16:58.297Z] time="2024-01-03T02:16:58Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:58.297Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:16:58.305Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.325Z] [Pipeline] echo
+[2024-01-03T02:16:58.326Z] Transfer Influx data
+[2024-01-03T02:16:58.334Z] [Pipeline] findFiles
+[2024-01-03T02:16:58.346Z] [Pipeline] echo
+[2024-01-03T02:16:58.346Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:16:58.354Z] [Pipeline] readFile
+[2024-01-03T02:16:58.365Z] [Pipeline] echo
+[2024-01-03T02:16:58.366Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:16:58.373Z] [Pipeline] readFile
+[2024-01-03T02:16:58.384Z] [Pipeline] echo
+[2024-01-03T02:16:58.385Z] reading JSON content: 1
+[2024-01-03T02:16:58.394Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.407Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.418Z] [Pipeline] echo
+[2024-01-03T02:16:58.419Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:16:58.429Z] [Pipeline] readFile
+[2024-01-03T02:16:58.441Z] [Pipeline] echo
+[2024-01-03T02:16:58.441Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:16:58.449Z] [Pipeline] readFile
+[2024-01-03T02:16:58.460Z] [Pipeline] echo
+[2024-01-03T02:16:58.460Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:16:58.468Z] [Pipeline] readFile
+[2024-01-03T02:16:58.478Z] [Pipeline] echo
+[2024-01-03T02:16:58.478Z] reading JSON content: 1
+[2024-01-03T02:16:58.486Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.496Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.508Z] [Pipeline] echo
+[2024-01-03T02:16:58.508Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:16:58.515Z] [Pipeline] readFile
+[2024-01-03T02:16:58.525Z] [Pipeline] echo
+[2024-01-03T02:16:58.526Z] reading JSON content: 2
+[2024-01-03T02:16:58.533Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.545Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.557Z] [Pipeline] echo
+[2024-01-03T02:16:58.557Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:16:58.564Z] [Pipeline] readFile
+[2024-01-03T02:16:58.575Z] [Pipeline] echo
+[2024-01-03T02:16:58.575Z] reading JSON content: 1
+[2024-01-03T02:16:58.583Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.594Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.605Z] [Pipeline] echo
+[2024-01-03T02:16:58.606Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:16:58.613Z] [Pipeline] readFile
+[2024-01-03T02:16:58.623Z] [Pipeline] echo
+[2024-01-03T02:16:58.623Z] reading JSON content: 1
+[2024-01-03T02:16:58.632Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.648Z] [Pipeline] readJSON
+[2024-01-03T02:16:58.659Z] [Pipeline] echo
+[2024-01-03T02:16:58.659Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:16:58.667Z] [Pipeline] readFile
+[2024-01-03T02:16:58.679Z] [Pipeline] echo
+[2024-01-03T02:16:58.679Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:16:58.680Z] [Pipeline] stash
+[2024-01-03T02:16:58.681Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:16:58.681Z] Stashed 0 file(s)
+[2024-01-03T02:16:58.683Z] [Pipeline] }
+[2024-01-03T02:16:58.685Z] [Pipeline] // withEnv
+[2024-01-03T02:16:58.695Z] [Pipeline] echo
+[2024-01-03T02:16:58.695Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:16:59.124Z] [Pipeline] echo
+[2024-01-03T02:16:59.124Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:16:59.136Z] [Pipeline] sh
+[2024-01-03T02:16:59.394Z] + [ -x ./sap-piper ]
+[2024-01-03T02:16:59.408Z] [Pipeline] echo
+[2024-01-03T02:16:59.408Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:16:59.419Z] [Pipeline] echo
+[2024-01-03T02:16:59.420Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:16:59.420Z] [Pipeline] unstash
+[2024-01-03T02:16:59.442Z] [Pipeline] libraryResource
+[2024-01-03T02:16:59.453Z] [Pipeline] writeFile
+[2024-01-03T02:16:59.466Z] [Pipeline] echo
+[2024-01-03T02:16:59.466Z] Step params [filePattern:build-settings.json, stepResultType:settings, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:16:59.474Z] [Pipeline] withEnv
+[2024-01-03T02:16:59.475Z] [Pipeline] {
+[2024-01-03T02:16:59.487Z] [Pipeline] echo
+[2024-01-03T02:16:59.488Z] PIPER_parametersJSON: {"filePattern":"build-settings.json","stepResultType":"settings","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:16:59.499Z] [Pipeline] sh
+[2024-01-03T02:16:59.757Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:16:59.757Z] time="2024-01-03T02:16:59Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:59.757Z] time="2024-01-03T02:16:59Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:16:59.766Z] [Pipeline] readJSON
+[2024-01-03T02:16:59.777Z] [Pipeline] echo
+[2024-01-03T02:16:59.778Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:16:59.803Z] [Pipeline] withEnv
+[2024-01-03T02:16:59.804Z] [Pipeline] {
+[2024-01-03T02:16:59.814Z] [Pipeline] sh
+[2024-01-03T02:17:00.072Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:17:00.072Z] time="2024-01-03T02:16:59Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:00.072Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:17:00.072Z] [Pipeline] }
+[2024-01-03T02:17:00.075Z] [Pipeline] // withEnv
+[2024-01-03T02:17:00.088Z] [Pipeline] echo
+[2024-01-03T02:17:00.088Z] Unstash content: pipelineStepReports
+[2024-01-03T02:17:00.089Z] [Pipeline] unstash
+[2024-01-03T02:17:00.126Z] [Pipeline] withCredentials
+[2024-01-03T02:17:00.131Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:17:00.131Z] [Pipeline] {
+[2024-01-03T02:17:00.134Z] [Pipeline] }
+[2024-01-03T02:17:00.136Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:00.148Z] [Pipeline] withCredentials
+[2024-01-03T02:17:00.151Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:17:00.152Z] [Pipeline] {
+[2024-01-03T02:17:00.155Z] [Pipeline] }
+[2024-01-03T02:17:00.157Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:00.168Z] [Pipeline] withCredentials
+[2024-01-03T02:17:00.172Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:00.172Z] [Pipeline] {
+[2024-01-03T02:17:00.175Z] [Pipeline] }
+[2024-01-03T02:17:00.177Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:00.188Z] [Pipeline] withCredentials
+[2024-01-03T02:17:00.198Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:00.198Z] [Pipeline] {
+[2024-01-03T02:17:00.209Z] [Pipeline] sh
+[2024-01-03T02:17:00.467Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:17:00.467Z] time="2024-01-03T02:17:00Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:00.467Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:17:00.467Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:17:00.467Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:17:00.467Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:00.467Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:17:00.718Z]
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - looking for build-settings.json in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - uploading 1 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/settings
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:17:00.267173318 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"397","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:17:00.718Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:17:00.969Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:17:00.970Z] [Pipeline] }
+[2024-01-03T02:17:00.973Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:00.984Z] [Pipeline] fileExists
+[2024-01-03T02:17:00.996Z] [Pipeline] fileExists
+[2024-01-03T02:17:01.008Z] [Pipeline] sh
+[2024-01-03T02:17:01.266Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:17:01.266Z] time="2024-01-03T02:17:01Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:01.266Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:17:01.274Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.296Z] [Pipeline] echo
+[2024-01-03T02:17:01.296Z] Transfer Influx data
+[2024-01-03T02:17:01.305Z] [Pipeline] findFiles
+[2024-01-03T02:17:01.317Z] [Pipeline] echo
+[2024-01-03T02:17:01.317Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:17:01.326Z] [Pipeline] readFile
+[2024-01-03T02:17:01.338Z] [Pipeline] echo
+[2024-01-03T02:17:01.338Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:17:01.346Z] [Pipeline] readFile
+[2024-01-03T02:17:01.358Z] [Pipeline] echo
+[2024-01-03T02:17:01.358Z] reading JSON content: 1
+[2024-01-03T02:17:01.367Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.378Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.390Z] [Pipeline] echo
+[2024-01-03T02:17:01.390Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:17:01.397Z] [Pipeline] readFile
+[2024-01-03T02:17:01.409Z] [Pipeline] echo
+[2024-01-03T02:17:01.410Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:17:01.417Z] [Pipeline] readFile
+[2024-01-03T02:17:01.428Z] [Pipeline] echo
+[2024-01-03T02:17:01.429Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:17:01.436Z] [Pipeline] readFile
+[2024-01-03T02:17:01.447Z] [Pipeline] echo
+[2024-01-03T02:17:01.447Z] reading JSON content: 1
+[2024-01-03T02:17:01.457Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.469Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.481Z] [Pipeline] echo
+[2024-01-03T02:17:01.482Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:17:01.490Z] [Pipeline] readFile
+[2024-01-03T02:17:01.500Z] [Pipeline] echo
+[2024-01-03T02:17:01.501Z] reading JSON content: 2
+[2024-01-03T02:17:01.509Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.520Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.532Z] [Pipeline] echo
+[2024-01-03T02:17:01.532Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:17:01.540Z] [Pipeline] readFile
+[2024-01-03T02:17:01.551Z] [Pipeline] echo
+[2024-01-03T02:17:01.551Z] reading JSON content: 1
+[2024-01-03T02:17:01.559Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.570Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.582Z] [Pipeline] echo
+[2024-01-03T02:17:01.582Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:17:01.590Z] [Pipeline] readFile
+[2024-01-03T02:17:01.601Z] [Pipeline] echo
+[2024-01-03T02:17:01.602Z] reading JSON content: 1
+[2024-01-03T02:17:01.610Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.622Z] [Pipeline] readJSON
+[2024-01-03T02:17:01.634Z] [Pipeline] echo
+[2024-01-03T02:17:01.634Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:17:01.642Z] [Pipeline] readFile
+[2024-01-03T02:17:01.655Z] [Pipeline] echo
+[2024-01-03T02:17:01.656Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:17:01.656Z] [Pipeline] stash
+[2024-01-03T02:17:01.657Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:17:01.658Z] Stashed 0 file(s)
+[2024-01-03T02:17:01.660Z] [Pipeline] }
+[2024-01-03T02:17:01.662Z] [Pipeline] // withEnv
+[2024-01-03T02:17:01.672Z] [Pipeline] echo
+[2024-01-03T02:17:01.673Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:17:02.144Z] [Pipeline] echo
+[2024-01-03T02:17:02.144Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:17:02.156Z] [Pipeline] sh
+[2024-01-03T02:17:02.414Z] + [ -x ./sap-piper ]
+[2024-01-03T02:17:02.422Z] [Pipeline] echo
+[2024-01-03T02:17:02.423Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:17:02.434Z] [Pipeline] echo
+[2024-01-03T02:17:02.434Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:17:02.434Z] [Pipeline] unstash
+[2024-01-03T02:17:02.449Z] [Pipeline] libraryResource
+[2024-01-03T02:17:02.458Z] [Pipeline] writeFile
+[2024-01-03T02:17:02.470Z] [Pipeline] echo
+[2024-01-03T02:17:02.470Z] Step params [filePattern:**/bom*.xml, stepResultType:sbom, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:17:02.478Z] [Pipeline] withEnv
+[2024-01-03T02:17:02.478Z] [Pipeline] {
+[2024-01-03T02:17:02.490Z] [Pipeline] echo
+[2024-01-03T02:17:02.490Z] PIPER_parametersJSON: {"filePattern":"**/bom*.xml","stepResultType":"sbom","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:17:02.501Z] [Pipeline] sh
+[2024-01-03T02:17:02.758Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:17:02.758Z] time="2024-01-03T02:17:02Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:02.758Z] time="2024-01-03T02:17:02Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:02.767Z] [Pipeline] readJSON
+[2024-01-03T02:17:02.778Z] [Pipeline] echo
+[2024-01-03T02:17:02.778Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:17:02.800Z] [Pipeline] withEnv
+[2024-01-03T02:17:02.800Z] [Pipeline] {
+[2024-01-03T02:17:02.811Z] [Pipeline] sh
+[2024-01-03T02:17:03.069Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:17:03.069Z] time="2024-01-03T02:17:02Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:03.069Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:17:03.070Z] [Pipeline] }
+[2024-01-03T02:17:03.072Z] [Pipeline] // withEnv
+[2024-01-03T02:17:03.084Z] [Pipeline] echo
+[2024-01-03T02:17:03.084Z] Unstash content: pipelineStepReports
+[2024-01-03T02:17:03.084Z] [Pipeline] unstash
+[2024-01-03T02:17:03.123Z] [Pipeline] withCredentials
+[2024-01-03T02:17:03.131Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:17:03.131Z] [Pipeline] {
+[2024-01-03T02:17:03.134Z] [Pipeline] }
+[2024-01-03T02:17:03.136Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:03.147Z] [Pipeline] withCredentials
+[2024-01-03T02:17:03.150Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:17:03.151Z] [Pipeline] {
+[2024-01-03T02:17:03.153Z] [Pipeline] }
+[2024-01-03T02:17:03.155Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:03.166Z] [Pipeline] withCredentials
+[2024-01-03T02:17:03.169Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:03.170Z] [Pipeline] {
+[2024-01-03T02:17:03.172Z] [Pipeline] }
+[2024-01-03T02:17:03.174Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:03.185Z] [Pipeline] withCredentials
+[2024-01-03T02:17:03.195Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:03.195Z] [Pipeline] {
+[2024-01-03T02:17:03.209Z] [Pipeline] sh
+[2024-01-03T02:17:03.468Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:17:03.468Z] time="2024-01-03T02:17:03Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:03.468Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:17:03.719Z]
+[2024-01-03T02:17:03.719Z] info  sapCumulusUpload - looking for **/bom*.xml in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - uploading 1 file(s) into 7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58/sbom
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - cumulus upload was successful
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - SUCCESS
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - Step telemetry data:{"StepStartTime":"2024-01-03 02:17:03.26775208 +0000 UTC","PipelineURLHash":"96a0ab294c3ca2e0f271abacad70f1f4d42af548","BuildURLHash":"202d7fc349ff56d16feed6c2247912ca2dffd05e","StageName":"Central Build","StepName":"sapCumulusUpload","ErrorCode":"0","StepDuration":"597","ErrorCategory":"undefined","CorrelationID":"https://gkemaco.jaas-gcp.cloud.sap.corp/job/MaCO-MMT/job/mmt-srv-common-ng/job/hotfix/84/","PiperCommitHash":"86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b","ErrorDetail":null}
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - [DEBUG] POST https://dev-hf1.splunk.tools.sap:8088/services/collector/event
+[2024-01-03T02:17:03.969Z] info  sapCumulusUpload - [DEBUG] POST https://data-prod.cribl-public.tools.sap/u3000-hec/services/collector/raw
+[2024-01-03T02:17:03.970Z] [Pipeline] }
+[2024-01-03T02:17:03.973Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:03.984Z] [Pipeline] fileExists
+[2024-01-03T02:17:03.994Z] [Pipeline] fileExists
+[2024-01-03T02:17:04.006Z] [Pipeline] sh
+[2024-01-03T02:17:04.264Z] + ./sap-piper readPipelineEnv
+[2024-01-03T02:17:04.264Z] time="2024-01-03T02:17:04Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:04.264Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:17:04.272Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.292Z] [Pipeline] echo
+[2024-01-03T02:17:04.292Z] Transfer Influx data
+[2024-01-03T02:17:04.300Z] [Pipeline] findFiles
+[2024-01-03T02:17:04.311Z] [Pipeline] echo
+[2024-01-03T02:17:04.311Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result
+[2024-01-03T02:17:04.318Z] [Pipeline] readFile
+[2024-01-03T02:17:04.330Z] [Pipeline] echo
+[2024-01-03T02:17:04.330Z] Reading file from disk: .pipeline/influx/jenkins_custom_data/fields/build_result_key.json
+[2024-01-03T02:17:04.338Z] [Pipeline] readFile
+[2024-01-03T02:17:04.348Z] [Pipeline] echo
+[2024-01-03T02:17:04.348Z] reading JSON content: 1
+[2024-01-03T02:17:04.356Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.368Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.380Z] [Pipeline] echo
+[2024-01-03T02:17:04.380Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/build_url
+[2024-01-03T02:17:04.388Z] [Pipeline] readFile
+[2024-01-03T02:17:04.400Z] [Pipeline] echo
+[2024-01-03T02:17:04.401Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/cumulusPipelineID
+[2024-01-03T02:17:04.408Z] [Pipeline] readFile
+[2024-01-03T02:17:04.420Z] [Pipeline] echo
+[2024-01-03T02:17:04.420Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_additions.json
+[2024-01-03T02:17:04.428Z] [Pipeline] readFile
+[2024-01-03T02:17:04.438Z] [Pipeline] echo
+[2024-01-03T02:17:04.438Z] reading JSON content: 1
+[2024-01-03T02:17:04.446Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.456Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.468Z] [Pipeline] echo
+[2024-01-03T02:17:04.468Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_changes.json
+[2024-01-03T02:17:04.475Z] [Pipeline] readFile
+[2024-01-03T02:17:04.485Z] [Pipeline] echo
+[2024-01-03T02:17:04.485Z] reading JSON content: 2
+[2024-01-03T02:17:04.493Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.503Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.514Z] [Pipeline] echo
+[2024-01-03T02:17:04.515Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_deletions.json
+[2024-01-03T02:17:04.522Z] [Pipeline] readFile
+[2024-01-03T02:17:04.532Z] [Pipeline] echo
+[2024-01-03T02:17:04.533Z] reading JSON content: 1
+[2024-01-03T02:17:04.540Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.551Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.562Z] [Pipeline] echo
+[2024-01-03T02:17:04.563Z] Reading file from disk: .pipeline/influx/pipeline_data/fields/github_filesChanged.json
+[2024-01-03T02:17:04.570Z] [Pipeline] readFile
+[2024-01-03T02:17:04.580Z] [Pipeline] echo
+[2024-01-03T02:17:04.580Z] reading JSON content: 1
+[2024-01-03T02:17:04.588Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.600Z] [Pipeline] readJSON
+[2024-01-03T02:17:04.612Z] [Pipeline] echo
+[2024-01-03T02:17:04.612Z] Reading file from disk: .pipeline/influx/step_data/fields/build_url
+[2024-01-03T02:17:04.620Z] [Pipeline] readFile
+[2024-01-03T02:17:04.633Z] [Pipeline] echo
+[2024-01-03T02:17:04.633Z] Stash content: pipelineStepReports (includes: .pipeline/stepReports/**, excludes: , useDefaultExcludes: true, allowEmpty: true)
+[2024-01-03T02:17:04.634Z] [Pipeline] stash
+[2024-01-03T02:17:04.634Z] Warning: overwriting stash ‘pipelineStepReports’
+[2024-01-03T02:17:04.635Z] Stashed 0 file(s)
+[2024-01-03T02:17:04.637Z] [Pipeline] }
+[2024-01-03T02:17:04.640Z] [Pipeline] // withEnv
+[2024-01-03T02:17:04.651Z] [Pipeline] echo
+[2024-01-03T02:17:04.651Z] --- End library step of: sapCumulusUpload ---
+[2024-01-03T02:17:05.045Z] [Pipeline] echo
+[2024-01-03T02:17:05.046Z] --- Begin library step of: sapCumulusUpload ---
+[2024-01-03T02:17:05.059Z] [Pipeline] sh
+[2024-01-03T02:17:05.316Z] + [ -x ./sap-piper ]
+[2024-01-03T02:17:05.325Z] [Pipeline] echo
+[2024-01-03T02:17:05.326Z] Found sap-piper binary in the workspace - skipping unstash
+[2024-01-03T02:17:05.337Z] [Pipeline] echo
+[2024-01-03T02:17:05.337Z] Unstash content: pipelineConfigAndTests
+[2024-01-03T02:17:05.337Z] [Pipeline] unstash
+[2024-01-03T02:17:05.353Z] [Pipeline] libraryResource
+[2024-01-03T02:17:05.363Z] [Pipeline] writeFile
+[2024-01-03T02:17:05.376Z] [Pipeline] echo
+[2024-01-03T02:17:05.377Z] Step params [filePattern:**/url-log.json, stepResultType:url-log, version:hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58, scheduled:false]
+[2024-01-03T02:17:05.385Z] [Pipeline] withEnv
+[2024-01-03T02:17:05.386Z] [Pipeline] {
+[2024-01-03T02:17:05.398Z] [Pipeline] echo
+[2024-01-03T02:17:05.398Z] PIPER_parametersJSON: {"filePattern":"**/url-log.json","stepResultType":"url-log","version":"hotfix-2.8.0-20240103020619+7489f06e8a6d1c5bd2f9d4516ad4780e33d67a58","scheduled":false}
+[2024-01-03T02:17:05.409Z] [Pipeline] sh
+[2024-01-03T02:17:05.666Z] + ./sap-piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/sapCumulusUpload.yaml --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:17:05.667Z] time="2024-01-03T02:17:05Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:05.667Z] time="2024-01-03T02:17:05Z" level=info msg="Printing stepName " library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:05.675Z] [Pipeline] readJSON
+[2024-01-03T02:17:05.687Z] [Pipeline] echo
+[2024-01-03T02:17:05.687Z] Context Config: [cumulusFileCredentialsId:cumulusfilecredentialsid, gcpFileVaultSecretName:cumulus, gcsBucketId:3ecd1e25-97dd-4203-af4d-3c907dc213ad, vaultAppRoleSecretTokenCredentialsId:vault-approle-secret-id-accessor-70-13242, vaultAppRoleTokenCredentialsId:vault-approle-role-id-70-13242, vaultBasePath:piper/PIPELINE-GROUP-70, vaultNamespace:ies/hyperspace/pipelines, vaultPipelineName:PIPELINE-13242, vaultServerUrl:https://vault.tools.sap]
+[2024-01-03T02:17:05.709Z] [Pipeline] withEnv
+[2024-01-03T02:17:05.710Z] [Pipeline] {
+[2024-01-03T02:17:05.720Z] [Pipeline] sh
+[2024-01-03T02:17:05.978Z] + ./sap-piper writePipelineEnv
+[2024-01-03T02:17:05.978Z] time="2024-01-03T02:17:05Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:05.978Z] info  (noStepName) - Project defaults: NONE
+[2024-01-03T02:17:05.979Z] [Pipeline] }
+[2024-01-03T02:17:05.982Z] [Pipeline] // withEnv
+[2024-01-03T02:17:05.992Z] [Pipeline] echo
+[2024-01-03T02:17:05.993Z] Unstash content: pipelineStepReports
+[2024-01-03T02:17:05.993Z] [Pipeline] unstash
+[2024-01-03T02:17:06.033Z] [Pipeline] withCredentials
+[2024-01-03T02:17:06.038Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath
+[2024-01-03T02:17:06.039Z] [Pipeline] {
+[2024-01-03T02:17:06.042Z] [Pipeline] }
+[2024-01-03T02:17:06.044Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:06.054Z] [Pipeline] withCredentials
+[2024-01-03T02:17:06.058Z] Masking supported pattern matches of $PIPER_vaultAppRoleID
+[2024-01-03T02:17:06.058Z] [Pipeline] {
+[2024-01-03T02:17:06.061Z] [Pipeline] }
+[2024-01-03T02:17:06.063Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:06.073Z] [Pipeline] withCredentials
+[2024-01-03T02:17:06.077Z] Masking supported pattern matches of $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:06.077Z] [Pipeline] {
+[2024-01-03T02:17:06.081Z] [Pipeline] }
+[2024-01-03T02:17:06.083Z] [Pipeline] // withCredentials
+[2024-01-03T02:17:06.094Z] [Pipeline] withCredentials
+[2024-01-03T02:17:06.103Z] Masking supported pattern matches of $PIPER_jsonKeyFilePath or $PIPER_vaultAppRoleID or $PIPER_vaultAppRoleSecretID
+[2024-01-03T02:17:06.103Z] [Pipeline] {
+[2024-01-03T02:17:06.114Z] [Pipeline] sh
+[2024-01-03T02:17:06.371Z] + ./sap-piper sapCumulusUpload --defaultConfig .pipeline/piper-defaults.yml --ignoreCustomDefaults
+[2024-01-03T02:17:06.371Z] time="2024-01-03T02:17:06Z" level=info msg="Version 86fbaa4050d49c8b8e6a24cf20e2ebfdcbae1f9b" library="https://github.wdf.sap.corp/ContinuousDelivery/piper-library.git"
+[2024-01-03T02:17:06.371Z] info  sapCumulusUpload - Logging into Vault
+[2024-01-03T02:17:06.371Z] info  sapCumulusUpload -   succeeded
+[2024-01-03T02:17:06.371Z] info  sapCumulusUpload - Resolving 'jsonKeyFilePath'
+[2024-01-03T02:17:06.371Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:06.372Z] info  sapCumulusUpload - Resolving 'gcpJsonKeyFilePath'
+[2024-01-03T02:17:06.622Z] info  sapCumulusUpload -   succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+[2024-01-03T02:17:06.622Z] info  sapCumulusUpload - Resolving test credentials wrapper
+[2024-01-03T02:17:06.622Z] info  sapCumulusUpload - Resolving credentials wrapper
+[2024-01-03T02:17:06.622Z] info  sapCumulusUpload - Run cumulus path - true
+[2024-01-03T02:17:06.622Z]
+[2024-01-03T02:17:06.622Z] info  sapCumulusUpload - looking for **/url-log.json in /jenkinsdata/MaCO-MMT/mmt-srv-common-ng/hotfix/workspace

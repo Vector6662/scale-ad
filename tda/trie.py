@@ -101,9 +101,11 @@ def add_escape(value):
 
 def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
     for log_cluster in log_clusters:
-        template = add_escape(log_cluster.template)
-        template = template.replace(r'<*>', r'.*')
-        if re.fullmatch(template, log_message):
+        # translate special characters in template. There's an interesting phenomenon shown in unit_tests#test_translation,
+        # that \t equals \\t in param 'pattern'.
+        template = re.escape(log_cluster.template)
+        template = template.replace(r'<\*>', r'.*')
+        if re.match(template, log_message):
             return log_cluster
     return None
 

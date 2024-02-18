@@ -8,43 +8,35 @@ import en_core_web_sm
 from utils import LogMessagesCache
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
-open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN',
-                    'VERB'}  # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
+# refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
+open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN', 'VERB'}
 
 EXACT_MATCH = 0
 PARTIAL_MATCH = 1
 NO_MATCH = 2
 
 
-class LogError(Exception):
-    def __init__(self, log: str, pattern: str):
-        super().__init__(self)
-        self.error_info = f"\033[41mFailed to match pattern======\033[0m\n{log}\npattern:{pattern}\n\033[41m======\033[0m\n"
-
-    def __str__(self):
-        return self.error_info
-
-
-def merge_adjacent_wildcards(template_tokens: list[str]):
+def tokenize(content: str):
     """
-    merge adjacent <*>s
+    ONLY interface to tokenize string, because there must be ONLY one standard to tokenize.
+    For better performance, here only tokenize a string split by spaces, i.e.: currently, don't consider chars like '(', ')', '[', etc.
     """
-    new_tokenized_template = []
-    i = 0
-    while i < len(template_tokens):
-        if template_tokens[i] != '<*>':
-            new_tokenized_template.append(template_tokens[i])
-            i = i + 1
-            continue
-        while i < len(template_tokens) and (template_tokens[i] == '<*>' or template_tokens[i].isspace()):  # spaces between '<*>' should also be replaced. e.g. ['<*>', ' ', ' \t\t', '<*>'] ---> ['<*>']
-            i = i + 1
-        new_tokenized_template.append('<*>')
-        if i > 0 and template_tokens[i-1].isspace():  # for more precise template result, spaces after '<*>' shouldn't be replaced. e.g. ['<*>', spaces..., '<*>', ' ', '\t'] --> ['<*>', ' ', '\t']
-            new_tokenized_template.append(template_tokens[i-1])
-        if i < len(template_tokens):
-            new_tokenized_template.append(template_tokens[i])
-        i = i + 1
-    return new_tokenized_template
+    tokens = re.split(r'(\s+)', content)
+    return tokens
+
+
+def serialize(tokens: list[str]):
+    return ''.join(tokens)
+
+
+def merge_adjacent_wildcards(template_tokens: list[str]) -> [list[str], str]:
+    """
+    merge adjacent <*>s.
+    spaces between '<*>' should be replaced. e.g. ['<*>', ' ', ' \t\t', '<*>'] ---> ['<*>']
+    """
+    # FIXME: there's risk on serialize -> tokenize. Ideally, only one traverse direction: tokenize-> serialize
+    template = re.sub(r'<\*>(\s|(<\*>))*<\*>', '<*>', serialize(template_tokens))
+    return tokenize(template), template
 
 
 def extract_template(log_message: 'LogMessage', tokenized_template: list[str]) -> list[str]:
@@ -65,16 +57,19 @@ def extract_template(log_message: 'LogMessage', tokenized_template: list[str]) -
     return new_tokenized_template
 
 
-def serialize(tokenized_template: list[str]):
-    template = ''.join(tokenized_template)
-    # template = re.sub(r' *<\*> *', '<*>', template)
-    return template
+class LogError(Exception):
+    def __init__(self, log: str, pattern: str):
+        super().__init__(self)
+        self.error_info = f"\033[41mFailed to match pattern======\033[0m\n{log}\npattern:{pattern}\n\033[41m======\033[0m\n"
+
+    def __str__(self):
+        return self.error_info
 
 
 class LogCluster:
     def __init__(self, tokenized_template: list[str]):
-        self.template: str = ''.join(tokenized_template)
         self.tokenized_template: list[str] = tokenized_template
+        self.template: str = serialize(tokenized_template)
         self.logMessagesCache: LogMessagesCache = LogMessagesCache(300)
         self.nWildcard: int = 0  # number of wildcard(<*>) in the template
         self.ground_truth: float = 0
@@ -96,11 +91,7 @@ class LogCluster:
         # update template based on the new log message
         self.tokenized_template = extract_template(log_message, self.tokenized_template)
         # merge adjacent "<*>"s
-        self.tokenized_template = merge_adjacent_wildcards(self.tokenized_template)
-
-        # serialize
-        self.template = serialize(self.tokenized_template)
-
+        self.tokenized_template, self.template = merge_adjacent_wildcards(self.tokenized_template)
 
     def update_time(self):
         self.recent_used_timestamp = int(time())
@@ -149,7 +140,7 @@ class LogMessage:
 
     def __tokenize(self):
         # remove any characters that are not letters or numbers
-        self.content_tokens = re.split(r'(\s+)', self.get_content())
+        self.content_tokens = tokenize(self.get_content())
         # generate tokens by nlp, filter out open class words, use these tokens in traverse internal nodes stage
 
         # FIXME: Spacy defect.
@@ -164,11 +155,11 @@ class LogMessage:
         #    "CioStream socket to 172.16.96.116:33370'"         ---> "CioStream socket to ...:'"
         #  then the traverse tokens won't contain any numbers.
         #  However, this is not an elegant solution. Optimization may be processed after researching Spacy. I think patterns like hex '0x05' can be identified as NUM.
+
+        # TODO: There may be another way to fix this: remove PROPN from open_class_words?
         content = re.sub(r'\w*\d+\w*', '', self.get_content())
         self.traverse_tokens = {token.text: token.pos_ for token in nlp(content) if token.pos_ in open_class_words}
         pass
-
-
 
     def get_content(self) -> str:
         if 'CONTENT' not in self.data_frame:
