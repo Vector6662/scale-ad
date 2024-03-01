@@ -1,0 +1,20 @@
+those logs are anomaly logs:
+
+1.
+pattern: <*>\tat <*>
+examples:
+\tat semanticvaladapter.SemanticValAdapterProducerTest.testcase_COMDIS29001_1(SemanticValAdapterProducerTest.java:558)[file:/home/jenkins/agent/workspace/_semantic-validation-sdk_release/target/test-classes/:]
+\tat semanticvaladapter.SemanticValAdapterProducerTest.QUOTES_15004_test(SemanticValAdapterProducerTest.java:154)[file:/home/jenkins/agent/workspace/_semantic-validation-sdk_release/target/test-classes/:]
+\tat semanticvaladapter.SemanticValAdapterProducerTest.IFTSTA_21038_Negative_AHB_test(SemanticValAdapterProducerTest.java:82)[file:/home/jenkins/agent/workspace/_semantic-validation-sdk_release/target/test-classes/:]
+
+2.
+pattern: succeeded with Vault path <*>
+examples:
+succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/github'
+succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/github'
+succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/github'
+succeeded with Vault path 'piper/PIPELINE-GROUP-70/GROUP-SECRETS/cumulus'
+
+
+Tony is a man, who loves to design haircut.

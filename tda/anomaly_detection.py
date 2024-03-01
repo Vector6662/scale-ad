@@ -7,12 +7,13 @@ import pandas as pd
 from log_structure import LogCluster, FeedBack
 from expert_feedback import openai_feedback
 from utils import plot_cdf
+from rag.starter import rag_insert, rag_feedback
 
 
 def detect_cdf(log_clusters: list[LogCluster]):
     data = [len(log_cluster.logMessagesCache) for log_cluster in log_clusters]
     c = -0.5
-    query_threshold = 0.9
+    query_threshold = 0.7
     cdfs = genextreme.cdf(data, c)
     T = 10  # range from 2 to 10
     tps = cdfs ** T / np.sum(cdfs) ** T
@@ -23,8 +24,10 @@ def detect_cdf(log_clusters: list[LogCluster]):
         if log_cluster.feedback.decision != 2:  # already has feedback
             continue
         if tp > query_threshold:
-            result, score, reason = openai_feedback(log_cluster)
+            # result, score, reason = openai_feedback(log_cluster)
+            result, score, reason = rag_feedback(log_cluster)
             log_cluster.feedback = FeedBack(decision=1 if result == 'yes' else 0, ep=score, tp=tp, reason=reason)
+            rag_insert(log_cluster)
 
 
 def detect_streamad(log_clusters: list[LogCluster]):

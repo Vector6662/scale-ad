@@ -3,7 +3,7 @@ from time import sleep
 from threading import Thread
 
 from anomaly_detection import detect_cdf, detect_streamad
-from config import file_path, log_pattern_re, log_keywords
+from config import file_path, log_pattern_re, log_metadata
 from server_apis import render_pyecharts_tree
 from trie import Trie, sampling
 from utils import LruCache, LogClusterCache
@@ -22,7 +22,7 @@ def reconstruct():
 
 def detect_worker():
     while True:
-        sleep(10)
+        sleep(5)
         print('==============start detection==============')
         # start detection
         detect_cdf(lcCache.to_list())
@@ -30,20 +30,20 @@ def detect_worker():
 
 def process():
     global root
-    root = Trie(f'Root Trie node of {log_keywords}')
+    root = Trie(log_metadata)
 
     pattern = re.compile(log_pattern_re)
     sampling(pattern, file_path)
 
     # thread for detection
-    thr = Thread(target=detect_worker, name='Anomany Detection Thread')
-    # thr.start()
+    thr = Thread(target=detect_worker, name='Anomaly Detection Thread')
+    thr.start()
 
     # main thread, read logs
     with open(file_path) as f:
         for line in f:
             # sleep(0.5)
-            print(f'==============one line coming...==============\t\t{line}')
+            # print(f'==============one line coming...==============\t\t{line}')
 
             try:
                 log_message = LogMessage(pattern, line)

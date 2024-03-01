@@ -13,6 +13,6 @@ jenkins_pattern = r'(?P<DATE>\[\S+\]) +(?P<LEVEL>\w+) +(?P<COMPONENT>\w+) +- +((
 
 
 # config interface
-file_path = jenkins_path
-log_pattern_re = jenkins_pattern
-log_keywords = 'Jenkins'
+file_path = bgl_path
+log_pattern_re = bgl2_pattern
+log_metadata = 'Jenkins'

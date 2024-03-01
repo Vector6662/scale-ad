@@ -4,6 +4,8 @@ Log Data Structures, including LogMessage(wrapper of each log message. Each line
 """
 import re
 from time import time
+from typing import Optional
+
 import en_core_web_sm
 from utils import LogMessagesCache
 
@@ -77,6 +79,7 @@ class LogCluster:
         self.update_time()
         self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
         self.parent: 'Trie' = None
+        # TODO: add metadata for this cluster: its parent node's names, log keywords
 
     def insert_and_update_template(self, log_message: 'LogMessage', match_type: int):
         """
@@ -178,18 +181,19 @@ class FeedBack:
     """
 
     def __init__(self, ep: float, tp: float, decision: int = -1, reason='desc...'):
-        '''
+        """
         -1: initial state, means haven't submitted to expert for feedback.
         others have been submitted to expert, but may no feedback yet:
         1 indicates anomaly, 0 indicated normal, 2 unknown, already submitted to expert, but no feedback yet
-        '''
-        self.decision = decision
+        """
+        self.decision: int = decision
         self.ep = ep  # confidence score given by experts
         self.tp = tp  # anomaly score by GEV
-        self.p = self.compute_integrate()
-        self.reason = reason
+        self.p = self._compute_integrate()
+        self.reason: str = reason
+        self.committer: Optional[str] = None  # the one made this decision
 
-    def compute_integrate(self):
+    def _compute_integrate(self):
         """
         compute an integrated anomaly score 𝑝, which is a weighted average of TDA’s output and the expert’s feedback, where we use the expert’s confidence as the weight.
         """
