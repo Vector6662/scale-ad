@@ -7,6 +7,8 @@ from time import time
 from typing import Optional
 
 import en_core_web_sm
+
+from exceptions import LogError
 from utils import LogMessagesCache
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
@@ -59,15 +61,6 @@ def extract_template(log_message: 'LogMessage', tokenized_template: list[str]) -
     return new_tokenized_template
 
 
-class LogError(Exception):
-    def __init__(self, log: str, pattern: str):
-        super().__init__(self)
-        self.error_info = f"\033[41mFailed to match pattern======\033[0m\n{log}\npattern:{pattern}\n\033[41m======\033[0m\n"
-
-    def __str__(self):
-        return self.error_info
-
-
 class LogCluster:
     def __init__(self, tokenized_template: list[str]):
         self.tokenized_template: list[str] = tokenized_template
@@ -78,8 +71,22 @@ class LogCluster:
         self.recent_used_timestamp = None
         self.update_time()
         self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
-        self.parent: 'Trie' = None
-        # TODO: add metadata for this cluster: its parent node's names, log keywords
+        self._parent: Optional['Trie'] = None
+        # TODO: it is better that metadata is a dict - key should be node type, which is based on traverse funcs.
+        #  So, consider add field 'nodeType' for every trie nodes?
+        self.metadata: list = list()  # names from parent to root trie nodes, also includes field 'template' of its own
+
+    @property
+    def parent(self):
+        return self._parent
+
+    @parent.setter
+    def parent(self, trie_node: 'Trie'):
+        self._parent = trie_node
+        while trie_node:
+            self.metadata.append(trie_node.name)
+            trie_node = trie_node.parent
+        self.metadata.append(self.template)
 
     def insert_and_update_template(self, log_message: 'LogMessage', match_type: int):
         """
@@ -113,10 +120,9 @@ class LogMessage:
         line: origin log line
         """
         self.data_frame = dict()
-        self.traverse_tokens: dict = None  # tokens used in traverse internal nodes
+        self.traverse_tokens: Optional[dict] = None  # tokens used in traverse internal nodes
         self.content_tokens = list(str())  # tokens generated from CONTEXT
-        # self.context_POSs = list(str())  # part of speech(generated from CONTEXT as well)
-        self.log_cluster: LogCluster = None  # the log cluster which this log message belongs to
+        self.parent: Optional[LogCluster] = None  # the log cluster which this log message belongs to
 
         # update trie process will call it too. in this condition, only requires log cluster template parameter.
         if template:
@@ -130,6 +136,7 @@ class LogMessage:
         # preprocess. generate dataframe and tokenize CONTENT field
         self.__gen_data_frame()
         self.__tokenize()
+        # TODO: add context to every log message. maybe 10 log entry before and after this message
 
     def __gen_data_frame(self):
         m = self.pattern.match(self.line)

@@ -1,16 +1,17 @@
 import re
-from time import sleep
 from threading import Thread
+from time import sleep
+from typing import Optional
 
-from anomaly_detection import detect_cdf, detect_streamad
+from anomaly_detection import detect_cdf
 from config import file_path, log_pattern_re, log_metadata
+from exceptions import LogError
+from log_structure import LogMessage
 from server_apis import render_pyecharts_tree
 from trie import Trie, sampling
-from utils import LruCache, LogClusterCache
-from log_structure import LogMessage, LogError
-from trie import NO_MATCH, PARTIAL_MATCH, EXACT_MATCH
+from utils import LogClusterCache
 
-root: Trie = None
+root: Optional[Trie] = None
 lcCache = LogClusterCache(200)  # lru cache of log clusters
 logMessages = []
 
@@ -30,14 +31,14 @@ def detect_worker():
 
 def process():
     global root
-    root = Trie(log_metadata)
+    root = Trie(log_metadata, None)
 
     pattern = re.compile(log_pattern_re)
     sampling(pattern, file_path)
 
     # thread for detection
     thr = Thread(target=detect_worker, name='Anomaly Detection Thread')
-    thr.start()
+    # thr.start()
 
     # main thread, read logs
     with open(file_path) as f:
@@ -52,11 +53,8 @@ def process():
                 continue
 
             trie_node, log_cluster, match_type = root.insert(log_message)
-            if not log_cluster:
-                continue
             log_cluster.insert_and_update_template(log_message, match_type)
-            log_message.log_cluster = log_cluster  # refer to its parent
-            log_cluster.parent = trie_node  # refer to its parent
+            log_message.parent = log_cluster  # refer to its parent(type: LogCluster)
 
             if log_cluster.feedback.decision != 2:
                 # todo already has feedback

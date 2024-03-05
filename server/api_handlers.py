@@ -21,10 +21,12 @@ def log_feedback(request: HttpRequest):
     data = json.dumps(data)
     return HttpResponse(data)
 
+
 def log_messages_result(request: HttpRequest):
     """
 
     """
-    data = [{'log': log.line, 'decision': log.log_cluster.feedback.decision, 'reason': log.log_cluster.feedback.reason} for log in logMessages]
+    data = [{'log': log_message.line, 'decision': log_message.parent.feedback.decision,
+             'reason': log_message.parent.feedback.reason} for log_message in logMessages]
     data = json.dumps(data)
     return HttpResponse(data)

@@ -1,14 +1,11 @@
 import re
-from typing import List, Dict, Tuple
-from io import TextIOWrapper
-
-from log_structure import LogMessage, LogCluster, LogError
-from log_structure import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH
-from collections import OrderedDict
+from typing import Tuple, Optional
 
 from thefuzz import fuzz
-from thefuzz import process
-from functools import cmp_to_key
+
+from exceptions import LogError
+from log_structure import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH
+from log_structure import LogMessage, LogCluster
 
 domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
@@ -18,8 +15,6 @@ token_occurrences = []
 d = 3  # their first 𝑑 prefix tokens
 
 cmax = 3  # hyperparameter to limit the maximum number of child nodes
-
-
 
 
 def sampling(pattern: re.Pattern, file_path: str, bath_size=1000):
@@ -99,7 +94,7 @@ def add_escape(value):
     return value.translate(trans)
 
 
-def match_exact(log_message: str, log_clusters: set[LogCluster]) -> LogCluster:
+def match_exact(log_message: str, log_clusters: set[LogCluster]) -> Optional[LogCluster]:
     for log_cluster in log_clusters:
         # translate special characters in template. There's an interesting phenomenon shown in unit_tests#test_translation,
         # that \t equals \\t in param 'pattern'.
@@ -123,11 +118,12 @@ def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluste
 
 
 class Trie:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, parent: Optional['Trie']) -> None:
         self.name = name
         self.children: dict[str, Trie] = dict()
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
+        self.parent: Trie = parent  # parent node
 
     def insert(self, log_message: LogMessage, funcs: list[str] = None) -> Tuple["Trie", LogCluster, int]:
         """
@@ -137,32 +133,27 @@ class Trie:
         if funcs is None:
             funcs = all_traverse_funcs
         trie_node = self
-        # collect log clusters under internal trie node, then assign them to leaf node
-        internal_log_clusters: set[LogCluster] = set()
         # extract internal nodes
         for func in funcs:
             internal_tokens = func(log_message)  # extract prefix tokens
-            # there may be chances that internal_tokens may be null, then return None to indicate there are no place to insert this log message
+            # for a log message that can't extract internal tokens (mostly occurs in most frequent tokens), assign it a default trie node.
+            # Don't worry about the accuracy of the whole inserting process - the purpose of choosing trie nodes is coarse-grained!
             if not internal_tokens:
-                return trie_node, None, None
+                internal_tokens = ['DEFAULT']
+
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.children:
-                    trie_node.children[internal_token] = Trie(internal_token)  # create a new node
+                    trie_node.children[internal_token] = Trie(internal_token, trie_node)  # create a new node
                 trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
-                # # internal nodes can't contain log clusters, should remove then assign them to leaf nodes
-                # if trie_node.logClusters:
-                #     internal_log_clusters.update(trie_node.logClusters)
-                #     trie_node.logClusters = set()
 
         trie_node.isEnd = True  # leaf node
-        # if internal_log_clusters:
-        #     trie_node.logClusters.update(internal_log_clusters)
 
         # leaf trie node, match a log cluster then update its template
         log_cluster, match_type = trie_node.match(log_message)
         if match_type == NO_MATCH:
             trie_node.logClusters.add(log_cluster)  # add the log into trie node
+            log_cluster.parent = trie_node  # refer to its parent (type: Trie)
 
         return trie_node, log_cluster, match_type
 
@@ -221,7 +212,7 @@ class Trie:
         traverse_func: assign traverse function
         """
         log_clusters = self.search_clusters_recurse()  # gather all log clusters under this node recursively
-        assert self.isEnd == False
+        assert not self.isEnd
         self.children = dict()  # clear all child trie nodes, then re-construct
         for log_cluster in log_clusters:
             node = self
@@ -230,7 +221,7 @@ class Trie:
             prefix_tokens = traverse_func(log_message)
             for token in prefix_tokens:
                 if token not in node.children:
-                    node.children[token] = Trie(token)
+                    node.children[token] = Trie(token, node)
                 node = node.children[token]
                 node.isEnd = False
             node.isEnd = True
