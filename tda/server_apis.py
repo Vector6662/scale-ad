@@ -56,7 +56,7 @@ def gen_trie_tree(root: Trie, name: str, debug=False):
         for log_cluster in root.logClusters:
             if debug:  # just for debug: see json structure details(structure.json) intuitively
                 items = [item.get_content() for item in log_cluster.logMessagesCache.to_list()]
-                t['children'] = [{'name': f'{log_cluster.template}',
+                t['children'] = [{'name': f'Cluster Name: {log_cluster.template}\n\tMetadata: {log_cluster.metadata}',
                                   'value': items}]
             else:
                 t['children'] = [{'name': f'{log_cluster.template}',

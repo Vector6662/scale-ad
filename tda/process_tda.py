@@ -31,14 +31,14 @@ def detect_worker():
 
 def process():
     global root
-    root = Trie(log_metadata, None)
+    root = Trie(log_metadata, None, 'root')
 
     pattern = re.compile(log_pattern_re)
     sampling(pattern, file_path)
 
     # thread for detection
     thr = Thread(target=detect_worker, name='Anomaly Detection Thread')
-    # thr.start()
+    thr.start()
 
     # main thread, read logs
     with open(file_path) as f:

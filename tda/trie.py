@@ -1,13 +1,12 @@
 import re
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Callable
 
 from thefuzz import fuzz
 
+from config import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH
+from config import TRA_TYPE_domain_knowledge, TRA_TYPE_most_frequent_tokens, TRA_TYPE_prefix_tokens
 from exceptions import LogError
-from log_structure import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH
 from log_structure import LogMessage, LogCluster
-
-domain_knowledge = ['INFO', 'FATAL', 'ERROR', 'core']
 
 K = 3  # 𝐾 most frequent tokens
 token_occurrences = []
@@ -15,6 +14,10 @@ token_occurrences = []
 d = 3  # their first 𝑑 prefix tokens
 
 cmax = 3  # hyperparameter to limit the maximum number of child nodes
+
+DEFAULT_TOKENS = ['DEFAULT']
+
+theta_match = 70  # match threshold
 
 
 def sampling(pattern: re.Pattern, file_path: str, bath_size=1000):
@@ -77,11 +80,11 @@ def traverse_prefix(log_message: LogMessage) -> list[str]:
     return prefix_tokens
 
 
-all_traverse_funcs = [traverse_d_k, traverse_m_f, traverse_prefix]
-
-####################
-# match: exact, partial, no-match
-theta_match = 70  # match threshold
+traverse_funcs = {
+    TRA_TYPE_domain_knowledge: traverse_d_k,
+    TRA_TYPE_most_frequent_tokens: traverse_m_f,
+    TRA_TYPE_prefix_tokens: traverse_prefix
+}
 
 
 def add_escape(value):
@@ -118,32 +121,34 @@ def match_partial(log_message: str, log_clusters: set[LogCluster]) -> (LogCluste
 
 
 class Trie:
-    def __init__(self, name: str, parent: Optional['Trie']) -> None:
+    def __init__(self, name: str, parent: Optional['Trie'], node_type: str) -> None:
+        self.node_type = node_type  # type of the node: ROOT, domain knowledge, m_f, prefix tokens
         self.name = name
         self.children: dict[str, Trie] = dict()
         self.isEnd = False
         self.logClusters: set[LogCluster] = set()
-        self.parent: Trie = parent  # parent node
+        self.parent: Trie = parent  # parent trie node
 
-    def insert(self, log_message: LogMessage, funcs: list[str] = None) -> Tuple["Trie", LogCluster, int]:
+    def insert(self, log_message: LogMessage, funcs: dict[str, Callable] = None) -> Tuple["Trie", LogCluster, int]:
         """
         gross-grained insert via three traverse functions. Then exact inserted into a LogCluster instance.
         returns internal leaf node and log cluster that matches.
         """
         if funcs is None:
-            funcs = all_traverse_funcs
+            funcs = traverse_funcs
+
         trie_node = self
         # extract internal nodes
-        for func in funcs:
-            internal_tokens = func(log_message)  # extract prefix tokens
+        for traverse_type, traverse_func in funcs.items():
+            internal_tokens = traverse_func(log_message)  # extract prefix tokens
             # for a log message that can't extract internal tokens (mostly occurs in most frequent tokens), assign it a default trie node.
-            # Don't worry about the accuracy of the whole inserting process - the purpose of choosing trie nodes is coarse-grained!
+            # Don't worry about the accuracy of the whole inserting process - the purpose of choosing trie nodes is 'coarse-grained' classification!
             if not internal_tokens:
-                internal_tokens = ['DEFAULT']
+                internal_tokens = DEFAULT_TOKENS
 
             for internal_token in internal_tokens:
                 if internal_token not in trie_node.children:
-                    trie_node.children[internal_token] = Trie(internal_token, trie_node)  # create a new node
+                    trie_node.children[internal_token] = Trie(internal_token, trie_node, traverse_type)  # create a new node
                 trie_node = trie_node.children[internal_token]
                 trie_node.isEnd = False
 
@@ -221,7 +226,7 @@ class Trie:
             prefix_tokens = traverse_func(log_message)
             for token in prefix_tokens:
                 if token not in node.children:
-                    node.children[token] = Trie(token, node)
+                    node.children[token] = Trie(token, node, TRA_TYPE_prefix_tokens)
                 node = node.children[token]
                 node.isEnd = False
             node.isEnd = True

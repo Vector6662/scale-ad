@@ -8,16 +8,15 @@ from typing import Optional
 
 import en_core_web_sm
 
+from config import EXACT_MATCH, NO_MATCH, PARTIAL_MATCH, TRA_TYPE_most_frequent_tokens, TRA_TYPE_prefix_tokens, TRA_TYPE_domain_knowledge
 from exceptions import LogError
 from utils import LogMessagesCache
 
 nlp = en_core_web_sm.load()  # load a trained pipeline
+
 # refer to https://universaldependencies.org/u/pos/ , to exclude stopwords
 open_class_words = {'ADJ', 'ADV', 'INTJ', 'NOUN', 'PROPN', 'VERB'}
 
-EXACT_MATCH = 0
-PARTIAL_MATCH = 1
-NO_MATCH = 2
 
 
 def tokenize(content: str):
@@ -72,9 +71,7 @@ class LogCluster:
         self.update_time()
         self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
         self._parent: Optional['Trie'] = None
-        # TODO: it is better that metadata is a dict - key should be node type, which is based on traverse funcs.
-        #  So, consider add field 'nodeType' for every trie nodes?
-        self.metadata: list = list()  # names from parent to root trie nodes, also includes field 'template' of its own
+        self.metadata: dict[str, str] = dict()  # names from parent to root trie nodes, also includes field 'template' of its own
 
     @property
     def parent(self):
@@ -84,9 +81,8 @@ class LogCluster:
     def parent(self, trie_node: 'Trie'):
         self._parent = trie_node
         while trie_node:
-            self.metadata.append(trie_node.name)
+            self.metadata[trie_node.node_type] = trie_node.name if trie_node.node_type not in self.metadata else self.metadata[trie_node.node_type]+f', {trie_node.name}'
             trie_node = trie_node.parent
-        self.metadata.append(self.template)
 
     def insert_and_update_template(self, log_message: 'LogMessage', match_type: int):
         """
