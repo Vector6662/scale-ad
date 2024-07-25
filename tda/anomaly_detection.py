@@ -11,7 +11,7 @@ from rag.starter import rag_insert, rag_feedback
 def detect_cdf(log_clusters: list[LogCluster]):
     data = [len(log_cluster.logMessagesCache) for log_cluster in log_clusters]
     c = -0.5
-    query_threshold = 0.5
+    query_threshold = 0.0
     cdfs = genextreme.cdf(data, c)
     T = 10  # range from 2 to 10
     tps = cdfs ** T / np.sum(cdfs) ** T
@@ -19,13 +19,15 @@ def detect_cdf(log_clusters: list[LogCluster]):
     # plot_cdf(data, cdfs, tps)
 
     for log_cluster, tp in zip(log_clusters, cdfs):
-        if log_cluster.feedback.decision != 2:  # already has feedback
+        if log_cluster.feedback.decision != -1:  # already has feedback
+            print(f'log cluster {log_cluster.template}\talready has feedback. no need to do RAG')
             continue
         if tp > query_threshold:
             # result, score, reason = openai_feedback(log_cluster)
-            result, score, reason = rag_feedback(log_cluster)
-            log_cluster.feedback = FeedBack(decision=1 if result == 'yes' else 0, ep=score, tp=tp, reason=reason)
-            rag_insert(log_cluster)
+            decision, score, reason = rag_feedback(log_cluster)
+            log_cluster.feedback.decision, log_cluster.feedback.ep, log_cluster.feedback.reason, log_cluster.feedback.tp \
+                = decision, score, reason, tp
+            log_cluster.feedback.committer = 'gpt.3.5'
 
 
 def detect_streamad(log_clusters: list[LogCluster]):

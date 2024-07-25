@@ -6,7 +6,6 @@
 
 13 types of log pattern parsing, also summary of "Tools and Benchmarks for Automated Log Parsing": https://zhuanlan.zhihu.com/p/498522888
 
-
 ## Trie-based Detection Agent(TDA)
 
 TDA workflow:
@@ -163,7 +162,7 @@ limit the number of log templates considered for fitting the distribution
 1. Maintain **most recently seen** log templates in LRU.
 2. Discards the **least recently used** templates, when reaching thereshold $R$.
 
-### 6. Leveraging Expert Feedback
+### 6. Leveraging Expert Feedback and a solution(RAG)
 
 #### Integrate GPT
 
@@ -177,7 +176,7 @@ Intended UI Design(Figure 7(a)):
 > 2. the normal logs that are wrongly classified as abnormal were subtle anomalies that engineers typically disregard, such as "failed to login, wrong password."
 >    Such logs often contain keywords such as "failed," indicating abnormal semantics.
 
-### TODO: Retrieval Augmented Generation techniques
+### RAG - Retrieval Augmented Generation techniques
 
 https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6
 
@@ -185,12 +184,14 @@ https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8f
 
 - go on optimize TDA, especially implement LRU,
   - ----> TDA has been optimized partly. LRU is the first priority implementation.
-- design and implement a UI for monitoring 
+- design and implement a UI for monitoring
   - ---> Done. but UI layout is not friendly, adjust it later.
 - [RAG](https://readmedium.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6): take a survey first
   - [Verba](https://github.com/weaviate/Verba)
   - [selfrag](https://selfrag.github.io/)
-- the CDF correctness is terrible, need some research.
+- the effect of CDF correctness is terrible, need some research.
+- how to deal with most frequent tokens? current approach has many flaws.
+- persist trie tree!
 
 ## UI Design
 
@@ -199,9 +200,18 @@ There are two part of UI content:
 - One for on-call users: Display anomaly logs and their details. Display potential logs based on GEV theory-Waiting for on-call engineers or GPT's feedback.
 - Another for monitoring: Display TDA tree and its change(eg. after "Update Trie" step);
 
-### Developing notes:
+## Developing notes and Papers
 
 Django simple demo: https://blog.csdn.net/m0_46192045/article/details/118084087
 fix Django double load:https://blog.csdn.net/qq_39147299/article/details/117474908
 
 OpenAi return json object: https://platform.openai.com/docs/guides/text-generation/json-mode
+
+a high-yield scholar: https://petertsehsun.github.io/
+
+Milvus standalone installation: https://milvus.io/docs/install_standalone-docker.md
+how to restart Milvus server if it's down?
+- check docker status: `systemctl status docker`. if it's inactive, start the daemon: `sudo systemctl status docker`
+- run shell: `bash standalone_embed.sh start`
+start Attu for UI monitoring: (https://github.com/zilliztech/attu)
+- docker run -p 8888:3000 -e MILVUS_URL=10.58.137.244:19530 zilliz/attu:v2.4.0

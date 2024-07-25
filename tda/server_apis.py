@@ -126,7 +126,8 @@ def expert_feedback_api(root: Trie):
             'ep': log_cluster.feedback.ep,
             'tp': log_cluster.feedback.tp,
             'logs': log_cluster.get_log_messages(),
-            'desc': log_cluster.feedback.reason
+            'desc': log_cluster.feedback.reason,
+            'committer': log_cluster.feedback.committer
         })
     return data  # for debug
 

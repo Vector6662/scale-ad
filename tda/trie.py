@@ -13,7 +13,7 @@ token_occurrences = []
 
 d = 3  # their first 𝑑 prefix tokens
 
-cmax = 3  # hyperparameter to limit the maximum number of child nodes
+cmax = 1  # hyperparameter to limit the maximum number of child nodes
 
 DEFAULT_TOKENS = ['DEFAULT']
 

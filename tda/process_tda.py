@@ -22,9 +22,11 @@ def reconstruct():
 
 
 def detect_worker():
+    batch = 1
     while True:
         sleep(5)
-        print('==============start detection==============')
+        print(f'==============start detection (batch {batch})==============')
+        batch = batch + 1
         # start detection
         detect_cdf(lcCache.to_list())
 
@@ -56,7 +58,7 @@ def process():
             log_cluster.insert_and_update_template(log_message, match_type)
             log_message.parent = log_cluster  # refer to its parent(type: LogCluster)
 
-            if log_cluster.feedback.decision != 2:
+            if log_cluster.feedback.decision != -1:
                 # todo already has feedback
                 pass
 

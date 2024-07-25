@@ -69,7 +69,7 @@ class LogCluster:
         self.ground_truth: float = 0
         self.recent_used_timestamp = None
         self.update_time()
-        self.feedback = FeedBack(decision=2, ep=-1, tp=-1)  # instance of Feedback, default unknown
+        self.feedback = FeedBack(decision=-1, ep=-1, tp=-1)  # instance of Feedback, default unknown
         self._parent: Optional['Trie'] = None
         self.metadata: dict[str, str] = dict()  # names from parent to root trie nodes, also includes field 'template' of its own
 
@@ -141,7 +141,7 @@ class LogMessage:
         gd = m.groupdict()
         # check if the data frame CONTENT only contains space or non-words, eg, '--------', ' '.
         if re.fullmatch(r'\W*', gd['CONTENT']):
-            raise ValueError(f"field CONTENT: [{gd['CONTENT']}], or LEVEL:]{gd['LEVEL']}] is empty")
+            raise ValueError(f"field CONTENT: [{gd['CONTENT']}], or LEVEL:[{gd['LEVEL']}] is empty")
         self.data_frame.update(gd)
 
     def __tokenize(self):
@@ -183,11 +183,11 @@ class FeedBack:
     expert feed back, including on-call engineers, GPT
     """
 
-    def __init__(self, ep: float, tp: float, decision: int = -1, reason='desc...'):
+    def __init__(self, ep: float, tp: float, decision: int = -1, reason='no feedback yet'):
         """
         -1: initial state, means haven't submitted to expert for feedback.
         others have been submitted to expert, but may no feedback yet:
-        1 indicates anomaly, 0 indicated normal, 2 unknown, already submitted to expert, but no feedback yet
+        1 indicates anomaly, 0 indicated normal
         """
         self.decision: int = decision
         self.ep = ep  # confidence score given by experts
