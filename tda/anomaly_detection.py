@@ -5,7 +5,7 @@ from streamad.model import SpotDetector
 from streamad.util import CustomDS, StreamGenerator, plot
 
 from log_structure import LogCluster, FeedBack
-from rag.starter import rag_insert, rag_feedback
+from rag.process import rag_insert, rag_feedback
 
 
 def detect_cdf(log_clusters: list[LogCluster]):
